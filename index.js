@@ -16,7 +16,15 @@ connectDB();
 
 // Middlewares
 app.use(cors());
-app.use(express.json());
+app.use(
+  express.json({
+    verify: (req, res, buf) => {
+      if (req.originalUrl && req.originalUrl.includes('/webhook')) {
+        req.rawBody = buf;
+      }
+    },
+  })
+);
 
 // Basic Route
 app.get('/', (req, res) => {

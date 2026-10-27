@@ -98,8 +98,22 @@ const bookingSchema = new mongoose.Schema(
     // Payment status
     paymentStatus: {
       type: String,
-      enum: ['pending', 'paid', 'cash_to_driver', 'card'],
+      enum: ['pending', 'paid', 'failed', 'refunded', 'cash_to_driver', 'card'],
       default: 'pending',
+    },
+
+    // Payment transaction details
+    paymentDetails: {
+      type: mongoose.Schema.Types.Mixed,
+      default: () => ({
+        paymentIntentId: '',
+        checkoutSessionId: '',
+        paymentMethod: '',
+        paidAmount: 0,
+        paidCurrency: 'AUD',
+        paidAt: null,
+        receiptUrl: '',
+      }),
     },
 
     // Internal notes or special requests

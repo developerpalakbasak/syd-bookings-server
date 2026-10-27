@@ -23,6 +23,7 @@ export const createBooking = async (req, res, next) => {
         status: booking.status,
         fare: booking.fare,
         paymentStatus: booking.paymentStatus,
+        paymentDetails: booking.paymentDetails,
         notes: booking.notes,
         cancellationReason: booking.cancellationReason,
         createdAt: booking.createdAt,

@@ -6,15 +6,23 @@ import dotenv from 'dotenv';
 import { connectDB } from '../config/db.js';
 import { Route } from '../models/route.model.js';
 
-dotenv.config();
-
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+
+// Explicitly load .env from syd-bookings-server root regardless of current working directory
+const envPath = path.resolve(__dirname, '../.env');
+dotenv.config({ path: envPath });
 
 async function seedFares() {
   try {
     console.log('Connecting to MongoDB...');
-    await connectDB();
+    const mongoUri = process.env.MONGODB_URI;
+    if (!mongoUri) {
+      throw new Error(`MONGODB_URI is not defined. Checked env path: ${envPath}`);
+    }
+
+    const conn = await mongoose.connect(mongoUri);
+    console.log(`MongoDB Connected: ${conn.connection.host}`);
 
     const jsonPath = path.resolve(__dirname, '../../sydney_transport_fares_plus30.json');
     if (!fs.existsSync(jsonPath)) {

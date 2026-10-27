@@ -66,8 +66,9 @@ const bookingSchema = new mongoose.Schema(
 
     passengerEmail: {
       type: String,
+      required: true,
       trim: true,
-      default: '',
+      lowercase: true,
     },
 
     // Booking lifecycle status

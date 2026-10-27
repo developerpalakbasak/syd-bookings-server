@@ -52,6 +52,13 @@ class BookingService {
       throw err;
     }
 
+    const passengerEmail = (dto.passengerEmail || '').trim().toLowerCase();
+    if (!passengerEmail) {
+      const err = new Error('Passenger email is required');
+      err.statusCode = 400;
+      throw err;
+    }
+
     const dropoff = dto.dropoff ?? dto.destination ?? dto.to ?? quotePayload?.destination ?? '';
 
     // 2. Resolve Timing & Passengers

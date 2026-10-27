@@ -8,6 +8,5 @@ const router = Router();
 router.use('/health', healthRoutes);
 router.use('/bookings', bookingRoutes);
 router.use('/routes', routeRoutes);
-router.use('/places', routeRoutes);
 
 export default router;

@@ -338,17 +338,30 @@ class RouteService {
     if (Object.keys(vehicleAndFares).length === 0) {
       const fallbackFare = dto.fair ?? dto.fare;
       if (fallbackFare !== undefined && !isNaN(Number(fallbackFare))) {
-        vehicleAndFares = { taxi: Number(fallbackFare) };
+        vehicleAndFares = { Taxi: Number(fallbackFare) };
       }
     }
 
     if (Object.keys(vehicleAndFares).length === 0) {
       const err = new Error(
-        'vehicleAndFares must contain at least 1 vehicle fare mapping (e.g. { taxi: 75 })'
+        'vehicleAndFares must contain at least 1 vehicle fare mapping (e.g. { Taxi: 75, Chauffeur: 95 })'
       );
       err.statusCode = 400;
       throw err;
     }
+
+    // Normalize keys to canonical Chauffeur / Taxi
+    const normalizedFares = {};
+    for (const [k, v] of Object.entries(vehicleAndFares)) {
+      const normKey =
+        k.toLowerCase() === 'chauffeur'
+          ? 'Chauffeur'
+          : k.toLowerCase() === 'taxi'
+          ? 'Taxi'
+          : k;
+      normalizedFares[normKey] = Number(v);
+    }
+    vehicleAndFares = normalizedFares;
 
     let increaseFarePerPersonMap = {};
     const rawPerPerson = dto.increaseFarePerPerson ?? dto.increaseFairPerPerson;
@@ -357,7 +370,15 @@ class RouteService {
         increaseFarePerPersonMap[vKey] = Number(rawPerPerson);
       }
     } else if (rawPerPerson && typeof rawPerPerson === 'object') {
-      increaseFarePerPersonMap = rawPerPerson;
+      for (const [k, v] of Object.entries(rawPerPerson)) {
+        const normKey =
+          k.toLowerCase() === 'chauffeur'
+            ? 'Chauffeur'
+            : k.toLowerCase() === 'taxi'
+            ? 'Taxi'
+            : k;
+        increaseFarePerPersonMap[normKey] = Number(v);
+      }
     }
 
     const payload = {
@@ -388,7 +409,18 @@ class RouteService {
     if (dto.lastPlace) updateData.lastPlace = dto.lastPlace.trim();
 
     if (dto.vehicleAndFares || dto.vehicleFares) {
-      updateData.vehicleAndFares = dto.vehicleAndFares || dto.vehicleFares;
+      const rawFares = dto.vehicleAndFares || dto.vehicleFares;
+      const normalizedFares = {};
+      for (const [k, v] of Object.entries(rawFares)) {
+        const normKey =
+          k.toLowerCase() === 'chauffeur'
+            ? 'Chauffeur'
+            : k.toLowerCase() === 'taxi'
+            ? 'Taxi'
+            : k;
+        normalizedFares[normKey] = Number(v);
+      }
+      updateData.vehicleAndFares = normalizedFares;
     }
 
     const rawPerPerson = dto.increaseFarePerPerson ?? dto.increaseFairPerPerson;
@@ -400,7 +432,17 @@ class RouteService {
       }
       updateData.increaseFarePerPerson = map;
     } else if (rawPerPerson && typeof rawPerPerson === 'object') {
-      updateData.increaseFarePerPerson = rawPerPerson;
+      const map = {};
+      for (const [k, v] of Object.entries(rawPerPerson)) {
+        const normKey =
+          k.toLowerCase() === 'chauffeur'
+            ? 'Chauffeur'
+            : k.toLowerCase() === 'taxi'
+            ? 'Taxi'
+            : k;
+        map[normKey] = Number(v);
+      }
+      updateData.increaseFarePerPerson = map;
     }
 
     if (dto.currency) {
@@ -444,17 +486,13 @@ class RouteService {
       {
         firstPlace: 'Sydney Airport (SYD)',
         lastPlace: 'Sydney CBD',
-        increaseFarePerPerson: { taxi: 10, executive: 10, luxury: 15, suv: 12, mpv: 12, van: 15 },
+        increaseFarePerPerson: { Chauffeur: 10, Taxi: 10 },
         currency: 'AUD',
         distanceKm: 14,
         durationMin: 25,
         vehicleAndFares: {
-          taxi: 65,
-          executive: 85,
-          luxury: 110,
-          suv: 95,
-          mpv: 105,
-          van: 125,
+          Chauffeur: 85,
+          Taxi: 65,
         },
         firstPlaceDetails: { address: 'Mascot NSW 2020', lat: -33.9399, lng: 151.1753, code: 'SYD' },
         lastPlaceDetails: { address: 'Sydney NSW 2000', lat: -33.8688, lng: 151.2093, code: 'CBD' },
@@ -464,17 +502,13 @@ class RouteService {
       {
         firstPlace: 'Sydney Airport (SYD)',
         lastPlace: 'Bondi Beach',
-        increaseFarePerPerson: { taxi: 10, executive: 10, luxury: 15, suv: 12, mpv: 12, van: 15 },
+        increaseFarePerPerson: { Chauffeur: 10, Taxi: 10 },
         currency: 'AUD',
         distanceKm: 16,
         durationMin: 30,
         vehicleAndFares: {
-          taxi: 75,
-          executive: 95,
-          luxury: 125,
-          suv: 105,
-          mpv: 115,
-          van: 135,
+          Chauffeur: 95,
+          Taxi: 75,
         },
         firstPlaceDetails: { address: 'Mascot NSW 2020', lat: -33.9399, lng: 151.1753, code: 'SYD' },
         lastPlaceDetails: { address: 'Bondi Beach NSW 2026', lat: -33.8915, lng: 151.2767 },
@@ -484,17 +518,13 @@ class RouteService {
       {
         firstPlace: 'Sydney Airport (SYD)',
         lastPlace: 'Parramatta',
-        increaseFarePerPerson: { taxi: 15, executive: 15, luxury: 20, suv: 18, mpv: 18, van: 20 },
+        increaseFarePerPerson: { Chauffeur: 15, Taxi: 15 },
         currency: 'AUD',
         distanceKm: 28,
         durationMin: 40,
         vehicleAndFares: {
-          taxi: 95,
-          executive: 120,
-          luxury: 155,
-          suv: 135,
-          mpv: 145,
-          van: 170,
+          Chauffeur: 120,
+          Taxi: 95,
         },
         firstPlaceDetails: { address: 'Mascot NSW 2020', lat: -33.9399, lng: 151.1753, code: 'SYD' },
         lastPlaceDetails: { address: 'Parramatta NSW 2150', lat: -33.815, lng: 151.0011 },
@@ -504,17 +534,13 @@ class RouteService {
       {
         firstPlace: 'Sydney Airport (SYD)',
         lastPlace: 'Manly',
-        increaseFarePerPerson: { taxi: 15, executive: 15, luxury: 20, suv: 18, mpv: 18, van: 20 },
+        increaseFarePerPerson: { Chauffeur: 15, Taxi: 15 },
         currency: 'AUD',
         distanceKm: 27,
         durationMin: 45,
         vehicleAndFares: {
-          taxi: 110,
-          executive: 140,
-          luxury: 175,
-          suv: 150,
-          mpv: 165,
-          van: 190,
+          Chauffeur: 140,
+          Taxi: 110,
         },
         firstPlaceDetails: { address: 'Mascot NSW 2020', lat: -33.9399, lng: 151.1753, code: 'SYD' },
         lastPlaceDetails: { address: 'Manly NSW 2095', lat: -33.7971, lng: 151.2882 },
@@ -524,17 +550,13 @@ class RouteService {
       {
         firstPlace: 'Sydney Airport (SYD)',
         lastPlace: 'Chatswood',
-        increaseFarePerPerson: { taxi: 12, executive: 12, luxury: 18, suv: 15, mpv: 15, van: 18 },
+        increaseFarePerPerson: { Chauffeur: 12, Taxi: 12 },
         currency: 'AUD',
         distanceKm: 22,
         durationMin: 35,
         vehicleAndFares: {
-          taxi: 85,
-          executive: 110,
-          luxury: 145,
-          suv: 120,
-          mpv: 135,
-          van: 155,
+          Chauffeur: 110,
+          Taxi: 85,
         },
         firstPlaceDetails: { address: 'Mascot NSW 2020', lat: -33.9399, lng: 151.1753, code: 'SYD' },
         lastPlaceDetails: { address: 'Chatswood NSW 2067', lat: -33.7961, lng: 151.178 },
@@ -544,17 +566,13 @@ class RouteService {
       {
         firstPlace: 'Sydney CBD',
         lastPlace: 'Bondi Beach',
-        increaseFarePerPerson: { taxi: 8, executive: 8, luxury: 12, suv: 10, mpv: 10, van: 12 },
+        increaseFarePerPerson: { Chauffeur: 8, Taxi: 8 },
         currency: 'AUD',
         distanceKm: 8,
         durationMin: 20,
         vehicleAndFares: {
-          taxi: 35,
-          executive: 50,
-          luxury: 70,
-          suv: 60,
-          mpv: 65,
-          van: 85,
+          Chauffeur: 50,
+          Taxi: 35,
         },
         firstPlaceDetails: { address: 'Sydney NSW 2000', lat: -33.8688, lng: 151.2093 },
         lastPlaceDetails: { address: 'Bondi Beach NSW 2026', lat: -33.8915, lng: 151.2767 },
@@ -564,17 +582,13 @@ class RouteService {
       {
         firstPlace: 'Sydney CBD',
         lastPlace: 'Manly Beach',
-        increaseFarePerPerson: { taxi: 10, executive: 10, luxury: 15, suv: 12, mpv: 12, van: 15 },
+        increaseFarePerPerson: { Chauffeur: 10, Taxi: 10 },
         currency: 'AUD',
         distanceKm: 15,
         durationMin: 30,
         vehicleAndFares: {
-          taxi: 55,
-          executive: 75,
-          luxury: 100,
-          suv: 85,
-          mpv: 95,
-          van: 115,
+          Chauffeur: 75,
+          Taxi: 55,
         },
         firstPlaceDetails: { address: 'Sydney NSW 2000', lat: -33.8688, lng: 151.2093 },
         lastPlaceDetails: { address: 'Manly NSW 2095', lat: -33.7971, lng: 151.2882 },

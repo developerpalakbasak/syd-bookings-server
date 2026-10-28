@@ -70,6 +70,7 @@ class BookingService {
     }
 
     const passengers = Number(dto.passengers ?? dto.pax ?? quotePayload?.passengers ?? 1);
+    const luggage = Number(dto.luggage ?? dto.bags ?? quotePayload?.luggage ?? 0);
     const vehicleType = (dto.vehicleType ?? quotePayload?.vehicleType ?? 'Standard').trim();
 
     // 3. Generate unique Booking Reference
@@ -87,6 +88,7 @@ class BookingService {
       dropoff,
       pickupTime,
       passengers,
+      luggage,
       vehicleType,
       passengerName: dto.passengerName.trim(),
       passengerPhone,

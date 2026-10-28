@@ -15,6 +15,7 @@ export const createBooking = async (req, res, next) => {
         dropoff: booking.dropoff,
         pickupTime: booking.pickupTime,
         passengers: booking.passengers,
+        luggage: booking.luggage,
         vehicleType: booking.vehicleType,
         passengerName: booking.passengerName,
         passengerPhone: booking.passengerPhone,

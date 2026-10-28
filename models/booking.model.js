@@ -40,6 +40,15 @@ const bookingSchema = new mongoose.Schema(
       default: 1,
     },
 
+    // Number of luggage / bags
+    luggage: {
+      type: Number,
+      required: false,
+      min: 0,
+      default: 0,
+      alias: 'bags',
+    },
+
     // Vehicle Type requested
     vehicleType: {
       type: String,

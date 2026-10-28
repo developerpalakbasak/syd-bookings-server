@@ -7,21 +7,28 @@ Modular and clean Express.js REST API for SYD Transport (Internal Bookings & Rou
 ```text
 syd-backend/
 ├── config/
-│   └── db.js                      # MongoDB connection setup
+│   ├── db.js                      # MongoDB connection setup
+│   └── stripe.js                  # Stripe SDK configuration
 ├── controllers/
 │   ├── health.controller.js       # Health check controller
 │   ├── booking.controller.js      # Booking REST controller
-│   └── route.controller.js        # Route & places REST controller
+│   ├── route.controller.js        # Route & places REST controller
+│   └── payment.controller.js      # Payment & Stripe webhook controller
 ├── models/
+│   ├── admin.model.js             # Admin user schema
 │   ├── booking.model.js           # Single Booking schema & indexes
+│   ├── payment.model.js           # Payment transaction ledger schema
 │   └── route.model.js             # Route fare catalog schema & indexes
 ├── routes/
-│   ├── health.routes.js           # Health route definitions
+│   ├── admin.routes.js            # Admin management routes (bookings, payments, routes)
 │   ├── booking.routes.js          # Booking route definitions
+│   ├── health.routes.js           # Health route definitions
+│   ├── payment.routes.js          # Payment & checkout route definitions
 │   ├── route.routes.js            # Route & places route definitions
 │   └── index.js                   # API route aggregation
 ├── services/
 │   ├── booking.service.js         # Booking business logic & reference generation
+│   ├── payment.service.js         # Stripe payments & checkout logic
 │   └── route.service.js           # Route lookups, deduplication & fare seeding
 ├── middlewares/
 │   └── notFound.middleware.js     # 404 Route Not Found middleware
@@ -87,7 +94,34 @@ The `Route` model represents fixed transfer fares between origin and destination
 - `lastPlaceDetails` (Object: `{ address, lat, lng, code }`)
 - `isActive` (Boolean, default: `true`, indexed)
 - `notes` (String, internal remarks)
-- Compound index on `{ firstPlace: 1, lastPlace: 1 }`
+### 3. Payment Schema Fields
+
+The `Payment` model tracks payment transactions:
+- `bookingId` (ObjectId, ref: 'Booking', required, indexed)
+- `bookingNumber` (String, required, indexed, uppercase)
+- `stripePaymentIntentId` (String, required, indexed)
+- `stripeCheckoutSessionId` (String, optional)
+- `amount` (Number, required)
+- `currency` (String, default: `AUD`, uppercase)
+- `status` (`requires_payment_method`, `requires_confirmation`, `requires_action`, `processing`, `succeeded`, `canceled`, `failed`)
+- `paymentMethodType` (String, default: `card`)
+- `customerEmail` (String)
+- `receiptUrl` (String)
+- `metadata` (Mixed)
+- Timestamps (`createdAt`, `updatedAt`)
+
+### 4. Admin Schema Fields
+
+The `Admin` model represents administrator accounts:
+- `name` (String, required)
+- `email` (String, required, unique, lowercase, indexed)
+- `password` (String, required, `select: false`)
+- `role` (`admin`, `superadmin`, default: `admin`)
+- `phone` (String)
+- `isActive` (Boolean, default: `true`)
+- `lastLoginAt` (Date, default: `null`)
+- `refreshToken` (String, `select: false`)
+- `refreshTokenExpiresAt` (Date, default: `null`)
 - Timestamps (`createdAt`, `updatedAt`)
 
 ---
@@ -623,3 +657,291 @@ Permanently removes a booking from the database by **bookingNumber** (`SYD-XXXXX
   "booking": { ... }
 }
 ```
+
+---
+
+## Part D: Admin Endpoints
+
+All admin endpoints are accessible under `http://localhost:5000/api/admin`.
+
+### Admin Endpoints Overview
+
+| Category | Method | Endpoint | Description | Access |
+|---|---|---|---|---|
+| **Auth** | `POST` | `/api/admin/login` | Login with email & password (sets HTTP-only `accessToken` & `refreshToken` cookies) | Public |
+| | `POST` | `/api/admin/logout` | Logout (clears cookies and revokes refresh token) | Admin / Superadmin |
+| | `GET` | `/api/admin/me` | Get current authenticated admin profile | Admin / Superadmin |
+| **Superadmin CRUD** | `GET` | `/api/admin/admins` | List all admin accounts | Superadmin only |
+| | `POST` | `/api/admin/admins` | Create new admin or superadmin | Superadmin only |
+| | `GET` | `/api/admin/admins/:id` | Get admin by ID | Superadmin only |
+| | `PUT` / `PATCH` | `/api/admin/admins/:id` | Update admin info (name, email, role, phone, isActive) | Superadmin only |
+| | `POST` / `PATCH` | `/api/admin/admins/:id/set-password` | Set / reset password for an admin | Superadmin only |
+| | `DELETE` | `/api/admin/admins/:id` | Delete an admin account | Superadmin only |
+| **Bookings** | `GET` | `/api/admin/bookings` | List all bookings with query filters & pagination | Admin / Superadmin |
+| | `GET` | `/api/admin/bookings/:refOrId` | Get booking by ID or reference code (`SYD-XXXXXX`) | Admin / Superadmin |
+| | `PUT` / `PATCH` | `/api/admin/bookings/:refOrId` | Update full booking details (edit any field) | Admin / Superadmin |
+| | `PATCH` | `/api/admin/bookings/:refOrId/status` | Update booking status, payment status, or notes | Admin / Superadmin |
+| | `POST` | `/api/admin/bookings/:refOrId/cancel` | Cancel a booking with reason | Admin / Superadmin |
+| | `DELETE` | `/api/admin/bookings/:refOrId` | Permanently delete a booking | Admin / Superadmin |
+| **Payments** | `GET` | `/api/admin/payments` | List all payment records with filters & pagination | Admin / Superadmin |
+| | `GET` | `/api/admin/payments/booking/:refOrId` | Get payment status and transaction history for a booking | Admin / Superadmin |
+| **Routes** | `GET` | `/api/admin/routes` | List all routes with filters & pagination | Admin / Superadmin |
+| | `POST` | `/api/admin/routes` | Create a new route fare mapping | Admin / Superadmin |
+| | `GET` | `/api/admin/routes/:id` | Get route details by ID | Admin / Superadmin |
+| | `PUT` / `PATCH` | `/api/admin/routes/:id` | Update route fare / details by ID | Admin / Superadmin |
+| | `DELETE` | `/api/admin/routes/:id` | Delete a route by ID | Admin / Superadmin |
+
+---
+
+### Authentication & Token Rotation Workflow
+
+- **Cookies**: Upon successful login, the server sets two HttpOnly cookies:
+  - `accessToken`: Short-lived (default `30m` via `ACCESS_TOKEN_VALIDITY`).
+  - `refreshToken`: Long-lived (default `7d` via `REFRESH_TOKEN_VALIDITY`).
+- **Automatic Rotation**: When a request arrives with an expired `accessToken`, the authentication middleware checks the `refreshToken`. If valid and matching the stored token in DB, it **automatically issues and rotates a new refreshToken** and new `accessToken` directly in the response cookies, allowing seamless uninterrupted requests.
+- **Role Enforcement**: Protected routes require a valid session. Superadmin endpoints (`/api/admin/admins/*`) specifically require `role === 'superadmin'`.
+
+---
+
+### 1. Admin Login
+
+- **Method**: `POST`
+- **URL**: `http://localhost:5000/api/admin/login`
+- **Body (raw JSON)**:
+```json
+{
+  "email": "admin@sydtransport.com.au",
+  "password": "yourSecretPassword"
+}
+```
+- **Response `200 OK`**:
+```json
+{
+  "success": true,
+  "message": "Login successful",
+  "admin": {
+    "id": "6acf7f098ebdf026739444e8",
+    "name": "System Administrator",
+    "email": "admin@sydtransport.com.au",
+    "role": "admin",
+    "phone": "+61 400 000 000",
+    "isActive": true,
+    "lastLoginAt": "2026-10-28T15:35:00.000Z"
+  }
+}
+```
+*(Also sets `accessToken` and `refreshToken` cookies automatically).*
+
+---
+
+### 2. Admin Logout
+
+- **Method**: `POST`
+- **URL**: `http://localhost:5000/api/admin/logout`
+- **Response `200 OK`**:
+```json
+{
+  "success": true,
+  "message": "Logged out successfully"
+}
+```
+*(Clears `accessToken` and `refreshToken` cookies and invalidates refresh token in DB).*
+
+---
+
+### 3. Superadmin: Admin Management
+
+#### Create Admin
+- **Method**: `POST`
+- **URL**: `http://localhost:5000/api/admin/admins`
+- **Body**:
+```json
+{
+  "name": "Operations Manager",
+  "email": "ops@sydtransport.com.au",
+  "password": "TemporaryPassword123",
+  "role": "admin",
+  "phone": "+61 411 222 333",
+  "isActive": true
+}
+```
+
+#### List Admins
+- **Method**: `GET`
+- **URL**: `http://localhost:5000/api/admin/admins?role=admin&isActive=true`
+
+#### Set / Reset Admin Password
+- **Method**: `POST` or `PATCH`
+- **URL**: `http://localhost:5000/api/admin/admins/:id/set-password`
+- **Body**:
+```json
+{
+  "password": "NewSecurePassword456"
+}
+```
+
+#### Delete Admin
+- **Method**: `DELETE`
+- **URL**: `http://localhost:5000/api/admin/admins/:id`
+
+---
+
+### 1. Admin: View & List Bookings
+
+- **Method**: `GET`
+- **URL**: `http://localhost:5000/api/admin/bookings?status=confirmed&limit=20`
+- **Query Parameters**:
+  - `phone`: Filter by passenger phone
+  - `status`: `pending`, `confirmed`, `assigned`, `on_the_way`, `arrived`, `in_progress`, `completed`, `cancelled`
+  - `vehicleType`: Filter by vehicle type (e.g. `Sedan`, `SUV`)
+  - `bookingNumber`: Filter by booking reference code
+  - `limit`: Number of items per page (default: `50`, max: `100`)
+  - `skip`: Number of items to skip for pagination (default: `0`)
+- **Response `200 OK`**:
+```json
+{
+  "success": true,
+  "total": 42,
+  "bookings": [ ... ]
+}
+```
+
+---
+
+### 2. Admin: Edit Booking Details
+
+Admins can edit any field of an existing booking.
+
+- **Method**: `PUT` or `PATCH`
+- **URL**: `http://localhost:5000/api/admin/bookings/SYD-K9J4M2`
+- **Body (raw JSON)**:
+```json
+{
+  "pickup": "Sydney Airport Terminal 2",
+  "dropoff": "Hilton Sydney, 488 George St",
+  "pickupTime": "2026-10-30T14:30:00.000Z",
+  "passengers": 3,
+  "vehicleType": "Chauffeur",
+  "passengerName": "John Doe",
+  "passengerPhone": "+61 400 111 222",
+  "status": "confirmed",
+  "notes": "VIP client - requested quiet ride"
+}
+```
+- **Response `200 OK`**:
+```json
+{
+  "success": true,
+  "message": "Booking updated successfully",
+  "booking": { ... }
+}
+```
+
+---
+
+### 3. Admin: View Payments Ledger
+
+- **Method**: `GET`
+- **URL**: `http://localhost:5000/api/admin/payments?status=succeeded&limit=20`
+- **Query Parameters**:
+  - `status`: Filter by payment status (`succeeded`, `requires_payment_method`, `processing`, `failed`, `canceled`)
+  - `bookingNumber`: Filter by booking reference code
+  - `limit`: Page size limit (default: `50`, max: `100`)
+  - `skip`: Pagination offset
+- **Response `200 OK`**:
+```json
+{
+  "success": true,
+  "total": 15,
+  "limit": 20,
+  "skip": 0,
+  "payments": [
+    {
+      "_id": "671cc15f10b249a518fb9999",
+      "bookingId": { ... },
+      "bookingNumber": "SYD-K9J4M2",
+      "stripePaymentIntentId": "pi_3MtwBwLkdIwHu7ix28a3tqPa",
+      "amount": 85.50,
+      "currency": "AUD",
+      "status": "succeeded",
+      "paymentMethodType": "card",
+      "customerEmail": "john.doe@example.com",
+      "receiptUrl": "https://pay.stripe.com/receipts/...",
+      "createdAt": "2026-10-26T16:00:00.000Z"
+    }
+  ]
+}
+```
+
+---
+
+### 4. Admin: View Booking Payment Details
+
+- **Method**: `GET`
+- **URL**: `http://localhost:5000/api/admin/payments/booking/SYD-K9J4M2`
+- **Response `200 OK`**:
+```json
+{
+  "success": true,
+  "data": {
+    "bookingNumber": "SYD-K9J4M2",
+    "bookingId": "671cc15f10b249a518fb9911",
+    "vehicleType": "Sedan",
+    "status": "confirmed",
+    "paymentStatus": "paid",
+    "fare": { "currency": "AUD", "total": 85.50 },
+    "paymentDetails": { ... },
+    "payments": [ ... ]
+  }
+}
+```
+
+---
+
+### 5. Admin: Route CRUD Operations
+
+#### Create Route
+- **Method**: `POST`
+- **URL**: `http://localhost:5000/api/admin/routes`
+- **Body**:
+```json
+{
+  "firstPlace": "Sydney Airport (SYD)",
+  "lastPlace": "Coogee Beach",
+  "vehicleAndFares": {
+    "Taxi": 65,
+    "Chauffeur": 85
+  },
+  "increaseFarePerPerson": {
+    "Taxi": 10,
+    "Chauffeur": 10
+  },
+  "distanceKm": 12,
+  "durationMin": 25,
+  "currency": "AUD",
+  "isActive": true
+}
+```
+
+#### Read Route
+- **Method**: `GET`
+- **URL**: `http://localhost:5000/api/admin/routes/:id`
+
+#### Update Route
+- **Method**: `PUT` or `PATCH`
+- **URL**: `http://localhost:5000/api/admin/routes/:id`
+- **Body**:
+```json
+{
+  "vehicleAndFares": {
+    "Taxi": 70,
+    "Chauffeur": 90
+  },
+  "isActive": true
+}
+```
+
+#### Delete Route
+- **Method**: `DELETE`
+- **URL**: `http://localhost:5000/api/admin/routes/:id`
+

@@ -158,6 +158,47 @@ class BookingService {
     return booking;
   }
 
+  // Updates booking details (full or partial edit)
+  async update(refOrId, dto) {
+    const booking = await this.findByReferenceOrId(refOrId);
+
+    const editableFields = [
+      'pickup',
+      'dropoff',
+      'pickupTime',
+      'passengers',
+      'luggage',
+      'vehicleType',
+      'passengerName',
+      'passengerPhone',
+      'passengerEmail',
+      'status',
+      'fare',
+      'paymentStatus',
+      'paymentDetails',
+      'notes',
+      'cancellationReason',
+    ];
+
+    for (const field of editableFields) {
+      if (dto[field] !== undefined) {
+        booking[field] = dto[field];
+      }
+    }
+
+    if (dto.passengerPhon !== undefined && dto.passengerPhone === undefined) {
+      booking.passengerPhone = dto.passengerPhon;
+    }
+    if (dto.pax !== undefined && dto.passengers === undefined) {
+      booking.passengers = Number(dto.pax);
+    }
+    if (dto.bags !== undefined && dto.luggage === undefined) {
+      booking.luggage = Number(dto.bags);
+    }
+
+    return await booking.save();
+  }
+
   // Updates booking lifecycle status, payment status, cancellation reasons, or notes.
   async updateStatus(refOrId, dto) {
     const booking = await this.findByReferenceOrId(refOrId);

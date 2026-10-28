@@ -74,6 +74,22 @@ export const getBookingByIdOrRef = async (req, res, next) => {
   }
 };
 
+// PATCH / PUT /api/bookings/:refOrId - Updates a booking's details (admin edit)
+export const updateBooking = async (req, res, next) => {
+  try {
+    const { refOrId } = req.params;
+    const booking = await bookingService.update(refOrId, req.body);
+
+    res.status(200).json({
+      success: true,
+      message: 'Booking updated successfully',
+      booking,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
 // PATCH /api/bookings/:refOrId/status - Updates booking lifecycle status, payment status, or internal notes.
 export const updateBookingStatus = async (req, res, next) => {
   try {

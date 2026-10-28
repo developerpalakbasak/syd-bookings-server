@@ -1,6 +1,44 @@
 import { paymentService } from '../services/payment.service.js';
 
 /**
+ * GET /api/payments
+ * Lists all payments with filtering and pagination
+ */
+export const getAllPayments = async (req, res, next) => {
+  try {
+    const { status, bookingNumber, limit, skip } = req.query;
+    const filter = {};
+
+    if (status) filter.status = status;
+    if (bookingNumber) filter.bookingNumber = bookingNumber.toUpperCase();
+
+    const limitNum = limit ? Math.min(Number(limit), 100) : 50;
+    const skipNum = skip ? Number(skip) : 0;
+
+    const { Payment } = await import('../models/payment.model.js');
+    const [total, payments] = await Promise.all([
+      Payment.countDocuments(filter),
+      Payment.find(filter)
+        .populate('bookingId')
+        .sort({ createdAt: -1 })
+        .skip(skipNum)
+        .limit(limitNum)
+        .exec(),
+    ]);
+
+    res.status(200).json({
+      success: true,
+      total,
+      limit: limitNum,
+      skip: skipNum,
+      payments,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+/**
  * GET /api/payments/config
  * Returns public payment configuration (e.g. Stripe publishable key)
  */

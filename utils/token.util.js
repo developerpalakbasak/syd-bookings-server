@@ -30,9 +30,11 @@ export const generateAccessToken = (admin) => {
   const expiresIn = process.env.ACCESS_TOKEN_VALIDITY || '30m';
   return jwt.sign(
     {
-      id: admin._id || admin.id,
+      _id: admin._id || admin.id,
+      name: admin.name,
       email: admin.email,
       role: admin.role,
+      isActive: admin.isActive,
     },
     getJwtSecret(),
     { expiresIn }
@@ -43,9 +45,7 @@ export const generateRefreshToken = (admin) => {
   const expiresIn = process.env.REFRESH_TOKEN_VALIDITY || '7d';
   return jwt.sign(
     {
-      id: admin._id || admin.id,
-      email: admin.email,
-      tokenType: 'refresh',
+      _id: admin._id || admin.id,
     },
     getJwtSecret(),
     { expiresIn }

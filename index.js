@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
+import morgan from 'morgan';
 import dotenv from 'dotenv';
 import { connectDB } from './config/db.js';
 import routes from './routes/index.js';
@@ -16,6 +17,7 @@ const PORT = process.env.PORT || 5000;
 connectDB();
 
 // Middlewares
+app.use(morgan('dev'));
 app.use(
   cors({
     origin: process.env.CLIENT_ORIGIN || 'http://localhost:3000',

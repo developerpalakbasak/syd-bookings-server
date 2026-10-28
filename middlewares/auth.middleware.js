@@ -21,7 +21,8 @@ export const authenticateAdmin = async (req, res, next) => {
     if (accessToken) {
       try {
         const decoded = verifyToken(accessToken);
-        const admin = await Admin.findById(decoded.id).select('+role +isActive');
+        const adminId = decoded._id || decoded.id;
+        const admin = await Admin.findById(adminId).select('+role +isActive');
 
         if (!admin || !admin.isActive) {
           const err = new Error('Admin account is inactive or not found');
@@ -59,7 +60,8 @@ export const authenticateAdmin = async (req, res, next) => {
     }
 
     // Match with database stored refreshToken
-    const admin = await Admin.findById(refreshDecoded.id)
+    const refreshAdminId = refreshDecoded._id || refreshDecoded.id;
+    const admin = await Admin.findById(refreshAdminId)
       .select('+refreshToken +refreshTokenExpiresAt +role +isActive')
       .exec();
 

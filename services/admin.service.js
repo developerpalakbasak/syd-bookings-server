@@ -4,6 +4,8 @@ import { Admin } from '../models/admin.model.js';
 import {
   generateAccessToken,
   generateRefreshToken,
+  verifyToken,
+  decodeToken,
   parseDurationToMs,
   getCookieOptions,
 } from '../utils/token.util.js';
@@ -72,6 +74,85 @@ class AdminService {
     const isMatch = await bcrypt.compare(password, admin.password);
     if (!isMatch) {
       const err = new Error('Invalid email or password');
+      err.statusCode = 401;
+      throw err;
+    }
+
+    return await this.setAuthCookiesAndSave(res, admin);
+  }
+
+  /**
+   * Explicit token refresh and rotation
+   */
+  async refreshToken(req, res, token) {
+    const refreshToken = token || req.cookies?.refreshToken;
+    if (!refreshToken) {
+      const err = new Error('Refresh token is required');
+      err.statusCode = 401;
+      throw err;
+    }
+
+    let refreshDecoded;
+    let isJwtExpired = false;
+    try {
+      refreshDecoded = verifyToken(refreshToken);
+    } catch (tokenErr) {
+      if (tokenErr.name === 'TokenExpiredError') {
+        isJwtExpired = true;
+        refreshDecoded = decodeToken(refreshToken);
+      } else {
+        res.clearCookie('accessToken', getCookieOptions(0));
+        res.clearCookie('refreshToken', getCookieOptions(0));
+        const err = new Error('Refresh token is invalid. Please log in again.');
+        err.statusCode = 401;
+        throw err;
+      }
+    }
+
+    const adminId = refreshDecoded?._id || refreshDecoded?.id;
+    if (!adminId) {
+      res.clearCookie('accessToken', getCookieOptions(0));
+      res.clearCookie('refreshToken', getCookieOptions(0));
+      const err = new Error('Invalid refresh token payload. Please log in again.');
+      err.statusCode = 401;
+      throw err;
+    }
+
+    const admin = await Admin.findById(adminId)
+      .select('+refreshToken +refreshTokenExpiresAt +role +isActive')
+      .exec();
+
+    if (!admin || !admin.isActive) {
+      res.clearCookie('accessToken', getCookieOptions(0));
+      res.clearCookie('refreshToken', getCookieOptions(0));
+      const err = new Error('Admin account is inactive or not found');
+      err.statusCode = 401;
+      throw err;
+    }
+
+    // Check database refreshTokenExpiresAt
+    const isDbExpired =
+      !admin.refreshTokenExpiresAt ||
+      new Date(admin.refreshTokenExpiresAt) <= new Date();
+
+    if (isDbExpired || isJwtExpired) {
+      admin.refreshToken = null;
+      admin.refreshTokenExpiresAt = null;
+      await admin.save();
+
+      res.clearCookie('accessToken', getCookieOptions(0));
+      res.clearCookie('refreshToken', getCookieOptions(0));
+
+      const err = new Error('Refresh token expired. Please log in again.');
+      err.statusCode = 401;
+      throw err;
+    }
+
+    if (!admin.refreshToken || admin.refreshToken !== refreshToken) {
+      res.clearCookie('accessToken', getCookieOptions(0));
+      res.clearCookie('refreshToken', getCookieOptions(0));
+
+      const err = new Error('Refresh token revoked or invalid. Please log in again.');
       err.statusCode = 401;
       throw err;
     }

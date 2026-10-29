@@ -20,6 +20,25 @@ export const loginAdmin = async (req, res, next) => {
 };
 
 /**
+ * POST /api/admin/refresh
+ * Explicit endpoint to refresh accessToken and rotate refreshToken
+ */
+export const refreshAdminToken = async (req, res, next) => {
+  try {
+    const refreshToken = req.cookies?.refreshToken;
+    const result = await adminService.refreshToken(req, res, refreshToken);
+
+    res.status(200).json({
+      success: true,
+      message: 'Token refreshed successfully',
+      ...result,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+/**
  * POST /api/admin/logout
  * Clears cookies and invalidates refreshToken in DB
  */

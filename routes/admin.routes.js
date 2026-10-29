@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import {
   loginAdmin,
+  refreshAdminToken,
   logoutAdmin,
   getMyProfile,
   createAdminUser,
@@ -41,6 +42,9 @@ const router = Router();
    ========================================================================== */
 // POST /api/admin/login - Login for admin / superadmin (sets accessToken & refreshToken in cookies)
 router.post('/login', loginAdmin);
+
+// POST /api/admin/refresh - Explicitly refresh tokens and get updated session
+router.post('/refresh', refreshAdminToken);
 
 // POST /api/admin/logout - Invalidate refreshToken & clear cookies
 router.post('/logout', authenticateAdmin, logoutAdmin);

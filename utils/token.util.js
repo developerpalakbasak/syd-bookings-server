@@ -56,15 +56,23 @@ export const verifyToken = (token) => {
   return jwt.verify(token, getJwtSecret());
 };
 
+export const decodeToken = (token) => {
+  return jwt.decode(token);
+};
+
 /**
  * Cookie options helper for secure HttpOnly cookie storage
  */
 export const getCookieOptions = (maxAgeMs) => {
   const isProduction = process.env.NODE_ENV === 'production';
-  return {
+  const options = {
     httpOnly: true,
     secure: isProduction,
     sameSite: isProduction ? 'strict' : 'lax',
-    maxAge: maxAgeMs,
+    path: '/',
   };
+  if (typeof maxAgeMs === 'number') {
+    options.maxAge = maxAgeMs;
+  }
+  return options;
 };

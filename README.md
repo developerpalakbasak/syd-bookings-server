@@ -120,8 +120,6 @@ The `Admin` model represents administrator accounts:
 - `phone` (String)
 - `isActive` (Boolean, default: `true`)
 - `lastLoginAt` (Date, default: `null`)
-- `refreshToken` (String, `select: false`)
-- `refreshTokenExpiresAt` (Date, default: `null`)
 - Timestamps (`createdAt`, `updatedAt`)
 
 ---
@@ -693,12 +691,14 @@ All admin endpoints are accessible under `http://localhost:5000/api/admin`.
 
 ---
 
-### Authentication & Token Rotation Workflow
+### High-Performance Authentication & Multi-Device Support
 
-- **Cookies**: Upon successful login, the server sets two HttpOnly cookies:
-  - `accessToken`: Short-lived (default `30m` via `ACCESS_TOKEN_VALIDITY`).
+- **Cookies**: Upon successful login, the server sets two secure HttpOnly cookies:
+  - `accessToken`: Short-lived (default `15m` via `ACCESS_TOKEN_VALIDITY`).
   - `refreshToken`: Long-lived (default `7d` via `REFRESH_TOKEN_VALIDITY`).
-- **Automatic Rotation**: When a request arrives with an expired `accessToken`, the authentication middleware checks the `refreshToken`. If valid and matching the stored token in DB, it **automatically issues and rotates a new refreshToken** and new `accessToken` directly in the response cookies, allowing seamless uninterrupted requests.
+- **Zero DB Calls on Standard Requests**: During the 15-minute access window, the middleware verifies the cryptographically signed JWT without querying MongoDB, ensuring low latency.
+- **Concurrent Multi-Device Login**: `refreshToken` is encoded as a stateless signed JWT rather than stored in a single database column. Admins can log in concurrently from multiple laptops, phones, and tablets without overwriting each other's sessions.
+- **15-Minute Revalidation**: When the 15-minute `accessToken` expires, the middleware verifies the `refreshToken`, queries MongoDB once to ensure the account is active, and automatically sets a fresh 15-minute `accessToken` cookie.
 - **Role Enforcement**: Protected routes require a valid session. Superadmin endpoints (`/api/admin/admins/*`) specifically require `role === 'superadmin'`.
 
 ---
@@ -745,7 +745,7 @@ All admin endpoints are accessible under `http://localhost:5000/api/admin`.
   "message": "Logged out successfully"
 }
 ```
-*(Clears `accessToken` and `refreshToken` cookies and invalidates refresh token in DB).*
+*(Clears `accessToken` and `refreshToken` cookies).*
 
 ---
 

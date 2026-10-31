@@ -40,7 +40,7 @@ export const refreshAdminToken = async (req, res, next) => {
 
 /**
  * POST /api/admin/logout
- * Clears cookies and invalidates refreshToken in DB
+ * Clears authentication cookies
  */
 export const logoutAdmin = async (req, res, next) => {
   try {

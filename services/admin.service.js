@@ -12,19 +12,17 @@ import {
 
 class AdminService {
   /**
-   * Helper to set auth cookies and update admin tokens
+   * Helper to issue auth cookies and record last login
    */
   async setAuthCookiesAndSave(res, admin) {
     const accessToken = generateAccessToken(admin);
     const refreshToken = generateRefreshToken(admin);
 
-    const refreshValidity = process.env.REFRESH_TOKEN_VALIDITY || '7d';
-    const accessValidity = process.env.ACCESS_TOKEN_VALIDITY || '30m';
-    const refreshMs = parseDurationToMs(refreshValidity, 7 * 24 * 60 * 60 * 1000);
-    const accessMs = parseDurationToMs(accessValidity, 30 * 60 * 1000);
+    const accessMinutes = parseInt(process.env.ACCESS_COOKIES_VALIDITY, 10) || 15;
+    const refreshDays = parseInt(process.env.REFRESH_COOKIES_VALIDITY, 10) || 7;
+    const accessMs = accessMinutes * 60 * 1000;
+    const refreshMs = refreshDays * 24 * 60 * 60 * 1000;
 
-    admin.refreshToken = refreshToken;
-    admin.refreshTokenExpiresAt = new Date(Date.now() + refreshMs);
     admin.lastLoginAt = new Date();
     await admin.save();
 
@@ -36,6 +34,7 @@ class AdminService {
       refreshToken,
       admin: {
         id: admin._id,
+        _id: admin._id,
         name: admin.name,
         email: admin.email,
         role: admin.role,
@@ -57,7 +56,7 @@ class AdminService {
     }
 
     const cleanEmail = email.trim().toLowerCase();
-    const admin = await Admin.findOne({ email: cleanEmail }).select('+password +refreshToken');
+    const admin = await Admin.findOne({ email: cleanEmail }).select('+password');
 
     if (!admin) {
       const err = new Error('Invalid email or password');
@@ -82,7 +81,7 @@ class AdminService {
   }
 
   /**
-   * Explicit token refresh and rotation
+   * Explicit token refresh endpoint
    */
   async refreshToken(req, res, token) {
     const refreshToken = token || req.cookies?.refreshToken;
@@ -93,23 +92,17 @@ class AdminService {
     }
 
     let refreshDecoded;
-    let isJwtExpired = false;
     try {
-      refreshDecoded = verifyToken(refreshToken);
+      refreshDecoded = decodeToken(refreshToken);
     } catch (tokenErr) {
-      if (tokenErr.name === 'TokenExpiredError') {
-        isJwtExpired = true;
-        refreshDecoded = decodeToken(refreshToken);
-      } else {
-        res.clearCookie('accessToken', getCookieOptions(0));
-        res.clearCookie('refreshToken', getCookieOptions(0));
-        const err = new Error('Refresh token is invalid. Please log in again.');
-        err.statusCode = 401;
-        throw err;
-      }
+      res.clearCookie('accessToken', getCookieOptions(0));
+      res.clearCookie('refreshToken', getCookieOptions(0));
+      const err = new Error('Refresh token is invalid or expired. Please log in again.');
+      err.statusCode = 401;
+      throw err;
     }
 
-    const adminId = refreshDecoded?._id || refreshDecoded?.id;
+    const adminId = refreshDecoded?.adminId || refreshDecoded?._id || refreshDecoded?.id;
     if (!adminId) {
       res.clearCookie('accessToken', getCookieOptions(0));
       res.clearCookie('refreshToken', getCookieOptions(0));
@@ -118,8 +111,9 @@ class AdminService {
       throw err;
     }
 
+    // DB call only happens here during refresh
     const admin = await Admin.findById(adminId)
-      .select('+refreshToken +refreshTokenExpiresAt +role +isActive')
+      .select('+role +isActive')
       .exec();
 
     if (!admin || !admin.isActive) {
@@ -130,47 +124,31 @@ class AdminService {
       throw err;
     }
 
-    // Check database refreshTokenExpiresAt
-    const isDbExpired =
-      !admin.refreshTokenExpiresAt ||
-      new Date(admin.refreshTokenExpiresAt) <= new Date();
+    const newAccessToken = generateAccessToken(admin);
+    const accessMinutes = parseInt(process.env.ACCESS_COOKIES_VALIDITY, 10) || 15;
+    const accessMs = accessMinutes * 60 * 1000;
 
-    if (isDbExpired || isJwtExpired) {
-      admin.refreshToken = null;
-      admin.refreshTokenExpiresAt = null;
-      await admin.save();
+    res.cookie('accessToken', newAccessToken, getCookieOptions(accessMs));
 
-      res.clearCookie('accessToken', getCookieOptions(0));
-      res.clearCookie('refreshToken', getCookieOptions(0));
-
-      const err = new Error('Refresh token expired. Please log in again.');
-      err.statusCode = 401;
-      throw err;
-    }
-
-    if (!admin.refreshToken || admin.refreshToken !== refreshToken) {
-      res.clearCookie('accessToken', getCookieOptions(0));
-      res.clearCookie('refreshToken', getCookieOptions(0));
-
-      const err = new Error('Refresh token revoked or invalid. Please log in again.');
-      err.statusCode = 401;
-      throw err;
-    }
-
-    return await this.setAuthCookiesAndSave(res, admin);
+    return {
+      accessToken: newAccessToken,
+      admin: {
+        id: admin._id,
+        _id: admin._id,
+        name: admin.name,
+        email: admin.email,
+        role: admin.role,
+        phone: admin.phone,
+        isActive: admin.isActive,
+        lastLoginAt: admin.lastLoginAt,
+      },
+    };
   }
 
   /**
    * Admin Logout
    */
-  async logout(res, adminId) {
-    if (adminId && mongoose.isValidObjectId(adminId)) {
-      await Admin.findByIdAndUpdate(adminId, {
-        refreshToken: null,
-        refreshTokenExpiresAt: null,
-      }).exec();
-    }
-
+  async logout(res) {
     res.clearCookie('accessToken', getCookieOptions(0));
     res.clearCookie('refreshToken', getCookieOptions(0));
 
@@ -243,7 +221,7 @@ class AdminService {
     }
 
     const admins = await Admin.find(filter)
-      .select('-password -refreshToken')
+      .select('-password')
       .sort({ createdAt: -1 })
       .exec();
 
@@ -260,7 +238,7 @@ class AdminService {
       throw err;
     }
 
-    const admin = await Admin.findById(id).select('-password -refreshToken').exec();
+    const admin = await Admin.findById(id).select('-password').exec();
     if (!admin) {
       const err = new Error(`Admin with ID '${id}' not found`);
       err.statusCode = 404;
@@ -343,10 +321,6 @@ class AdminService {
 
     const salt = await bcrypt.genSalt(10);
     admin.password = await bcrypt.hash(newPassword, salt);
-    // Invalidate existing refresh token so admin must re-authenticate with new password
-    admin.refreshToken = null;
-    admin.refreshTokenExpiresAt = null;
-
     await admin.save();
 
     return {

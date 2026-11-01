@@ -31,6 +31,12 @@ import {
   deleteRoute,
 } from '../controllers/route.controller.js';
 import {
+  getAllContacts,
+  getContactById,
+  updateContactStatus,
+  deleteContact,
+} from '../controllers/contact.controller.js';
+import {
   authenticateAdmin,
   requireSuperAdmin,
 } from '../middlewares/auth.middleware.js';
@@ -109,5 +115,16 @@ router.get('/routes/:id', authenticateAdmin, getRouteById);
 router.put('/routes/:id', authenticateAdmin, updateRoute);
 router.patch('/routes/:id', authenticateAdmin, updateRoute);
 router.delete('/routes/:id', authenticateAdmin, deleteRoute);
+ 
+
+/* ==========================================================================
+   CONTACTS / ENQUIRIES MANAGEMENT
+   - See and manage customer contact form enquiries (Admin or Superadmin)
+   ========================================================================== */
+router.get('/contacts', authenticateAdmin, getAllContacts);
+router.get('/contacts/:id', authenticateAdmin, getContactById);
+router.patch('/contacts/:id/status', authenticateAdmin, updateContactStatus);
+router.put('/contacts/:id/status', authenticateAdmin, updateContactStatus);
+router.delete('/contacts/:id', authenticateAdmin, deleteContact);
 
 export default router;

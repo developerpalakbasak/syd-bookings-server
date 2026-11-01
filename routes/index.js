@@ -4,6 +4,7 @@ import bookingRoutes from './booking.routes.js';
 import routeRoutes from './route.routes.js';
 import paymentRoutes from './payment.routes.js';
 import adminRoutes from './admin.routes.js';
+import contactRoutes from './contact.routes.js';
 
 const router = Router();
 
@@ -12,6 +13,7 @@ router.use('/bookings', bookingRoutes);
 router.use('/routes', routeRoutes);
 router.use('/payments', paymentRoutes);
 router.use('/admin', adminRoutes);
+router.use('/contacts', contactRoutes);
 
 export default router;
 

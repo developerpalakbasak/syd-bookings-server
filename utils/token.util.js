@@ -1,3 +1,4 @@
+import crypto from 'crypto';
 import jwt from 'jsonwebtoken';
 
 const getJwtSecret = () => process.env.JWT_SECRET || 'quotes_secret_fallback_key';
@@ -27,21 +28,23 @@ export const parseDurationToMs = (durationStr, fallbackMs) => {
 };
 
 /**
- * Generates an Access Token with admin details encoded in the payload.
- * Default validity is 15 minutes.
+ * Generates an Access Token with user/admin details encoded in the payload.
+ * Default validity configured via ACCESS_TOKEN_VALIDITY (e.g. 30m).
  */
-export const generateAccessToken = (admin) => {
-  const expiresIn = process.env.ACCESS_TOKEN_VALIDITY || '15m';
+export const generateAccessToken = (user) => {
+  const expiresIn = process.env.ACCESS_TOKEN_VALIDITY || '30m';
+  const name = user.fullName || user.name || '';
   return jwt.sign(
     {
-      _id: admin._id || admin.id,
-      id: admin._id || admin.id,
-      name: admin.name,
-      email: admin.email,
-      role: admin.role,
-      phone: admin.phone || '',
-      isActive: admin.isActive !== false,
-      lastLoginAt: admin.lastLoginAt,
+      _id: user._id || user.id,
+      id: user._id || user.id,
+      name,
+      fullName: name,
+      email: user.email,
+      role: user.role || 'passenger',
+      phone: user.phone || '',
+      isActive: user.isActive !== false,
+      lastLoginAt: user.lastLoginAt,
     },
     getJwtSecret(),
     { expiresIn }
@@ -49,17 +52,21 @@ export const generateAccessToken = (admin) => {
 };
 
 /**
- * Generates a Refresh Token encoded as a JWT.
+ * Generates a Refresh Token encoded as a JWT with token rotation UUID.
  * Not bound to a single database column, enabling concurrent logins across multiple devices.
- * Default validity is 7 days.
+ * Default validity configured via REFRESH_TOKEN_VALIDITY (e.g. 7d).
  */
-export const generateRefreshToken = (admin) => {
+export const generateRefreshToken = (user) => {
   const expiresIn = process.env.REFRESH_TOKEN_VALIDITY || '7d';
-  const adminId = (admin?._id || admin?.id || admin).toString();
+  const userId = (user?._id || user?.id || user).toString();
   return jwt.sign(
     {
-      adminId,
-      _id: adminId,
+      userId,
+      adminId: userId,
+      customerId: userId,
+      _id: userId,
+      role: user?.role || 'passenger',
+      tokenId: crypto.randomUUID(),
     },
     getJwtSecret(),
     { expiresIn }

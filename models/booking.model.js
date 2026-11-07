@@ -98,6 +98,46 @@ const bookingSchema = new mongoose.Schema(
       index: true,
     },
 
+    // Link to customer if authenticated
+    customerId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Customer',
+      default: null,
+      index: true,
+    },
+
+    // Assigned Driver details (visible in Live Tracking)
+    driverInfo: {
+      driverName: { type: String, default: '' },
+      driverPhone: { type: String, default: '' },
+      vehicleMakeModel: { type: String, default: '' },
+      licensePlate: { type: String, default: '' },
+      currentLocation: {
+        lat: { type: Number, default: null },
+        lng: { type: Number, default: null },
+      },
+      etaMinutes: { type: Number, default: null },
+    },
+
+    // Flight tracking number for airport pickups
+    flightNumber: {
+      type: String,
+      trim: true,
+      default: '',
+    },
+
+    // Passenger modification request
+    modificationRequest: {
+      requestedAt: { type: Date, default: null },
+      newPickupTime: { type: Date, default: null },
+      note: { type: String, default: '' },
+      status: {
+        type: String,
+        enum: ['none', 'pending_approval', 'approved', 'rejected'],
+        default: 'none',
+      },
+    },
+
     // Fare details (supports number or detailed breakdown)
     fare: {
       type: mongoose.Schema.Types.Mixed,

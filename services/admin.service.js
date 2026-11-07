@@ -18,10 +18,14 @@ class AdminService {
     const accessToken = generateAccessToken(admin);
     const refreshToken = generateRefreshToken(admin);
 
-    const accessMinutes = parseInt(process.env.ACCESS_COOKIES_VALIDITY, 10) || 15;
-    const refreshDays = parseInt(process.env.REFRESH_COOKIES_VALIDITY, 10) || 7;
-    const accessMs = accessMinutes * 60 * 1000;
-    const refreshMs = refreshDays * 24 * 60 * 60 * 1000;
+    const accessMs = parseDurationToMs(
+      process.env.ACCESS_TOKEN_VALIDITY,
+      (parseInt(process.env.ACCESS_COOKIES_VALIDITY, 10) || 30) * 60 * 1000
+    );
+    const refreshMs = parseDurationToMs(
+      process.env.REFRESH_TOKEN_VALIDITY,
+      (parseInt(process.env.REFRESH_COOKIES_VALIDITY, 10) || 7) * 24 * 60 * 60 * 1000
+    );
 
     admin.lastLoginAt = new Date();
     await admin.save();
@@ -125,13 +129,23 @@ class AdminService {
     }
 
     const newAccessToken = generateAccessToken(admin);
-    const accessMinutes = parseInt(process.env.ACCESS_COOKIES_VALIDITY, 10) || 15;
-    const accessMs = accessMinutes * 60 * 1000;
+    const newRefreshToken = generateRefreshToken(admin);
+
+    const accessMs = parseDurationToMs(
+      process.env.ACCESS_TOKEN_VALIDITY,
+      (parseInt(process.env.ACCESS_COOKIES_VALIDITY, 10) || 30) * 60 * 1000
+    );
+    const refreshMs = parseDurationToMs(
+      process.env.REFRESH_TOKEN_VALIDITY,
+      (parseInt(process.env.REFRESH_COOKIES_VALIDITY, 10) || 7) * 24 * 60 * 60 * 1000
+    );
 
     res.cookie('accessToken', newAccessToken, getCookieOptions(accessMs));
+    res.cookie('refreshToken', newRefreshToken, getCookieOptions(refreshMs));
 
     return {
       accessToken: newAccessToken,
+      refreshToken: newRefreshToken,
       admin: {
         id: admin._id,
         _id: admin._id,

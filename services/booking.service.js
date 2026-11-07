@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 import jwt from 'jsonwebtoken';
 import { Booking } from '../models/booking.model.js';
+import { Customer } from '../models/customer.model.js';
 
 class BookingService {
   constructor() {
@@ -81,15 +82,33 @@ class BookingService {
       exists = await Booking.exists({ bookingNumber });
     }
 
-    // 4. Construct and Save Internal Booking
+    // 4. Resolve customer linking if available
+    let customerId = dto.customerId || null;
+    if (!customerId && (passengerEmail || passengerPhone)) {
+      try {
+        const queryList = [];
+        if (passengerEmail) queryList.push({ email: passengerEmail });
+        if (passengerPhone) queryList.push({ phone: passengerPhone });
+        if (queryList.length > 0) {
+          const matched = await Customer.findOne({ $or: queryList }).select('_id');
+          if (matched) customerId = matched._id;
+        }
+      } catch {
+        // Non-critical if lookup fails
+      }
+    }
+
+    // 5. Construct and Save Internal Booking
     const newBooking = new Booking({
       bookingNumber,
+      customerId,
       pickup,
       dropoff,
       pickupTime,
       passengers,
       luggage,
       vehicleType,
+      flightNumber: (dto.flightNumber || quotePayload?.flightNumber || '').trim(),
       passengerName: dto.passengerName.trim(),
       passengerPhone,
       passengerEmail: (dto.passengerEmail || '').trim(),

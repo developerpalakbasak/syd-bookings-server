@@ -174,6 +174,7 @@ class PaymentService {
     // Update booking if succeeded
     if (isSuccessful) {
       booking.paymentStatus = 'paid';
+      booking.paymentMethod = 'online';
       if (booking.status === 'pending') {
         booking.status = 'confirmed';
       }
@@ -375,6 +376,7 @@ class PaymentService {
       if (bookingId || bookingNumber) {
         const booking = await bookingService.findByReferenceOrId(bookingId || bookingNumber);
         booking.paymentStatus = 'paid';
+        booking.paymentMethod = 'online';
         if (booking.status === 'pending') {
           booking.status = 'confirmed';
         }
@@ -390,6 +392,33 @@ class PaymentService {
     }
 
     return { received: true, eventType: type };
+  }
+
+  /**
+   * Records cash / in-car payment option for a booking
+   */
+  async recordCashPayment({ bookingId, bookingNumber }) {
+    const targetRefOrId = bookingId || bookingNumber;
+    if (!targetRefOrId) {
+      const err = new Error('Booking ID or bookingNumber is required');
+      err.statusCode = 400;
+      throw err;
+    }
+
+    const booking = await bookingService.findByReferenceOrId(targetRefOrId);
+    booking.paymentMethod = 'cash';
+    booking.paymentStatus = 'cash_to_driver';
+    booking.paymentDetails = {
+      ...booking.paymentDetails,
+      paymentMethod: 'cash',
+    };
+    await booking.save();
+
+    return {
+      success: true,
+      message: 'Cash payment selected successfully',
+      booking,
+    };
   }
 }
 

@@ -603,7 +603,7 @@ class CustomerService {
         currency,
       },
       payment: {
-        method: booking.paymentDetails?.paymentMethod || 'Card',
+        method: booking.paymentMethod === 'online' ? 'Online Card' : booking.paymentMethod === 'cash' ? 'Cash to Driver' : (booking.paymentDetails?.paymentMethod || 'Card'),
         status: booking.paymentStatus.toUpperCase(),
         transactionId: booking.paymentDetails?.paymentIntentId || '',
         paidAt: booking.paymentDetails?.paidAt || null,

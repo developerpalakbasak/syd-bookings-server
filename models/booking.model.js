@@ -151,6 +151,15 @@ const bookingSchema = new mongoose.Schema(
       default: 'pending',
     },
 
+    // Payment method (online transaction or cash)
+    paymentMethod: {
+      type: String,
+      enum: ['online', 'cash', 'card'],
+      default: 'cash',
+      lowercase: true,
+      trim: true,
+    },
+
     // Payment transaction details
     paymentDetails: {
       type: mongoose.Schema.Types.Mixed,

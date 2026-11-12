@@ -3,6 +3,7 @@ import {
   getPaymentConfig,
   createPaymentIntent,
   confirmPayment,
+  recordCashPayment,
   createCheckoutSession,
   getPaymentStatus,
   handleStripeWebhook,
@@ -21,6 +22,7 @@ router.post('/create-checkout-session', createCheckoutSession);
 
 // Confirm / verify payment status
 router.post('/confirm', confirmPayment);
+router.post('/cash', recordCashPayment);
 
 // Payment status and history for a booking
 router.get('/booking/:refOrId', getPaymentStatus);

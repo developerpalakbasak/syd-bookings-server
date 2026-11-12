@@ -102,6 +102,26 @@ export const confirmPayment = async (req, res, next) => {
 };
 
 /**
+ * POST /api/payments/cash
+ * Records cash / pay later option for a booking
+ */
+export const recordCashPayment = async (req, res, next) => {
+  try {
+    const { bookingId, bookingNumber } = req.body;
+    const refOrId = req.params.refOrId || bookingId || bookingNumber;
+
+    const result = await paymentService.recordCashPayment({
+      bookingId: refOrId,
+      bookingNumber,
+    });
+
+    res.status(200).json(result);
+  } catch (error) {
+    next(error);
+  }
+};
+
+/**
  * POST /api/payments/create-checkout-session
  * Generates a hosted Stripe Checkout URL for redirect-based payment flows
  */

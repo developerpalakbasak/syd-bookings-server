@@ -115,6 +115,7 @@ class BookingService {
       status: dto.status || 'pending',
       fare: dto.fare ?? quotePayload?.price ?? { currency: 'AUD', total: 0 },
       paymentStatus: dto.paymentStatus || 'pending',
+      paymentMethod: dto.paymentMethod || 'cash',
       notes: dto.notes ? String(dto.notes).trim() : '',
       cancellationReason: dto.cancellationReason ? String(dto.cancellationReason).trim() : '',
     });
@@ -128,6 +129,8 @@ class BookingService {
 
     if (query.status) filter.status = query.status;
     if (query.vehicleType) filter.vehicleType = query.vehicleType;
+    if (query.paymentStatus) filter.paymentStatus = query.paymentStatus;
+    if (query.paymentMethod) filter.paymentMethod = query.paymentMethod;
     if (query.phone) {
       const phoneRegex = new RegExp(query.phone, 'i');
       filter.passengerPhone = phoneRegex;
@@ -194,6 +197,7 @@ class BookingService {
       'status',
       'fare',
       'paymentStatus',
+      'paymentMethod',
       'paymentDetails',
       'notes',
       'cancellationReason',
@@ -224,6 +228,7 @@ class BookingService {
 
     if (dto.status) booking.status = dto.status;
     if (dto.paymentStatus) booking.paymentStatus = dto.paymentStatus;
+    if (dto.paymentMethod) booking.paymentMethod = dto.paymentMethod;
     if (dto.cancellationReason) booking.cancellationReason = dto.cancellationReason;
     if (dto.notes !== undefined) booking.notes = dto.notes;
 

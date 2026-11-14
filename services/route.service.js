@@ -357,8 +357,8 @@ class RouteService {
         k.toLowerCase() === 'chauffeur'
           ? 'Chauffeur'
           : k.toLowerCase() === 'taxi'
-          ? 'Taxi'
-          : k;
+            ? 'Taxi'
+            : k;
       normalizedFares[normKey] = Number(v);
     }
     vehicleAndFares = normalizedFares;
@@ -375,8 +375,8 @@ class RouteService {
           k.toLowerCase() === 'chauffeur'
             ? 'Chauffeur'
             : k.toLowerCase() === 'taxi'
-            ? 'Taxi'
-            : k;
+              ? 'Taxi'
+              : k;
         increaseFarePerPersonMap[normKey] = Number(v);
       }
     }
@@ -416,8 +416,8 @@ class RouteService {
           k.toLowerCase() === 'chauffeur'
             ? 'Chauffeur'
             : k.toLowerCase() === 'taxi'
-            ? 'Taxi'
-            : k;
+              ? 'Taxi'
+              : k;
         normalizedFares[normKey] = Number(v);
       }
       updateData.vehicleAndFares = normalizedFares;
@@ -438,8 +438,8 @@ class RouteService {
           k.toLowerCase() === 'chauffeur'
             ? 'Chauffeur'
             : k.toLowerCase() === 'taxi'
-            ? 'Taxi'
-            : k;
+              ? 'Taxi'
+              : k;
         map[normKey] = Number(v);
       }
       updateData.increaseFarePerPerson = map;
@@ -480,12 +480,12 @@ class RouteService {
     return deleted;
   }
 
-  // Seeds default Sydney transfer routes
+  // Seeds default Hughesney transfer routes
   async seedDefaultPlaces() {
     const defaultRoutes = [
       {
-        firstPlace: 'Sydney Airport (SYD)',
-        lastPlace: 'Sydney CBD',
+        firstPlace: 'Hughesney Airport (Hughes)',
+        lastPlace: 'Hughesney CBD',
         increaseFarePerPerson: { Chauffeur: 10, Taxi: 10 },
         currency: 'AUD',
         distanceKm: 14,
@@ -494,13 +494,13 @@ class RouteService {
           Chauffeur: 85,
           Taxi: 65,
         },
-        firstPlaceDetails: { address: 'Mascot NSW 2020', lat: -33.9399, lng: 151.1753, code: 'SYD' },
-        lastPlaceDetails: { address: 'Sydney NSW 2000', lat: -33.8688, lng: 151.2093, code: 'CBD' },
+        firstPlaceDetails: { address: 'Mascot NSW 2020', lat: -33.9399, lng: 151.1753, code: 'Hughes' },
+        lastPlaceDetails: { address: 'Hughesney NSW 2000', lat: -33.8688, lng: 151.2093, code: 'CBD' },
         isActive: true,
         notes: 'Popular airport to downtown transfer route',
       },
       {
-        firstPlace: 'Sydney Airport (SYD)',
+        firstPlace: 'Hughesney Airport (Hughes)',
         lastPlace: 'Bondi Beach',
         increaseFarePerPerson: { Chauffeur: 10, Taxi: 10 },
         currency: 'AUD',
@@ -510,13 +510,13 @@ class RouteService {
           Chauffeur: 95,
           Taxi: 75,
         },
-        firstPlaceDetails: { address: 'Mascot NSW 2020', lat: -33.9399, lng: 151.1753, code: 'SYD' },
+        firstPlaceDetails: { address: 'Mascot NSW 2020', lat: -33.9399, lng: 151.1753, code: 'Hughes' },
         lastPlaceDetails: { address: 'Bondi Beach NSW 2026', lat: -33.8915, lng: 151.2767 },
         isActive: true,
         notes: 'Eastern suburbs coastal route',
       },
       {
-        firstPlace: 'Sydney Airport (SYD)',
+        firstPlace: 'Hughesney Airport (Hughes)',
         lastPlace: 'Parramatta',
         increaseFarePerPerson: { Chauffeur: 15, Taxi: 15 },
         currency: 'AUD',
@@ -526,13 +526,13 @@ class RouteService {
           Chauffeur: 120,
           Taxi: 95,
         },
-        firstPlaceDetails: { address: 'Mascot NSW 2020', lat: -33.9399, lng: 151.1753, code: 'SYD' },
+        firstPlaceDetails: { address: 'Mascot NSW 2020', lat: -33.9399, lng: 151.1753, code: 'Hughes' },
         lastPlaceDetails: { address: 'Parramatta NSW 2150', lat: -33.815, lng: 151.0011 },
         isActive: true,
-        notes: 'Western Sydney business hub',
+        notes: 'Western Hughesney business hub',
       },
       {
-        firstPlace: 'Sydney Airport (SYD)',
+        firstPlace: 'Hughesney Airport (Hughes)',
         lastPlace: 'Manly',
         increaseFarePerPerson: { Chauffeur: 15, Taxi: 15 },
         currency: 'AUD',
@@ -542,13 +542,13 @@ class RouteService {
           Chauffeur: 140,
           Taxi: 110,
         },
-        firstPlaceDetails: { address: 'Mascot NSW 2020', lat: -33.9399, lng: 151.1753, code: 'SYD' },
+        firstPlaceDetails: { address: 'Mascot NSW 2020', lat: -33.9399, lng: 151.1753, code: 'Hughes' },
         lastPlaceDetails: { address: 'Manly NSW 2095', lat: -33.7971, lng: 151.2882 },
         isActive: true,
         notes: 'Northern Beaches transfer',
       },
       {
-        firstPlace: 'Sydney Airport (SYD)',
+        firstPlace: 'Hughesney Airport (Hughes)',
         lastPlace: 'Chatswood',
         increaseFarePerPerson: { Chauffeur: 12, Taxi: 12 },
         currency: 'AUD',
@@ -558,13 +558,13 @@ class RouteService {
           Chauffeur: 110,
           Taxi: 85,
         },
-        firstPlaceDetails: { address: 'Mascot NSW 2020', lat: -33.9399, lng: 151.1753, code: 'SYD' },
+        firstPlaceDetails: { address: 'Mascot NSW 2020', lat: -33.9399, lng: 151.1753, code: 'Hughes' },
         lastPlaceDetails: { address: 'Chatswood NSW 2067', lat: -33.7961, lng: 151.178 },
         isActive: true,
         notes: 'North Shore commercial center',
       },
       {
-        firstPlace: 'Sydney CBD',
+        firstPlace: 'Hughesney CBD',
         lastPlace: 'Bondi Beach',
         increaseFarePerPerson: { Chauffeur: 8, Taxi: 8 },
         currency: 'AUD',
@@ -574,13 +574,13 @@ class RouteService {
           Chauffeur: 50,
           Taxi: 35,
         },
-        firstPlaceDetails: { address: 'Sydney NSW 2000', lat: -33.8688, lng: 151.2093 },
+        firstPlaceDetails: { address: 'Hughesney NSW 2000', lat: -33.8688, lng: 151.2093 },
         lastPlaceDetails: { address: 'Bondi Beach NSW 2026', lat: -33.8915, lng: 151.2767 },
         isActive: true,
         notes: 'Inner city to beach transfer',
       },
       {
-        firstPlace: 'Sydney CBD',
+        firstPlace: 'Hughesney CBD',
         lastPlace: 'Manly Beach',
         increaseFarePerPerson: { Chauffeur: 10, Taxi: 10 },
         currency: 'AUD',
@@ -590,7 +590,7 @@ class RouteService {
           Chauffeur: 75,
           Taxi: 55,
         },
-        firstPlaceDetails: { address: 'Sydney NSW 2000', lat: -33.8688, lng: 151.2093 },
+        firstPlaceDetails: { address: 'Hughesney NSW 2000', lat: -33.8688, lng: 151.2093 },
         lastPlaceDetails: { address: 'Manly NSW 2095', lat: -33.7971, lng: 151.2882 },
         isActive: true,
         notes: 'CBD to Northern Beaches',

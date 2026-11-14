@@ -1,6 +1,6 @@
 /**
  * ============================================================
- * SYD AIRPORT TRANSFER — PRICING CONFIGURATION
+ * Hughes AIRPORT TRANSFER — PRICING CONFIGURATION
  * ============================================================
  * Update these values when the client provides final rates.
  * No other file needs to be changed — all fare calculation
@@ -48,7 +48,7 @@ export const SURCHARGES = {
  * Keywords that trigger the airport surcharge
  */
 export const AIRPORT_KEYWORDS = [
-  'airport', 'terminal', 'kingsford smith', 'syd', 't1', 't2', 't3',
+  'airport', 'terminal', 'kingsford smith', 'Hughes', 't1', 't2', 't3',
 ];
 
 /**

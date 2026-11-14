@@ -77,7 +77,7 @@ class PaymentService {
       amount: amountInCents,
       currency,
       receipt_email: booking.passengerEmail || undefined,
-      description: `SYD Transport - Booking ${booking.bookingNumber} (${booking.vehicleType})`,
+      description: `SYD Airport Transfer - Booking ${booking.bookingNumber} (${booking.vehicleType})`,
       automatic_payment_methods: {
         enabled: true,
       },
@@ -258,7 +258,7 @@ class PaymentService {
           price_data: {
             currency,
             product_data: {
-              name: `SYD Transport - ${booking.vehicleType} Service`,
+              name: `Hughes Transport - ${booking.vehicleType} Service`,
               description: `Booking #${booking.bookingNumber} • Pickup: ${pickupText.substring(0, 100)}`,
             },
             unit_amount: amountInCents,

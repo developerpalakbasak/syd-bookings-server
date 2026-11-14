@@ -1,7 +1,7 @@
 {
-  "name": "syd-backend",
+  "name": "Hughes-backend",
   "version": "1.0.0",
-  "description": "Backend API service for SYD Transport",
+  "description": "Backend API service for Hughes Transport",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -12,7 +12,7 @@
   "keywords": [
     "express",
     "api",
-    "syd-backend"
+    "Hughes-backend"
   ],
   "author": "",
   "license": "ISC",

@@ -60,7 +60,7 @@ export const getAllBookings = async (req, res, next) => {
   }
 };
 
-// GET /api/bookings/:refOrId - Looks up booking by human-readable reference (SYD-XXXXXX) or MongoDB ObjectId.
+// GET /api/bookings/:refOrId - Looks up booking by human-readable reference (Hughes-XXXXXX) or MongoDB ObjectId.
 export const getBookingByIdOrRef = async (req, res, next) => {
   try {
     const { refOrId } = req.params;

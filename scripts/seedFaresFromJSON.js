@@ -9,7 +9,7 @@ import { Route } from '../models/route.model.js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Explicitly load .env from syd-bookings-server root regardless of current working directory
+// Explicitly load .env from Hughes-bookings-server root regardless of current working directory
 const envPath = path.resolve(__dirname, '../.env');
 dotenv.config({ path: envPath });
 
@@ -24,7 +24,7 @@ async function seedFares() {
     const conn = await mongoose.connect(mongoUri);
     console.log(`MongoDB Connected: ${conn.connection.host}`);
 
-    const jsonPath = path.resolve(__dirname, '../../sydney_transport_fares_plus30.json');
+    const jsonPath = path.resolve(__dirname, '../../Hughesney_transport_fares_plus30.json');
     if (!fs.existsSync(jsonPath)) {
       throw new Error(`Fares JSON file not found at: ${jsonPath}`);
     }
@@ -74,11 +74,11 @@ async function seedFares() {
         },
         firstPlaceDetails: {
           address: `${first}, NSW Australia`,
-          code: first.includes('SYD') ? 'SYD' : first.includes('CBD') ? 'CBD' : '',
+          code: first.includes('Hughes') ? 'Hughes' : first.includes('CBD') ? 'CBD' : '',
         },
         lastPlaceDetails: {
           address: `${last}, NSW Australia`,
-          code: last.includes('SYD') ? 'SYD' : last.includes('CBD') ? 'CBD' : '',
+          code: last.includes('Hughes') ? 'Hughes' : last.includes('CBD') ? 'CBD' : '',
         },
         notes: routeVia && routeVia !== 'Direct / Standard'
           ? `${notes} (Via: ${routeVia})`
@@ -100,23 +100,23 @@ async function seedFares() {
 
       const via = (item.route_via || '').trim();
 
-      // 1. Suburb <-> Sydney Airport (SYD) [Domestic & International]
+      // 1. Suburb <-> Hughesney Airport (Hughes) [Domestic & International]
       const domDrop = item.dom_drop_aud || item.dom_pickup_aud;
       const intDrop = item.int_drop_aud || item.int_pickup_aud;
 
       if (domDrop) {
-        addRoute(suburb, 'Sydney Airport (SYD)', domDrop, 'Airport Transfer', via);
+        addRoute(suburb, 'Hughesney Airport (Hughes)', domDrop, 'Airport Transfer', via);
         // Also support Domestic terminal naming
-        addRoute(suburb, 'Sydney Domestic Airport (T2/T3)', domDrop, 'Domestic Airport Transfer', via);
+        addRoute(suburb, 'Hughesney Domestic Airport (T2/T3)', domDrop, 'Domestic Airport Transfer', via);
       }
 
       if (intDrop) {
-        addRoute(suburb, 'Sydney International Airport (T1)', intDrop, 'International Airport Transfer', via);
+        addRoute(suburb, 'Hughesney International Airport (T1)', intDrop, 'International Airport Transfer', via);
       }
 
-      // 2. Suburb <-> Sydney CBD
+      // 2. Suburb <-> Hughesney CBD
       if (item.city_fare_aud) {
-        addRoute(suburb, 'Sydney CBD', item.city_fare_aud, 'City Center Transfer', via);
+        addRoute(suburb, 'Hughesney CBD', item.city_fare_aud, 'City Center Transfer', via);
       }
     }
 

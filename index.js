@@ -53,7 +53,7 @@ app.use(
 
 // Basic Route
 app.get('/', (req, res) => {
-  res.send('SYD Transport Backend Server is running');
+  res.send('Hughes Transport Backend Server is running');
 });
 
 // Modular Routes

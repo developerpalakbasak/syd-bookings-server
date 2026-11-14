@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 const bookingSchema = new mongoose.Schema(
   {
-    // Unique human-readable booking reference e.g., "SYD-K9J4M2"
+    // Unique human-readable booking reference e.g., "Hughes-K9J4M2"
     bookingNumber: {
       type: String,
       required: true,

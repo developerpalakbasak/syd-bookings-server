@@ -1,11 +1,11 @@
-# syd-backend
+# Hughes-backend
 
-Modular and clean Express.js REST API for SYD Transport (Internal Bookings & Route Fare Catalog).
+Modular and clean Express.js REST API for Hughes Transport (Internal Bookings & Route Fare Catalog).
 
 ## Directory Structure
 
 ```text
-syd-backend/
+Hughes-backend/
 ├── config/
 │   ├── db.js                      # MongoDB connection setup
 │   └── stripe.js                  # Stripe SDK configuration
@@ -64,7 +64,7 @@ Default Server URL: `http://localhost:5000`
 ### 1. Booking Schema Fields
 
 The `Booking` model contains internal booking details:
-- `bookingNumber` (e.g. `SYD-K9J4M2`, unique, uppercase, indexed)
+- `bookingNumber` (e.g. `Hughes-K9J4M2`, unique, uppercase, indexed)
 - `pickup` (String or Object with coordinates/address)
 - `dropoff` (String or Object with coordinates/address)
 - `pickupTime` (ISO Date string or Date)
@@ -83,8 +83,8 @@ The `Booking` model contains internal booking details:
 ### 2. Route Schema Fields
 
 The `Route` model represents fixed transfer fares between origin and destination places:
-- `firstPlace` (String, required, indexed - e.g. `Sydney Airport (SYD)`)
-- `lastPlace` (String, required, indexed - e.g. `Sydney CBD`)
+- `firstPlace` (String, required, indexed - e.g. `Hughesney Airport (Hughes)`)
+- `lastPlace` (String, required, indexed - e.g. `Hughesney CBD`)
 - `vehicleAndFares` (Map of vehicle types to fare numbers, required, e.g. `{ taxi: 65, executive: 85, luxury: 110, suv: 95, van: 125 }`)
 - `increaseFarePerPerson` (Map of vehicle types to extra fare per passenger, e.g. `{ taxi: 10, luxury: 15 }`)
 - `currency` (String, default: `AUD`, uppercase)
@@ -156,7 +156,7 @@ All route endpoints are accessible under `http://localhost:5000/api/routes` (and
 
 ### 1. Seed Default Routes
 
-Seeds standard Sydney transfer routes (Airport to CBD, Bondi Beach, Parramatta, Manly, Chatswood, etc.):
+Seeds standard Hughesney transfer routes (Airport to CBD, Bondi Beach, Parramatta, Manly, Chatswood, etc.):
 
 - **Method**: `POST`
 - **URL**: `http://localhost:5000/api/routes/seed`
@@ -177,19 +177,19 @@ Seeds standard Sydney transfer routes (Airport to CBD, Bondi Beach, Parramatta, 
 Finds the fixed fare between two places. Automatically handles forward, reverse, and fuzzy substring matching.
 
 - **Method**: `GET`
-- **URL**: `http://localhost:5000/api/routes/lookup?firstPlace=Sydney Airport&lastPlace=Sydney CBD`
+- **URL**: `http://localhost:5000/api/routes/lookup?firstPlace=Hughesney Airport&lastPlace=Hughesney CBD`
 - **Accepted Query Parameters**:
   - `firstPlace` or `from` or `pickup`
   - `lastPlace` or `to` or `destination`
-- **Alternative Path URL**: `http://localhost:5000/api/routes/route/Sydney Airport (SYD)/Sydney CBD`
+- **Alternative Path URL**: `http://localhost:5000/api/routes/route/Hughesney Airport (Hughes)/Hughesney CBD`
 - **Response `200 OK`**:
 ```json
 {
   "success": true,
   "route": {
     "_id": "6adf7e0950aff857923e1338",
-    "firstPlace": "Sydney Airport (SYD)",
-    "lastPlace": "Sydney CBD",
+    "firstPlace": "Hughesney Airport (Hughes)",
+    "lastPlace": "Hughesney CBD",
     "currency": "AUD",
     "distanceKm": 14,
     "durationMin": 25,
@@ -213,10 +213,10 @@ Finds the fixed fare between two places. Automatically handles forward, reverse,
       "address": "Mascot NSW 2020",
       "lat": -33.9399,
       "lng": 151.1753,
-      "code": "SYD"
+      "code": "Hughes"
     },
     "lastPlaceDetails": {
-      "address": "Sydney NSW 2000",
+      "address": "Hughesney NSW 2000",
       "lat": -33.8688,
       "lng": 151.2093,
       "code": "CBD"
@@ -251,8 +251,8 @@ Retrieves a clean, deduplicated list of all available places from registered rou
     "Manly",
     "Manly Beach",
     "Parramatta",
-    "Sydney Airport (SYD)",
-    "Sydney CBD"
+    "Hughesney Airport (Hughes)",
+    "Hughesney CBD"
   ]
 }
 ```
@@ -263,11 +263,11 @@ Retrieves a clean, deduplicated list of all available places from registered rou
   "count": 7,
   "places": [
     {
-      "name": "Sydney Airport (SYD)",
+      "name": "Hughesney Airport (Hughes)",
       "address": "Mascot NSW 2020",
       "lat": -33.9399,
       "lng": 151.1753,
-      "code": "SYD"
+      "code": "Hughes"
     },
     ...
   ]
@@ -287,11 +287,11 @@ Retrieves a clean, deduplicated list of all available places from registered rou
   "count": 1,
   "places": [
     {
-      "name": "Sydney Airport (SYD)",
+      "name": "Hughesney Airport (Hughes)",
       "address": "Mascot NSW 2020",
       "lat": -33.9399,
       "lng": 151.1753,
-      "code": "SYD"
+      "code": "Hughes"
     }
   ]
 }
@@ -304,19 +304,19 @@ Retrieves a clean, deduplicated list of all available places from registered rou
 Returns all destination places connected to a given origin place:
 
 - **Method**: `GET`
-- **URL**: `http://localhost:5000/api/routes/destinations?from=Sydney Airport (SYD)`
+- **URL**: `http://localhost:5000/api/routes/destinations?from=Hughesney Airport (Hughes)`
 - **Response `200 OK`**:
 ```json
 {
   "success": true,
-  "origin": "Sydney Airport (SYD)",
+  "origin": "Hughesney Airport (Hughes)",
   "count": 5,
   "places": [
     { "name": "Bondi Beach", "address": "Bondi Beach NSW 2026", "lat": -33.8915, "lng": 151.2767, "code": "" },
     { "name": "Chatswood", "address": "Chatswood NSW 2067", "lat": -33.7961, "lng": 151.178, "code": "" },
     { "name": "Manly", "address": "Manly NSW 2095", "lat": -33.7971, "lng": 151.2882, "code": "" },
     { "name": "Parramatta", "address": "Parramatta NSW 2150", "lat": -33.815, "lng": 151.0011, "code": "" },
-    { "name": "Sydney CBD", "address": "Sydney NSW 2000", "lat": -33.8688, "lng": 151.2093, "code": "CBD" }
+    { "name": "Hughesney CBD", "address": "Hughesney NSW 2000", "lat": -33.8688, "lng": 151.2093, "code": "CBD" }
   ]
 }
 ```
@@ -354,7 +354,7 @@ Returns all destination places connected to a given origin place:
 - **Body (raw JSON)**:
 ```json
 {
-  "firstPlace": "Sydney Airport (SYD)",
+  "firstPlace": "Hughesney Airport (Hughes)",
   "lastPlace": "Cronulla Beach",
   "currency": "AUD",
   "distanceKm": 24,
@@ -375,7 +375,7 @@ Returns all destination places connected to a given origin place:
     "address": "Mascot NSW 2020",
     "lat": -33.9399,
     "lng": 151.1753,
-    "code": "SYD"
+    "code": "Hughes"
   },
   "lastPlaceDetails": {
     "address": "Cronulla NSW 2230",
@@ -450,8 +450,8 @@ All booking routes are accessible at `http://localhost:5000/api/bookings`.
 - **Body (raw JSON)**:
 ```json
 {
-  "pickup": "Sydney Airport Terminal 1, Mascot NSW 2020",
-  "dropoff": "Circular Quay, Sydney NSW 2000",
+  "pickup": "Hughesney Airport Terminal 1, Mascot NSW 2020",
+  "dropoff": "Circular Quay, Hughesney NSW 2000",
   "pickupTime": "2026-10-30T10:00:00.000Z",
   "passengers": 2,
   "vehicleType": "Sedan",
@@ -475,9 +475,9 @@ All booking routes are accessible at `http://localhost:5000/api/bookings`.
   "message": "Booking confirmed successfully",
   "booking": {
     "id": "671cc15f10b249a518fb9911",
-    "bookingNumber": "SYD-K9J4M2",
-    "pickup": "Sydney Airport Terminal 1, Mascot NSW 2020",
-    "dropoff": "Circular Quay, Sydney NSW 2000",
+    "bookingNumber": "Hughes-K9J4M2",
+    "pickup": "Hughesney Airport Terminal 1, Mascot NSW 2020",
+    "dropoff": "Circular Quay, Hughesney NSW 2000",
     "pickupTime": "2026-10-30T10:00:00.000Z",
     "passengers": 2,
     "vehicleType": "Sedan",
@@ -509,7 +509,7 @@ All booking routes are accessible at `http://localhost:5000/api/bookings`.
   - `phone`: Filter by passenger phone number (e.g. `?phone=0412345678`)
   - `status`: Filter by status (`pending`, `confirmed`, `completed`, `cancelled`, etc.)
   - `vehicleType`: Filter by vehicle type (e.g. `?vehicleType=Sedan`)
-  - `bookingNumber`: Filter by booking reference (e.g. `?bookingNumber=SYD-K9J4M2`)
+  - `bookingNumber`: Filter by booking reference (e.g. `?bookingNumber=Hughes-K9J4M2`)
   - `limit`: Number of records to return (default: `50`, max: `100`)
   - `skip`: Pagination offset (default: `0`)
 
@@ -521,9 +521,9 @@ All booking routes are accessible at `http://localhost:5000/api/bookings`.
   "bookings": [
     {
       "_id": "671cc15f10b249a518fb9911",
-      "bookingNumber": "SYD-K9J4M2",
-      "pickup": "Sydney Airport Terminal 1, Mascot NSW 2020",
-      "dropoff": "Circular Quay, Sydney NSW 2000",
+      "bookingNumber": "Hughes-K9J4M2",
+      "pickup": "Hughesney Airport Terminal 1, Mascot NSW 2020",
+      "dropoff": "Circular Quay, Hughesney NSW 2000",
       "pickupTime": "2026-10-30T10:00:00.000Z",
       "passengers": 2,
       "vehicleType": "Sedan",
@@ -549,19 +549,19 @@ All booking routes are accessible at `http://localhost:5000/api/bookings`.
 
 ### 3. Get Booking By Reference or ID
 
-Supports lookup using either the **bookingNumber** (`SYD-XXXXXX`) or MongoDB **_id**.
+Supports lookup using either the **bookingNumber** (`Hughes-XXXXXX`) or MongoDB **_id**.
 
 - **Method**: `GET`
-- **URL**: `http://localhost:5000/api/bookings/SYD-K9J4M2`
+- **URL**: `http://localhost:5000/api/bookings/Hughes-K9J4M2`
 - **Response `200 OK`**:
 ```json
 {
   "success": true,
   "booking": {
     "_id": "671cc15f10b249a518fb9911",
-    "bookingNumber": "SYD-K9J4M2",
-    "pickup": "Sydney Airport Terminal 1, Mascot NSW 2020",
-    "dropoff": "Circular Quay, Sydney NSW 2000",
+    "bookingNumber": "Hughes-K9J4M2",
+    "pickup": "Hughesney Airport Terminal 1, Mascot NSW 2020",
+    "dropoff": "Circular Quay, Hughesney NSW 2000",
     "pickupTime": "2026-10-30T10:00:00.000Z",
     "passengers": 2,
     "vehicleType": "Sedan",
@@ -587,7 +587,7 @@ Supports lookup using either the **bookingNumber** (`SYD-XXXXXX`) or MongoDB **_
 ### 4. Update Booking Status / Payment / Notes
 
 - **Method**: `PATCH`
-- **URL**: `http://localhost:5000/api/bookings/SYD-K9J4M2/status`
+- **URL**: `http://localhost:5000/api/bookings/Hughes-K9J4M2/status`
 - **Body (raw JSON)**:
 ```json
 {
@@ -603,7 +603,7 @@ Supports lookup using either the **bookingNumber** (`SYD-XXXXXX`) or MongoDB **_
   "message": "Booking status updated successfully",
   "booking": {
     "_id": "671cc15f10b249a518fb9911",
-    "bookingNumber": "SYD-K9J4M2",
+    "bookingNumber": "Hughes-K9J4M2",
     "status": "in_progress",
     "paymentStatus": "paid",
     "notes": "Passenger picked up on schedule.",
@@ -617,7 +617,7 @@ Supports lookup using either the **bookingNumber** (`SYD-XXXXXX`) or MongoDB **_
 ### 5. Cancel Booking
 
 - **Method**: `POST`
-- **URL**: `http://localhost:5000/api/bookings/SYD-K9J4M2/cancel`
+- **URL**: `http://localhost:5000/api/bookings/Hughes-K9J4M2/cancel`
 - **Body (raw JSON)**:
 ```json
 {
@@ -631,7 +631,7 @@ Supports lookup using either the **bookingNumber** (`SYD-XXXXXX`) or MongoDB **_
   "message": "Booking cancelled successfully",
   "booking": {
     "_id": "671cc15f10b249a518fb9911",
-    "bookingNumber": "SYD-K9J4M2",
+    "bookingNumber": "Hughes-K9J4M2",
     "status": "cancelled",
     "cancellationReason": "Customer requested cancellation due to flight delay",
     ...
@@ -643,10 +643,10 @@ Supports lookup using either the **bookingNumber** (`SYD-XXXXXX`) or MongoDB **_
 
 ### 6. Delete Booking
 
-Permanently removes a booking from the database by **bookingNumber** (`SYD-XXXXXX`) or MongoDB **_id**.
+Permanently removes a booking from the database by **bookingNumber** (`Hughes-XXXXXX`) or MongoDB **_id**.
 
 - **Method**: `DELETE`
-- **URL**: `http://localhost:5000/api/bookings/SYD-K9J4M2`
+- **URL**: `http://localhost:5000/api/bookings/Hughes-K9J4M2`
 - **Response `200 OK`**:
 ```json
 {
@@ -676,7 +676,7 @@ All admin endpoints are accessible under `http://localhost:5000/api/admin`.
 | | `POST` / `PATCH` | `/api/admin/admins/:id/set-password` | Set / reset password for an admin | Superadmin only |
 | | `DELETE` | `/api/admin/admins/:id` | Delete an admin account | Superadmin only |
 | **Bookings** | `GET` | `/api/admin/bookings` | List all bookings with query filters & pagination | Admin / Superadmin |
-| | `GET` | `/api/admin/bookings/:refOrId` | Get booking by ID or reference code (`SYD-XXXXXX`) | Admin / Superadmin |
+| | `GET` | `/api/admin/bookings/:refOrId` | Get booking by ID or reference code (`Hughes-XXXXXX`) | Admin / Superadmin |
 | | `PUT` / `PATCH` | `/api/admin/bookings/:refOrId` | Update full booking details (edit any field) | Admin / Superadmin |
 | | `PATCH` | `/api/admin/bookings/:refOrId/status` | Update booking status, payment status, or notes | Admin / Superadmin |
 | | `POST` | `/api/admin/bookings/:refOrId/cancel` | Cancel a booking with reason | Admin / Superadmin |
@@ -710,7 +710,7 @@ All admin endpoints are accessible under `http://localhost:5000/api/admin`.
 - **Body (raw JSON)**:
 ```json
 {
-  "email": "admin@sydtransport.com.au",
+  "email": "admin@Hughestransport.com.au",
   "password": "yourSecretPassword"
 }
 ```
@@ -722,7 +722,7 @@ All admin endpoints are accessible under `http://localhost:5000/api/admin`.
   "admin": {
     "id": "6acf7f098ebdf026739444e8",
     "name": "System Administrator",
-    "email": "admin@sydtransport.com.au",
+    "email": "admin@Hughestransport.com.au",
     "role": "admin",
     "phone": "+61 400 000 000",
     "isActive": true,
@@ -758,7 +758,7 @@ All admin endpoints are accessible under `http://localhost:5000/api/admin`.
 ```json
 {
   "name": "Operations Manager",
-  "email": "ops@sydtransport.com.au",
+  "email": "ops@Hughestransport.com.au",
   "password": "TemporaryPassword123",
   "role": "admin",
   "phone": "+61 411 222 333",
@@ -813,12 +813,12 @@ All admin endpoints are accessible under `http://localhost:5000/api/admin`.
 Admins can edit any field of an existing booking.
 
 - **Method**: `PUT` or `PATCH`
-- **URL**: `http://localhost:5000/api/admin/bookings/SYD-K9J4M2`
+- **URL**: `http://localhost:5000/api/admin/bookings/Hughes-K9J4M2`
 - **Body (raw JSON)**:
 ```json
 {
-  "pickup": "Sydney Airport Terminal 2",
-  "dropoff": "Hilton Sydney, 488 George St",
+  "pickup": "Hughesney Airport Terminal 2",
+  "dropoff": "Hilton Hughesney, 488 George St",
   "pickupTime": "2026-10-30T14:30:00.000Z",
   "passengers": 3,
   "vehicleType": "Chauffeur",
@@ -859,7 +859,7 @@ Admins can edit any field of an existing booking.
     {
       "_id": "671cc15f10b249a518fb9999",
       "bookingId": { ... },
-      "bookingNumber": "SYD-K9J4M2",
+      "bookingNumber": "Hughes-K9J4M2",
       "stripePaymentIntentId": "pi_3MtwBwLkdIwHu7ix28a3tqPa",
       "amount": 85.50,
       "currency": "AUD",
@@ -878,13 +878,13 @@ Admins can edit any field of an existing booking.
 ### 4. Admin: View Booking Payment Details
 
 - **Method**: `GET`
-- **URL**: `http://localhost:5000/api/admin/payments/booking/SYD-K9J4M2`
+- **URL**: `http://localhost:5000/api/admin/payments/booking/Hughes-K9J4M2`
 - **Response `200 OK`**:
 ```json
 {
   "success": true,
   "data": {
-    "bookingNumber": "SYD-K9J4M2",
+    "bookingNumber": "Hughes-K9J4M2",
     "bookingId": "671cc15f10b249a518fb9911",
     "vehicleType": "Sedan",
     "status": "confirmed",
@@ -906,7 +906,7 @@ Admins can edit any field of an existing booking.
 - **Body**:
 ```json
 {
-  "firstPlace": "Sydney Airport (SYD)",
+  "firstPlace": "Hughesney Airport (Hughes)",
   "lastPlace": "Coogee Beach",
   "vehicleAndFares": {
     "Taxi": 65,

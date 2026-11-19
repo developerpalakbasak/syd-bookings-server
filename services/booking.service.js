@@ -154,13 +154,20 @@ class BookingService {
     return { total, bookings };
   }
 
-  // Finds booking by MongoDB ObjectId or reference number.
-  async findByReferenceOrId(refOrId) {
+  // Finds booking by MongoDB ObjectId or reference number (supports SYD-XXXXXX or direct alphanumeric)
+  async findByReferenceOrId(refOrId, lastName) {
     if (!refOrId) {
       const err = new Error('Booking reference or ID is required');
       err.statusCode = 400;
       throw err;
     }
+
+    const cleanRef = String(refOrId).trim().toUpperCase();
+    const possibleRefs = [
+      cleanRef,
+      cleanRef.startsWith('SYD-') ? cleanRef.replace(/^SYD-/, '') : `SYD-${cleanRef}`,
+      cleanRef.replace(/[^A-Z0-9]/g, ''),
+    ];
 
     let booking = null;
     if (mongoose.isValidObjectId(refOrId)) {
@@ -168,13 +175,26 @@ class BookingService {
     }
 
     if (!booking) {
-      booking = await Booking.findOne({ bookingNumber: refOrId.toUpperCase() }).exec();
+      booking = await Booking.findOne({
+        bookingNumber: { $in: possibleRefs },
+      }).exec();
     }
 
     if (!booking) {
       const err = new Error(`Booking with reference '${refOrId}' not found`);
       err.statusCode = 404;
       throw err;
+    }
+
+    // Optional verification by passenger last name if provided
+    if (lastName && String(lastName).trim()) {
+      const inputLastName = String(lastName).trim().toLowerCase();
+      const passengerName = String(booking.passengerName || '').toLowerCase();
+      if (!passengerName.includes(inputLastName)) {
+        const err = new Error('The last name does not match our records for this booking');
+        err.statusCode = 403;
+        throw err;
+      }
     }
 
     return booking;

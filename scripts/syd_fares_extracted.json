@@ -1,0 +1,4314 @@
+[
+  {
+    "suburb": "Abbotsbury",
+    "cityFare": 170.0,
+    "domDrop": 155.0,
+    "domPickup": 160.0,
+    "intlDrop": 155.0,
+    "intlPickup": 160.0
+  },
+  {
+    "suburb": "Abbotsford",
+    "cityFare": 100.0,
+    "domDrop": 115.0,
+    "domPickup": 120.0,
+    "intlDrop": 120.0,
+    "intlPickup": 125.0
+  },
+  {
+    "suburb": "Abbotsford Ed X City",
+    "cityFare": 100.0,
+    "domDrop": 120.0,
+    "domPickup": 135.0,
+    "intlDrop": 125.0,
+    "intlPickup": 140.0
+  },
+  {
+    "suburb": "Abbotsford M8",
+    "cityFare": 100.0,
+    "domDrop": 120.0,
+    "domPickup": 125.0,
+    "intlDrop": 125.0,
+    "intlPickup": 130.0
+  },
+  {
+    "suburb": "Acacia Gardens M2 Lct Ed",
+    "cityFare": 150.0,
+    "domDrop": 175.0,
+    "domPickup": 180.0,
+    "intlDrop": 175.0,
+    "intlPickup": 185.0
+  },
+  {
+    "suburb": "Acacia Gardens M4 M8",
+    "cityFare": 150.0,
+    "domDrop": 165.0,
+    "domPickup": 170.0,
+    "intlDrop": 165.0,
+    "intlPickup": 175.0
+  },
+  {
+    "suburb": "Airds",
+    "cityFare": 190.0,
+    "domDrop": 170.0,
+    "domPickup": 175.0,
+    "intlDrop": 170.0,
+    "intlPickup": 175.0
+  },
+  {
+    "suburb": "Akuna Bay",
+    "cityFare": 135.0,
+    "domDrop": 155.0,
+    "domPickup": 160.0,
+    "intlDrop": 160.0,
+    "intlPickup": 165.0
+  },
+  {
+    "suburb": "Albion Park",
+    "cityFare": 315.0,
+    "domDrop": 285.0,
+    "domPickup": 295.0,
+    "intlDrop": 285.0,
+    "intlPickup": 300.0
+  },
+  {
+    "suburb": "Alexandria",
+    "cityFare": 85.0,
+    "domDrop": 85.0,
+    "domPickup": 95.0,
+    "intlDrop": 90.0,
+    "intlPickup": 110.0
+  },
+  {
+    "suburb": "Alfords Point M5 M5E Ed",
+    "cityFare": 160.0,
+    "domDrop": 130.0,
+    "domPickup": 135.0,
+    "intlDrop": 130.0,
+    "intlPickup": 135.0
+  },
+  {
+    "suburb": "Allambie Heights",
+    "cityFare": 120.0,
+    "domDrop": 140.0,
+    "domPickup": 145.0,
+    "intlDrop": 145.0,
+    "intlPickup": 150.0
+  },
+  {
+    "suburb": "Ambarvale",
+    "cityFare": 195.0,
+    "domDrop": 175.0,
+    "domPickup": 180.0,
+    "intlDrop": 175.0,
+    "intlPickup": 180.0
+  },
+  {
+    "suburb": "Annandale",
+    "cityFare": 90.0,
+    "domDrop": 105.0,
+    "domPickup": 110.0,
+    "intlDrop": 105.0,
+    "intlPickup": 115.0
+  },
+  {
+    "suburb": "Annandale Ed X City",
+    "cityFare": 95.0,
+    "domDrop": 110.0,
+    "domPickup": 125.0,
+    "intlDrop": 110.0,
+    "intlPickup": 130.0
+  },
+  {
+    "suburb": "Annangrove",
+    "cityFare": 160.0,
+    "domDrop": 180.0,
+    "domPickup": 185.0,
+    "intlDrop": 180.0,
+    "intlPickup": 190.0
+  },
+  {
+    "suburb": "Arcadia",
+    "cityFare": 160.0,
+    "domDrop": 180.0,
+    "domPickup": 185.0,
+    "intlDrop": 180.0,
+    "intlPickup": 190.0
+  },
+  {
+    "suburb": "Arncliff Ed",
+    "cityFare": 110.0,
+    "domDrop": 85.0,
+    "domPickup": 95.0,
+    "intlDrop": 80.0,
+    "intlPickup": 100.0
+  },
+  {
+    "suburb": "Arndell Park M4 M8",
+    "cityFare": 155.0,
+    "domDrop": 160.0,
+    "domPickup": 165.0,
+    "intlDrop": 160.0,
+    "intlPickup": 170.0
+  },
+  {
+    "suburb": "Artarmon",
+    "cityFare": 90.0,
+    "domDrop": 110.0,
+    "domPickup": 120.0,
+    "intlDrop": 115.0,
+    "intlPickup": 130.0
+  },
+  {
+    "suburb": "Ashbury",
+    "cityFare": 100.0,
+    "domDrop": 105.0,
+    "domPickup": 110.0,
+    "intlDrop": 105.0,
+    "intlPickup": 115.0
+  },
+  {
+    "suburb": "Ashbury M8",
+    "cityFare": 100.0,
+    "domDrop": 110.0,
+    "domPickup": 115.0,
+    "intlDrop": 110.0,
+    "intlPickup": 120.0
+  },
+  {
+    "suburb": "Ashcroft",
+    "cityFare": 165.0,
+    "domDrop": 150.0,
+    "domPickup": 155.0,
+    "intlDrop": 150.0,
+    "intlPickup": 155.0
+  },
+  {
+    "suburb": "Ashfield",
+    "cityFare": 95.0,
+    "domDrop": 105.0,
+    "domPickup": 110.0,
+    "intlDrop": 105.0,
+    "intlPickup": 115.0
+  },
+  {
+    "suburb": "Ashfield M8",
+    "cityFare": 95.0,
+    "domDrop": 110.0,
+    "domPickup": 115.0,
+    "intlDrop": 110.0,
+    "intlPickup": 120.0
+  },
+  {
+    "suburb": "Asquith",
+    "cityFare": 135.0,
+    "domDrop": 155.0,
+    "domPickup": 160.0,
+    "intlDrop": 160.0,
+    "intlPickup": 165.0
+  },
+  {
+    "suburb": "Asquith North Connex",
+    "cityFare": 155.0,
+    "domDrop": 175.0,
+    "domPickup": 180.0,
+    "intlDrop": 180.0,
+    "intlPickup": 185.0
+  },
+  {
+    "suburb": "Auburn",
+    "cityFare": 120.0,
+    "domDrop": 120.0,
+    "domPickup": 125.0,
+    "intlDrop": 120.0,
+    "intlPickup": 130.0
+  },
+  {
+    "suburb": "Auburn M4 M8",
+    "cityFare": 125.0,
+    "domDrop": 125.0,
+    "domPickup": 130.0,
+    "intlDrop": 125.0,
+    "intlPickup": 135.0
+  },
+  {
+    "suburb": "Austinmer",
+    "cityFare": 220.0,
+    "domDrop": 190.0,
+    "domPickup": 200.0,
+    "intlDrop": 190.0,
+    "intlPickup": 205.0
+  },
+  {
+    "suburb": "Austral M5 Ed",
+    "cityFare": 175.0,
+    "domDrop": 160.0,
+    "domPickup": 165.0,
+    "intlDrop": 160.0,
+    "intlPickup": 165.0
+  },
+  {
+    "suburb": "Avalon",
+    "cityFare": 160.0,
+    "domDrop": 175.0,
+    "domPickup": 180.0,
+    "intlDrop": 175.0,
+    "intlPickup": 185.0
+  },
+  {
+    "suburb": "Badgerys Creek",
+    "cityFare": 195.0,
+    "domDrop": 175.0,
+    "domPickup": 180.0,
+    "intlDrop": 175.0,
+    "intlPickup": 180.0
+  },
+  {
+    "suburb": "Balgowlah",
+    "cityFare": 115.0,
+    "domDrop": 130.0,
+    "domPickup": 140.0,
+    "intlDrop": 130.0,
+    "intlPickup": 145.0
+  },
+  {
+    "suburb": "Balgowlah Heights",
+    "cityFare": 115.0,
+    "domDrop": 130.0,
+    "domPickup": 140.0,
+    "intlDrop": 130.0,
+    "intlPickup": 145.0
+  },
+  {
+    "suburb": "Balmain",
+    "cityFare": 85.0,
+    "domDrop": 110.0,
+    "domPickup": 115.0,
+    "intlDrop": 110.0,
+    "intlPickup": 125.0
+  },
+  {
+    "suburb": "Balmain Ed X City",
+    "cityFare": 85.0,
+    "domDrop": 115.0,
+    "domPickup": 130.0,
+    "intlDrop": 115.0,
+    "intlPickup": 135.0
+  },
+  {
+    "suburb": "Balmain East",
+    "cityFare": 85.0,
+    "domDrop": 110.0,
+    "domPickup": 115.0,
+    "intlDrop": 110.0,
+    "intlPickup": 125.0
+  },
+  {
+    "suburb": "Balmain East Ed X City",
+    "cityFare": 85.0,
+    "domDrop": 115.0,
+    "domPickup": 130.0,
+    "intlDrop": 115.0,
+    "intlPickup": 135.0
+  },
+  {
+    "suburb": "Balmoral Beach",
+    "cityFare": 105.0,
+    "domDrop": 120.0,
+    "domPickup": 130.0,
+    "intlDrop": 120.0,
+    "intlPickup": 135.0
+  },
+  {
+    "suburb": "Bangor",
+    "cityFare": 150.0,
+    "domDrop": 130.0,
+    "domPickup": 135.0,
+    "intlDrop": 130.0,
+    "intlPickup": 135.0
+  },
+  {
+    "suburb": "Bangor M5 M5E",
+    "cityFare": 160.0,
+    "domDrop": 140.0,
+    "domPickup": 145.0,
+    "intlDrop": 140.0,
+    "intlPickup": 145.0
+  },
+  {
+    "suburb": "Banksia",
+    "cityFare": 110.0,
+    "domDrop": 85.0,
+    "domPickup": 95.0,
+    "intlDrop": 80.0,
+    "intlPickup": 100.0
+  },
+  {
+    "suburb": "Banksmeadow",
+    "cityFare": 100.0,
+    "domDrop": 90.0,
+    "domPickup": 100.0,
+    "intlDrop": 90.0,
+    "intlPickup": 110.0
+  },
+  {
+    "suburb": "Banksmeadow Ed",
+    "cityFare": 105.0,
+    "domDrop": 90.0,
+    "domPickup": 100.0,
+    "intlDrop": 90.0,
+    "intlPickup": 110.0
+  },
+  {
+    "suburb": "Bankstown Airport M5 M5E Ed",
+    "cityFare": 145.0,
+    "domDrop": 120.0,
+    "domPickup": 125.0,
+    "intlDrop": 120.0,
+    "intlPickup": 130.0
+  },
+  {
+    "suburb": "Bankstown No Toll",
+    "cityFare": 120.0,
+    "domDrop": 115.0,
+    "domPickup": 120.0,
+    "intlDrop": 115.0,
+    "intlPickup": 120.0
+  },
+  {
+    "suburb": "Barangaroo",
+    "cityFare": 80.0,
+    "domDrop": 100.0,
+    "domPickup": 105.0,
+    "intlDrop": 100.0,
+    "intlPickup": 115.0
+  },
+  {
+    "suburb": "Barangaroo Ed (1 Toll)",
+    "cityFare": 80.0,
+    "domDrop": 100.0,
+    "domPickup": 115.0,
+    "intlDrop": 100.0,
+    "intlPickup": 120.0
+  },
+  {
+    "suburb": "Barangaroo Ed X City (2 Tolls)",
+    "cityFare": 80.0,
+    "domDrop": 105.0,
+    "domPickup": 120.0,
+    "intlDrop": 105.0,
+    "intlPickup": 130.0
+  },
+  {
+    "suburb": "Barden Ridge",
+    "cityFare": 155.0,
+    "domDrop": 135.0,
+    "domPickup": 140.0,
+    "intlDrop": 135.0,
+    "intlPickup": 140.0
+  },
+  {
+    "suburb": "Bardia",
+    "cityFare": 170.0,
+    "domDrop": 155.0,
+    "domPickup": 160.0,
+    "intlDrop": 155.0,
+    "intlPickup": 160.0
+  },
+  {
+    "suburb": "Bass Hill",
+    "cityFare": 145.0,
+    "domDrop": 125.0,
+    "domPickup": 130.0,
+    "intlDrop": 125.0,
+    "intlPickup": 130.0
+  },
+  {
+    "suburb": "Bass Hill M4",
+    "cityFare": 135.0,
+    "domDrop": 125.0,
+    "domPickup": 130.0,
+    "intlDrop": 125.0,
+    "intlPickup": 130.0
+  },
+  {
+    "suburb": "Bathurst",
+    "cityFare": 0.0,
+    "domDrop": 585.0,
+    "domPickup": 595.0,
+    "intlDrop": 585.0,
+    "intlPickup": 600.0
+  },
+  {
+    "suburb": "Bathurst M4 M8",
+    "cityFare": 565.0,
+    "domDrop": 565.0,
+    "domPickup": 575.0,
+    "intlDrop": 565.0,
+    "intlPickup": 580.0
+  },
+  {
+    "suburb": "Baulkham Hill M2 Lct Ed",
+    "cityFare": 140.0,
+    "domDrop": 165.0,
+    "domPickup": 170.0,
+    "intlDrop": 165.0,
+    "intlPickup": 175.0
+  },
+  {
+    "suburb": "Baulkham Hill M4 M8",
+    "cityFare": 140.0,
+    "domDrop": 155.0,
+    "domPickup": 160.0,
+    "intlDrop": 155.0,
+    "intlPickup": 165.0
+  },
+  {
+    "suburb": "Bayview",
+    "cityFare": 150.0,
+    "domDrop": 165.0,
+    "domPickup": 170.0,
+    "intlDrop": 165.0,
+    "intlPickup": 175.0
+  },
+  {
+    "suburb": "Beacon Hill",
+    "cityFare": 125.0,
+    "domDrop": 145.0,
+    "domPickup": 150.0,
+    "intlDrop": 150.0,
+    "intlPickup": 155.0
+  },
+  {
+    "suburb": "Beaconsfield",
+    "cityFare": 85.0,
+    "domDrop": 85.0,
+    "domPickup": 95.0,
+    "intlDrop": 90.0,
+    "intlPickup": 110.0
+  },
+  {
+    "suburb": "Beaumont Hills",
+    "cityFare": 150.0,
+    "domDrop": 175.0,
+    "domPickup": 180.0,
+    "intlDrop": 175.0,
+    "intlPickup": 185.0
+  },
+  {
+    "suburb": "Beauty Point",
+    "cityFare": 105.0,
+    "domDrop": 125.0,
+    "domPickup": 130.0,
+    "intlDrop": 125.0,
+    "intlPickup": 135.0
+  },
+  {
+    "suburb": "Bella Vista M2 Lct Ed",
+    "cityFare": 145.0,
+    "domDrop": 165.0,
+    "domPickup": 170.0,
+    "intlDrop": 165.0,
+    "intlPickup": 175.0
+  },
+  {
+    "suburb": "Bella Vista M4 M8",
+    "cityFare": 145.0,
+    "domDrop": 160.0,
+    "domPickup": 165.0,
+    "intlDrop": 160.0,
+    "intlPickup": 170.0
+  },
+  {
+    "suburb": "Berala",
+    "cityFare": 130.0,
+    "domDrop": 120.0,
+    "domPickup": 125.0,
+    "intlDrop": 120.0,
+    "intlPickup": 125.0
+  },
+  {
+    "suburb": "Berkshire Park",
+    "cityFare": 185.0,
+    "domDrop": 195.0,
+    "domPickup": 200.0,
+    "intlDrop": 195.0,
+    "intlPickup": 200.0
+  },
+  {
+    "suburb": "Berowra",
+    "cityFare": 150.0,
+    "domDrop": 165.0,
+    "domPickup": 175.0,
+    "intlDrop": 170.0,
+    "intlPickup": 175.0
+  },
+  {
+    "suburb": "Berowra Heights North Connex",
+    "cityFare": 155.0,
+    "domDrop": 170.0,
+    "domPickup": 175.0,
+    "intlDrop": 175.0,
+    "intlPickup": 180.0
+  },
+  {
+    "suburb": "Berowra North Connex",
+    "cityFare": 170.0,
+    "domDrop": 185.0,
+    "domPickup": 195.0,
+    "intlDrop": 190.0,
+    "intlPickup": 195.0
+  },
+  {
+    "suburb": "Berowra Waters",
+    "cityFare": 160.0,
+    "domDrop": 175.0,
+    "domPickup": 185.0,
+    "intlDrop": 180.0,
+    "intlPickup": 185.0
+  },
+  {
+    "suburb": "Berowra Waters North Connex",
+    "cityFare": 180.0,
+    "domDrop": 195.0,
+    "domPickup": 200.0,
+    "intlDrop": 200.0,
+    "intlPickup": 205.0
+  },
+  {
+    "suburb": "Beverley Park",
+    "cityFare": 120.0,
+    "domDrop": 105.0,
+    "domPickup": 110.0,
+    "intlDrop": 105.0,
+    "intlPickup": 115.0
+  },
+  {
+    "suburb": "Bilgola",
+    "cityFare": 160.0,
+    "domDrop": 170.0,
+    "domPickup": 180.0,
+    "intlDrop": 175.0,
+    "intlPickup": 185.0
+  },
+  {
+    "suburb": "Bilgola Plateau",
+    "cityFare": 160.0,
+    "domDrop": 170.0,
+    "domPickup": 180.0,
+    "intlDrop": 175.0,
+    "intlPickup": 185.0
+  },
+  {
+    "suburb": "Birkenhead Point",
+    "cityFare": 95.0,
+    "domDrop": 115.0,
+    "domPickup": 120.0,
+    "intlDrop": 115.0,
+    "intlPickup": 125.0
+  },
+  {
+    "suburb": "Birkenhead Point Ed X City",
+    "cityFare": 95.0,
+    "domDrop": 120.0,
+    "domPickup": 135.0,
+    "intlDrop": 120.0,
+    "intlPickup": 140.0
+  },
+  {
+    "suburb": "Blackett",
+    "cityFare": 175.0,
+    "domDrop": 180.0,
+    "domPickup": 185.0,
+    "intlDrop": 180.0,
+    "intlPickup": 185.0
+  },
+  {
+    "suburb": "Blacktown M4 M8",
+    "cityFare": 155.0,
+    "domDrop": 160.0,
+    "domPickup": 165.0,
+    "intlDrop": 160.0,
+    "intlPickup": 170.0
+  },
+  {
+    "suburb": "Blair Athol",
+    "cityFare": 190.0,
+    "domDrop": 170.0,
+    "domPickup": 175.0,
+    "intlDrop": 170.0,
+    "intlPickup": 175.0
+  },
+  {
+    "suburb": "Blairmount",
+    "cityFare": 190.0,
+    "domDrop": 170.0,
+    "domPickup": 175.0,
+    "intlDrop": 170.0,
+    "intlPickup": 175.0
+  },
+  {
+    "suburb": "Blakehurst Ed",
+    "cityFare": 130.0,
+    "domDrop": 105.0,
+    "domPickup": 115.0,
+    "intlDrop": 105.0,
+    "intlPickup": 115.0
+  },
+  {
+    "suburb": "Blaxland M4-M8",
+    "cityFare": 215.0,
+    "domDrop": 220.0,
+    "domPickup": 230.0,
+    "intlDrop": 220.0,
+    "intlPickup": 235.0
+  },
+  {
+    "suburb": "Blaxland M5-M7",
+    "cityFare": 0.0,
+    "domDrop": 240.0,
+    "domPickup": 250.0,
+    "intlDrop": 240.0,
+    "intlPickup": 255.0
+  },
+  {
+    "suburb": "Bligh Park",
+    "cityFare": 185.0,
+    "domDrop": 195.0,
+    "domPickup": 200.0,
+    "intlDrop": 195.0,
+    "intlPickup": 205.0
+  },
+  {
+    "suburb": "Bonnet Bay",
+    "cityFare": 150.0,
+    "domDrop": 125.0,
+    "domPickup": 135.0,
+    "intlDrop": 125.0,
+    "intlPickup": 135.0
+  },
+  {
+    "suburb": "Bossley Park",
+    "cityFare": 170.0,
+    "domDrop": 155.0,
+    "domPickup": 160.0,
+    "intlDrop": 155.0,
+    "intlPickup": 160.0
+  },
+  {
+    "suburb": "Botany",
+    "cityFare": 100.0,
+    "domDrop": 85.0,
+    "domPickup": 95.0,
+    "intlDrop": 85.0,
+    "intlPickup": 105.0
+  },
+  {
+    "suburb": "Botany Ed",
+    "cityFare": 105.0,
+    "domDrop": 85.0,
+    "domPickup": 95.0,
+    "intlDrop": 85.0,
+    "intlPickup": 105.0
+  },
+  {
+    "suburb": "Bowral M5 M5E Ed",
+    "cityFare": 355.0,
+    "domDrop": 320.0,
+    "domPickup": 330.0,
+    "intlDrop": 320.0,
+    "intlPickup": 335.0
+  },
+  {
+    "suburb": "Bradbury",
+    "cityFare": 190.0,
+    "domDrop": 170.0,
+    "domPickup": 175.0,
+    "intlDrop": 170.0,
+    "intlPickup": 175.0
+  },
+  {
+    "suburb": "Breakfast Point",
+    "cityFare": 105.0,
+    "domDrop": 120.0,
+    "domPickup": 125.0,
+    "intlDrop": 120.0,
+    "intlPickup": 130.0
+  },
+  {
+    "suburb": "Breakfast Point M4 M8",
+    "cityFare": 110.0,
+    "domDrop": 125.0,
+    "domPickup": 130.0,
+    "intlDrop": 125.0,
+    "intlPickup": 135.0
+  },
+  {
+    "suburb": "Brighton-Le-Sands",
+    "cityFare": 110.0,
+    "domDrop": 95.0,
+    "domPickup": 100.0,
+    "intlDrop": 95.0,
+    "intlPickup": 105.0
+  },
+  {
+    "suburb": "Broadway",
+    "cityFare": 80.0,
+    "domDrop": 95.0,
+    "domPickup": 105.0,
+    "intlDrop": 100.0,
+    "intlPickup": 115.0
+  },
+  {
+    "suburb": "Brookvale",
+    "cityFare": 120.0,
+    "domDrop": 140.0,
+    "domPickup": 145.0,
+    "intlDrop": 145.0,
+    "intlPickup": 150.0
+  },
+  {
+    "suburb": "Bungarribee M4 M8",
+    "cityFare": 160.0,
+    "domDrop": 165.0,
+    "domPickup": 170.0,
+    "intlDrop": 165.0,
+    "intlPickup": 170.0
+  },
+  {
+    "suburb": "Burraneer",
+    "cityFare": 140.0,
+    "domDrop": 120.0,
+    "domPickup": 125.0,
+    "intlDrop": 120.0,
+    "intlPickup": 130.0
+  },
+  {
+    "suburb": "Cabarita",
+    "cityFare": 105.0,
+    "domDrop": 120.0,
+    "domPickup": 125.0,
+    "intlDrop": 120.0,
+    "intlPickup": 130.0
+  },
+  {
+    "suburb": "Cabarita M4 M8",
+    "cityFare": 110.0,
+    "domDrop": 125.0,
+    "domPickup": 130.0,
+    "intlDrop": 125.0,
+    "intlPickup": 135.0
+  },
+  {
+    "suburb": "Cabramatta M5 M5E Ed",
+    "cityFare": 160.0,
+    "domDrop": 150.0,
+    "domPickup": 155.0,
+    "intlDrop": 150.0,
+    "intlPickup": 155.0
+  },
+  {
+    "suburb": "Cabramatta West M5 Ed",
+    "cityFare": 160.0,
+    "domDrop": 150.0,
+    "domPickup": 155.0,
+    "intlDrop": 150.0,
+    "intlPickup": 155.0
+  },
+  {
+    "suburb": "Caddens",
+    "cityFare": 185.0,
+    "domDrop": 185.0,
+    "domPickup": 90.0,
+    "intlDrop": 185.0,
+    "intlPickup": 195.0
+  },
+  {
+    "suburb": "Cambeltown M5 Ed",
+    "cityFare": 190.0,
+    "domDrop": 170.0,
+    "domPickup": 175.0,
+    "intlDrop": 170.0,
+    "intlPickup": 175.0
+  },
+  {
+    "suburb": "Cambridge Gardens M4 M8",
+    "cityFare": 190.0,
+    "domDrop": 190.0,
+    "domPickup": 195.0,
+    "intlDrop": 190.0,
+    "intlPickup": 195.0
+  },
+  {
+    "suburb": "Cambridge Park M4 M8",
+    "cityFare": 185.0,
+    "domDrop": 185.0,
+    "domPickup": 190.0,
+    "intlDrop": 185.0,
+    "intlPickup": 195.0
+  },
+  {
+    "suburb": "Camden M5 Ed",
+    "cityFare": 210.0,
+    "domDrop": 190.0,
+    "domPickup": 195.0,
+    "intlDrop": 190.0,
+    "intlPickup": 195.0
+  },
+  {
+    "suburb": "Camellia",
+    "cityFare": 120.0,
+    "domDrop": 135.0,
+    "domPickup": 140.0,
+    "intlDrop": 135.0,
+    "intlPickup": 140.0
+  },
+  {
+    "suburb": "Camellia M4 M8",
+    "cityFare": 125.0,
+    "domDrop": 135.0,
+    "domPickup": 140.0,
+    "intlDrop": 135.0,
+    "intlPickup": 140.0
+  },
+  {
+    "suburb": "Cammeray",
+    "cityFare": 90.0,
+    "domDrop": 110.0,
+    "domPickup": 120.0,
+    "intlDrop": 115.0,
+    "intlPickup": 125.0
+  },
+  {
+    "suburb": "Camperdown",
+    "cityFare": 85.0,
+    "domDrop": 95.0,
+    "domPickup": 105.0,
+    "intlDrop": 100.0,
+    "intlPickup": 115.0
+  },
+  {
+    "suburb": "Campsie",
+    "cityFare": 110.0,
+    "domDrop": 110.0,
+    "domPickup": 115.0,
+    "intlDrop": 110.0,
+    "intlPickup": 115.0
+  },
+  {
+    "suburb": "Campsie M5 Ed",
+    "cityFare": 125.0,
+    "domDrop": 115.0,
+    "domPickup": 120.0,
+    "intlDrop": 115.0,
+    "intlPickup": 120.0
+  },
+  {
+    "suburb": "Canada Bay",
+    "cityFare": 105.0,
+    "domDrop": 115.0,
+    "domPickup": 120.0,
+    "intlDrop": 115.0,
+    "intlPickup": 125.0
+  },
+  {
+    "suburb": "Canada Bay Ed Xcity",
+    "cityFare": 105.0,
+    "domDrop": 120.0,
+    "domPickup": 135.0,
+    "intlDrop": 120.0,
+    "intlPickup": 140.0
+  },
+  {
+    "suburb": "Canada Bay M4 M8",
+    "cityFare": 105.0,
+    "domDrop": 120.0,
+    "domPickup": 125.0,
+    "intlDrop": 120.0,
+    "intlPickup": 130.0
+  },
+  {
+    "suburb": "Canberra M5 M5E Ed",
+    "cityFare": 805.0,
+    "domDrop": 770.0,
+    "domPickup": 780.0,
+    "intlDrop": 770.0,
+    "intlPickup": 785.0
+  },
+  {
+    "suburb": "Canley Heights",
+    "cityFare": 160.0,
+    "domDrop": 150.0,
+    "domPickup": 155.0,
+    "intlDrop": 150.0,
+    "intlPickup": 155.0
+  },
+  {
+    "suburb": "Canley Vale M5 Ed",
+    "cityFare": 160.0,
+    "domDrop": 150.0,
+    "domPickup": 155.0,
+    "intlDrop": 150.0,
+    "intlPickup": 155.0
+  },
+  {
+    "suburb": "Canterbury",
+    "cityFare": 110.0,
+    "domDrop": 110.0,
+    "domPickup": 115.0,
+    "intlDrop": 110.0,
+    "intlPickup": 115.0
+  },
+  {
+    "suburb": "Canterbury M5 Ed",
+    "cityFare": 125.0,
+    "domDrop": 115.0,
+    "domPickup": 120.0,
+    "intlDrop": 115.0,
+    "intlPickup": 120.0
+  },
+  {
+    "suburb": "Caringbah",
+    "cityFare": 135.0,
+    "domDrop": 115.0,
+    "domPickup": 120.0,
+    "intlDrop": 115.0,
+    "intlPickup": 125.0
+  },
+  {
+    "suburb": "Carlingford Via M8 M4",
+    "cityFare": 130.0,
+    "domDrop": 145.0,
+    "domPickup": 150.0,
+    "intlDrop": 150.0,
+    "intlPickup": 160.0
+  },
+  {
+    "suburb": "Carlingford Via M2",
+    "cityFare": 130.0,
+    "domDrop": 150.0,
+    "domPickup": 155.0,
+    "intlDrop": 155.0,
+    "intlPickup": 165.0
+  },
+  {
+    "suburb": "Carlton",
+    "cityFare": 115.0,
+    "domDrop": 100.0,
+    "domPickup": 105.0,
+    "intlDrop": 100.0,
+    "intlPickup": 115.0
+  },
+  {
+    "suburb": "Carnes Hill",
+    "cityFare": 165.0,
+    "domDrop": 150.0,
+    "domPickup": 155.0,
+    "intlDrop": 150.0,
+    "intlPickup": 155.0
+  },
+  {
+    "suburb": "Carramar",
+    "cityFare": 150.0,
+    "domDrop": 145.0,
+    "domPickup": 150.0,
+    "intlDrop": 145.0,
+    "intlPickup": 150.0
+  },
+  {
+    "suburb": "Carss Park",
+    "cityFare": 125.0,
+    "domDrop": 105.0,
+    "domPickup": 110.0,
+    "intlDrop": 105.0,
+    "intlPickup": 115.0
+  },
+  {
+    "suburb": "Castle Cove",
+    "cityFare": 100.0,
+    "domDrop": 120.0,
+    "domPickup": 130.0,
+    "intlDrop": 120.0,
+    "intlPickup": 135.0
+  },
+  {
+    "suburb": "Castle Hill",
+    "cityFare": 140.0,
+    "domDrop": 160.0,
+    "domPickup": 165.0,
+    "intlDrop": 165.0,
+    "intlPickup": 170.0
+  },
+  {
+    "suburb": "Castlecrag",
+    "cityFare": 100.0,
+    "domDrop": 115.0,
+    "domPickup": 125.0,
+    "intlDrop": 120.0,
+    "intlPickup": 130.0
+  },
+  {
+    "suburb": "Castlereagh M4 M8",
+    "cityFare": 195.0,
+    "domDrop": 195.0,
+    "domPickup": 200.0,
+    "intlDrop": 195.0,
+    "intlPickup": 200.0
+  },
+  {
+    "suburb": "Casula",
+    "cityFare": 160.0,
+    "domDrop": 145.0,
+    "domPickup": 150.0,
+    "intlDrop": 145.0,
+    "intlPickup": 150.0
+  },
+  {
+    "suburb": "Catherine Field",
+    "cityFare": 185.0,
+    "domDrop": 165.0,
+    "domPickup": 170.0,
+    "intlDrop": 165.0,
+    "intlPickup": 170.0
+  },
+  {
+    "suburb": "Cattai",
+    "cityFare": 180.0,
+    "domDrop": 195.0,
+    "domPickup": 200.0,
+    "intlDrop": 195.0,
+    "intlPickup": 205.0
+  },
+  {
+    "suburb": "Cecil Park",
+    "cityFare": 170.0,
+    "domDrop": 165.0,
+    "domPickup": 170.0,
+    "intlDrop": 165.0,
+    "intlPickup": 170.0
+  },
+  {
+    "suburb": "Centennial Park",
+    "cityFare": 95.0,
+    "domDrop": 100.0,
+    "domPickup": 110.0,
+    "intlDrop": 105.0,
+    "intlPickup": 115.0
+  },
+  {
+    "suburb": "Central",
+    "cityFare": 80.0,
+    "domDrop": 95.0,
+    "domPickup": 105.0,
+    "intlDrop": 100.0,
+    "intlPickup": 115.0
+  },
+  {
+    "suburb": "Chatswood",
+    "cityFare": 100.0,
+    "domDrop": 120.0,
+    "domPickup": 130.0,
+    "intlDrop": 120.0,
+    "intlPickup": 135.0
+  },
+  {
+    "suburb": "Chatswood West",
+    "cityFare": 100.0,
+    "domDrop": 120.0,
+    "domPickup": 130.0,
+    "intlDrop": 120.0,
+    "intlPickup": 135.0
+  },
+  {
+    "suburb": "Cheltenham M2 Lcd Ed",
+    "cityFare": 125.0,
+    "domDrop": 145.0,
+    "domPickup": 150.0,
+    "intlDrop": 150.0,
+    "intlPickup": 155.0
+  },
+  {
+    "suburb": "Chippendale",
+    "cityFare": 80.0,
+    "domDrop": 95.0,
+    "domPickup": 105.0,
+    "intlDrop": 95.0,
+    "intlPickup": 105.0
+  },
+  {
+    "suburb": "Chullora",
+    "cityFare": 130.0,
+    "domDrop": 120.0,
+    "domPickup": 125.0,
+    "intlDrop": 120.0,
+    "intlPickup": 125.0
+  },
+  {
+    "suburb": "Claremont Meadows",
+    "cityFare": 180.0,
+    "domDrop": 180.0,
+    "domPickup": 185.0,
+    "intlDrop": 180.0,
+    "intlPickup": 185.0
+  },
+  {
+    "suburb": "Clarendon",
+    "cityFare": 185.0,
+    "domDrop": 195.0,
+    "domPickup": 200.0,
+    "intlDrop": 195.0,
+    "intlPickup": 205.0
+  },
+  {
+    "suburb": "Clareville",
+    "cityFare": 160.0,
+    "domDrop": 170.0,
+    "domPickup": 175.0,
+    "intlDrop": 175.0,
+    "intlPickup": 185.0
+  },
+  {
+    "suburb": "Claymore",
+    "cityFare": 190.0,
+    "domDrop": 170.0,
+    "domPickup": 175.0,
+    "intlDrop": 170.0,
+    "intlPickup": 175.0
+  },
+  {
+    "suburb": "Clifton Gardens",
+    "cityFare": 100.0,
+    "domDrop": 120.0,
+    "domPickup": 125.0,
+    "intlDrop": 120.0,
+    "intlPickup": 135.0
+  },
+  {
+    "suburb": "Clontarf",
+    "cityFare": 115.0,
+    "domDrop": 130.0,
+    "domPickup": 140.0,
+    "intlDrop": 130.0,
+    "intlPickup": 145.0
+  },
+  {
+    "suburb": "Collaroy",
+    "cityFare": 135.0,
+    "domDrop": 155.0,
+    "domPickup": 160.0,
+    "intlDrop": 155.0,
+    "intlPickup": 165.0
+  },
+  {
+    "suburb": "Collaroy Plateau",
+    "cityFare": 135.0,
+    "domDrop": 155.0,
+    "domPickup": 160.0,
+    "intlDrop": 155.0,
+    "intlPickup": 165.0
+  },
+  {
+    "suburb": "Condell Park",
+    "cityFare": 145.0,
+    "domDrop": 120.0,
+    "domPickup": 125.0,
+    "intlDrop": 120.0,
+    "intlPickup": 130.0
+  },
+  {
+    "suburb": "Coogee Via Ed",
+    "cityFare": 105.0,
+    "domDrop": 100.0,
+    "domPickup": 105.0,
+    "intlDrop": 100.0,
+    "intlPickup": 115.0
+  },
+  {
+    "suburb": "Cottage Point",
+    "cityFare": 140.0,
+    "domDrop": 160.0,
+    "domPickup": 170.0,
+    "intlDrop": 160.0,
+    "intlPickup": 175.0
+  },
+  {
+    "suburb": "Cowan",
+    "cityFare": 160.0,
+    "domDrop": 175.0,
+    "domPickup": 185.0,
+    "intlDrop": 180.0,
+    "intlPickup": 190.0
+  },
+  {
+    "suburb": "Cowan North Connex",
+    "cityFare": 180.0,
+    "domDrop": 195.0,
+    "domPickup": 205.0,
+    "intlDrop": 200.0,
+    "intlPickup": 210.0
+  },
+  {
+    "suburb": "Cranebrook M4 M8",
+    "cityFare": 190.0,
+    "domDrop": 190.0,
+    "domPickup": 195.0,
+    "intlDrop": 190.0,
+    "intlPickup": 195.0
+  },
+  {
+    "suburb": "Cronulla",
+    "cityFare": 140.0,
+    "domDrop": 120.0,
+    "domPickup": 125.0,
+    "intlDrop": 120.0,
+    "intlPickup": 130.0
+  },
+  {
+    "suburb": "Croydon Park",
+    "cityFare": 100.0,
+    "domDrop": 105.0,
+    "domPickup": 110.0,
+    "intlDrop": 105.0,
+    "intlPickup": 115.0
+  },
+  {
+    "suburb": "Croydon Park M8",
+    "cityFare": 100.0,
+    "domDrop": 110.0,
+    "domPickup": 115.0,
+    "intlDrop": 110.0,
+    "intlPickup": 120.0
+  },
+  {
+    "suburb": "Curran Hill",
+    "cityFare": 190.0,
+    "domDrop": 170.0,
+    "domPickup": 175.0,
+    "intlDrop": 170.0,
+    "intlPickup": 175.0
+  },
+  {
+    "suburb": "Daceyville Ed",
+    "cityFare": 105.0,
+    "domDrop": 90.0,
+    "domPickup": 105.0,
+    "intlDrop": 95.0,
+    "intlPickup": 110.0
+  },
+  {
+    "suburb": "Darling Harbour",
+    "cityFare": 80.0,
+    "domDrop": 95.0,
+    "domPickup": 105.0,
+    "intlDrop": 100.0,
+    "intlPickup": 115.0
+  },
+  {
+    "suburb": "Darling Harbour",
+    "cityFare": 80.0,
+    "domDrop": 95.0,
+    "domPickup": 105.0,
+    "intlDrop": 100.0,
+    "intlPickup": 115.0
+  },
+  {
+    "suburb": "Darling Harbour Ed X City",
+    "cityFare": 80.0,
+    "domDrop": 100.0,
+    "domPickup": 120.0,
+    "intlDrop": 105.0,
+    "intlPickup": 130.0
+  },
+  {
+    "suburb": "Darling Harbour Ed Xcity",
+    "cityFare": 80.0,
+    "domDrop": 100.0,
+    "domPickup": 120.0,
+    "intlDrop": 105.0,
+    "intlPickup": 130.0
+  },
+  {
+    "suburb": "Darling Point",
+    "cityFare": 85.0,
+    "domDrop": 105.0,
+    "domPickup": 110.0,
+    "intlDrop": 105.0,
+    "intlPickup": 115.0
+  },
+  {
+    "suburb": "Darling Point Ed Xcity",
+    "cityFare": 90.0,
+    "domDrop": 105.0,
+    "domPickup": 115.0,
+    "intlDrop": 105.0,
+    "intlPickup": 120.0
+  },
+  {
+    "suburb": "Darlinghurst",
+    "cityFare": 80.0,
+    "domDrop": 100.0,
+    "domPickup": 105.0,
+    "intlDrop": 100.0,
+    "intlPickup": 115.0
+  },
+  {
+    "suburb": "Darlinghurst Ed",
+    "cityFare": 85.0,
+    "domDrop": 100.0,
+    "domPickup": 110.0,
+    "intlDrop": 100.0,
+    "intlPickup": 120.0
+  },
+  {
+    "suburb": "Darlington",
+    "cityFare": 90.0,
+    "domDrop": 95.0,
+    "domPickup": 105.0,
+    "intlDrop": 95.0,
+    "intlPickup": 115.0
+  },
+  {
+    "suburb": "Davidson",
+    "cityFare": 120.0,
+    "domDrop": 140.0,
+    "domPickup": 145.0,
+    "intlDrop": 145.0,
+    "intlPickup": 150.0
+  },
+  {
+    "suburb": "Dawes Point",
+    "cityFare": 80.0,
+    "domDrop": 100.0,
+    "domPickup": 105.0,
+    "intlDrop": 100.0,
+    "intlPickup": 115.0
+  },
+  {
+    "suburb": "Dawes Point Ed (1 Toll)",
+    "cityFare": 80.0,
+    "domDrop": 100.0,
+    "domPickup": 110.0,
+    "intlDrop": 100.0,
+    "intlPickup": 120.0
+  },
+  {
+    "suburb": "Dean Park",
+    "cityFare": 160.0,
+    "domDrop": 180.0,
+    "domPickup": 185.0,
+    "intlDrop": 180.0,
+    "intlPickup": 185.0
+  },
+  {
+    "suburb": "Denham Court",
+    "cityFare": 175.0,
+    "domDrop": 160.0,
+    "domPickup": 165.0,
+    "intlDrop": 160.0,
+    "intlPickup": 165.0
+  },
+  {
+    "suburb": "Dharruk",
+    "cityFare": 175.0,
+    "domDrop": 180.0,
+    "domPickup": 185.0,
+    "intlDrop": 180.0,
+    "intlPickup": 185.0
+  },
+  {
+    "suburb": "Dolans Bay",
+    "cityFare": 140.0,
+    "domDrop": 120.0,
+    "domPickup": 125.0,
+    "intlDrop": 120.0,
+    "intlPickup": 130.0
+  },
+  {
+    "suburb": "Double Bay",
+    "cityFare": 85.0,
+    "domDrop": 105.0,
+    "domPickup": 110.0,
+    "intlDrop": 105.0,
+    "intlPickup": 120.0
+  },
+  {
+    "suburb": "Double Bay Ed X City",
+    "cityFare": 85.0,
+    "domDrop": 105.0,
+    "domPickup": 115.0,
+    "intlDrop": 105.0,
+    "intlPickup": 125.0
+  },
+  {
+    "suburb": "Dundas",
+    "cityFare": 115.0,
+    "domDrop": 135.0,
+    "domPickup": 140.0,
+    "intlDrop": 135.0,
+    "intlPickup": 140.0
+  },
+  {
+    "suburb": "Dundas Ed X City",
+    "cityFare": 115.0,
+    "domDrop": 140.0,
+    "domPickup": 155.0,
+    "intlDrop": 140.0,
+    "intlPickup": 155.0
+  },
+  {
+    "suburb": "Dundas M2 Lct Hb",
+    "cityFare": 130.0,
+    "domDrop": 150.0,
+    "domPickup": 155.0,
+    "intlDrop": 150.0,
+    "intlPickup": 160.0
+  },
+  {
+    "suburb": "Dundas M4 M8",
+    "cityFare": 120.0,
+    "domDrop": 140.0,
+    "domPickup": 145.0,
+    "intlDrop": 140.0,
+    "intlPickup": 145.0
+  },
+  {
+    "suburb": "Dundas Valley",
+    "cityFare": 115.0,
+    "domDrop": 135.0,
+    "domPickup": 140.0,
+    "intlDrop": 135.0,
+    "intlPickup": 140.0
+  },
+  {
+    "suburb": "Dundas Valley Ed X City",
+    "cityFare": 115.0,
+    "domDrop": 140.0,
+    "domPickup": 155.0,
+    "intlDrop": 140.0,
+    "intlPickup": 155.0
+  },
+  {
+    "suburb": "Dundas Valley M2 Lcd Hb",
+    "cityFare": 130.0,
+    "domDrop": 145.0,
+    "domPickup": 150.0,
+    "intlDrop": 145.0,
+    "intlPickup": 155.0
+  },
+  {
+    "suburb": "Dundas Valley M4 M8",
+    "cityFare": 120.0,
+    "domDrop": 140.0,
+    "domPickup": 145.0,
+    "intlDrop": 140.0,
+    "intlPickup": 145.0
+  },
+  {
+    "suburb": "Dural",
+    "cityFare": 150.0,
+    "domDrop": 170.0,
+    "domPickup": 175.0,
+    "intlDrop": 175.0,
+    "intlPickup": 180.0
+  },
+  {
+    "suburb": "Dural Round Corner",
+    "cityFare": 140.0,
+    "domDrop": 160.0,
+    "domPickup": 165.0,
+    "intlDrop": 165.0,
+    "intlPickup": 170.0
+  },
+  {
+    "suburb": "Eagle Vale",
+    "cityFare": 175.0,
+    "domDrop": 160.0,
+    "domPickup": 165.0,
+    "intlDrop": 160.0,
+    "intlPickup": 165.0
+  },
+  {
+    "suburb": "Earlwood",
+    "cityFare": 110.0,
+    "domDrop": 105.0,
+    "domPickup": 110.0,
+    "intlDrop": 100.0,
+    "intlPickup": 115.0
+  },
+  {
+    "suburb": "East Hills",
+    "cityFare": 150.0,
+    "domDrop": 125.0,
+    "domPickup": 130.0,
+    "intlDrop": 125.0,
+    "intlPickup": 135.0
+  },
+  {
+    "suburb": "East Killara",
+    "cityFare": 110.0,
+    "domDrop": 125.0,
+    "domPickup": 135.0,
+    "intlDrop": 125.0,
+    "intlPickup": 140.0
+  },
+  {
+    "suburb": "East Lindfield",
+    "cityFare": 110.0,
+    "domDrop": 125.0,
+    "domPickup": 135.0,
+    "intlDrop": 125.0,
+    "intlPickup": 140.0
+  },
+  {
+    "suburb": "East Roseville",
+    "cityFare": 100.0,
+    "domDrop": 120.0,
+    "domPickup": 130.0,
+    "intlDrop": 125.0,
+    "intlPickup": 140.0
+  },
+  {
+    "suburb": "East Ryde",
+    "cityFare": 100.0,
+    "domDrop": 120.0,
+    "domPickup": 130.0,
+    "intlDrop": 125.0,
+    "intlPickup": 140.0
+  },
+  {
+    "suburb": "East Sydney",
+    "cityFare": 80.0,
+    "domDrop": 95.0,
+    "domPickup": 105.0,
+    "intlDrop": 100.0,
+    "intlPickup": 115.0
+  },
+  {
+    "suburb": "East Sydney Ed",
+    "cityFare": 80.0,
+    "domDrop": 95.0,
+    "domPickup": 110.0,
+    "intlDrop": 100.0,
+    "intlPickup": 120.0
+  },
+  {
+    "suburb": "Eastern Creek M4 M8",
+    "cityFare": 165.0,
+    "domDrop": 170.0,
+    "domPickup": 175.0,
+    "intlDrop": 170.0,
+    "intlPickup": 175.0
+  },
+  {
+    "suburb": "Eastgardens",
+    "cityFare": 95.0,
+    "domDrop": 90.0,
+    "domPickup": 100.0,
+    "intlDrop": 95.0,
+    "intlPickup": 110.0
+  },
+  {
+    "suburb": "Eastgardens Ed",
+    "cityFare": 100.0,
+    "domDrop": 90.0,
+    "domPickup": 100.0,
+    "intlDrop": 95.0,
+    "intlPickup": 110.0
+  },
+  {
+    "suburb": "Eastlakes",
+    "cityFare": 90.0,
+    "domDrop": 85.0,
+    "domPickup": 95.0,
+    "intlDrop": 90.0,
+    "intlPickup": 110.0
+  },
+  {
+    "suburb": "Eastlakes Ed",
+    "cityFare": 100.0,
+    "domDrop": 85.0,
+    "domPickup": 95.0,
+    "intlDrop": 90.0,
+    "intlPickup": 110.0
+  },
+  {
+    "suburb": "Eastwood",
+    "cityFare": 110.0,
+    "domDrop": 130.0,
+    "domPickup": 135.0,
+    "intlDrop": 135.0,
+    "intlPickup": 140.0
+  },
+  {
+    "suburb": "Eastwood Lct Ed",
+    "cityFare": 115.0,
+    "domDrop": 135.0,
+    "domPickup": 150.0,
+    "intlDrop": 140.0,
+    "intlPickup": 155.0
+  },
+  {
+    "suburb": "Eastwood M4 M8",
+    "cityFare": 110.0,
+    "domDrop": 135.0,
+    "domPickup": 140.0,
+    "intlDrop": 140.0,
+    "intlPickup": 145.0
+  },
+  {
+    "suburb": "Edensor Park",
+    "cityFare": 170.0,
+    "domDrop": 155.0,
+    "domPickup": 160.0,
+    "intlDrop": 155.0,
+    "intlPickup": 160.0
+  },
+  {
+    "suburb": "Edmondson Park",
+    "cityFare": 165.0,
+    "domDrop": 150.0,
+    "domPickup": 155.0,
+    "intlDrop": 150.0,
+    "intlPickup": 155.0
+  },
+  {
+    "suburb": "Elanora Height",
+    "cityFare": 135.0,
+    "domDrop": 155.0,
+    "domPickup": 160.0,
+    "intlDrop": 155.0,
+    "intlPickup": 165.0
+  },
+  {
+    "suburb": "Elizabeth Bay",
+    "cityFare": 80.0,
+    "domDrop": 100.0,
+    "domPickup": 105.0,
+    "intlDrop": 105.0,
+    "intlPickup": 115.0
+  },
+  {
+    "suburb": "Elizabeth Bay Ed Or X City",
+    "cityFare": 85.0,
+    "domDrop": 100.0,
+    "domPickup": 110.0,
+    "intlDrop": 105.0,
+    "intlPickup": 120.0
+  },
+  {
+    "suburb": "Elizabeth Hills",
+    "cityFare": 180.0,
+    "domDrop": 155.0,
+    "domPickup": 160.0,
+    "intlDrop": 155.0,
+    "intlPickup": 160.0
+  },
+  {
+    "suburb": "Emu Plains M4 M8",
+    "cityFare": 195.0,
+    "domDrop": 190.0,
+    "domPickup": 200.0,
+    "intlDrop": 190.0,
+    "intlPickup": 200.0
+  },
+  {
+    "suburb": "Engadine",
+    "cityFare": 155.0,
+    "domDrop": 135.0,
+    "domPickup": 140.0,
+    "intlDrop": 135.0,
+    "intlPickup": 140.0
+  },
+  {
+    "suburb": "Englorie Park",
+    "cityFare": 195.0,
+    "domDrop": 175.0,
+    "domPickup": 180.0,
+    "intlDrop": 175.0,
+    "intlPickup": 180.0
+  },
+  {
+    "suburb": "Erskine Park M4 M8",
+    "cityFare": 170.0,
+    "domDrop": 175.0,
+    "domPickup": 180.0,
+    "intlDrop": 175.0,
+    "intlPickup": 185.0
+  },
+  {
+    "suburb": "Fairfield",
+    "cityFare": 150.0,
+    "domDrop": 150.0,
+    "domPickup": 155.0,
+    "intlDrop": 150.0,
+    "intlPickup": 155.0
+  },
+  {
+    "suburb": "Fairlight",
+    "cityFare": 115.0,
+    "domDrop": 130.0,
+    "domPickup": 140.0,
+    "intlDrop": 130.0,
+    "intlPickup": 145.0
+  },
+  {
+    "suburb": "Freshwater",
+    "cityFare": 120.0,
+    "domDrop": 140.0,
+    "domPickup": 145.0,
+    "intlDrop": 145.0,
+    "intlPickup": 150.0
+  },
+  {
+    "suburb": "Gables",
+    "cityFare": 170.0,
+    "domDrop": 185.0,
+    "domPickup": 190.0,
+    "intlDrop": 185.0,
+    "intlPickup": 195.0
+  },
+  {
+    "suburb": "Galston",
+    "cityFare": 155.0,
+    "domDrop": 175.0,
+    "domPickup": 180.0,
+    "intlDrop": 175.0,
+    "intlPickup": 185.0
+  },
+  {
+    "suburb": "Georges Hall",
+    "cityFare": 150.0,
+    "domDrop": 130.0,
+    "domPickup": 135.0,
+    "intlDrop": 130.0,
+    "intlPickup": 135.0
+  },
+  {
+    "suburb": "Girraween M4 M8",
+    "cityFare": 150.0,
+    "domDrop": 155.0,
+    "domPickup": 160.0,
+    "intlDrop": 155.0,
+    "intlPickup": 165.0
+  },
+  {
+    "suburb": "Gladsville",
+    "cityFare": 95.0,
+    "domDrop": 120.0,
+    "domPickup": 125.0,
+    "intlDrop": 125.0,
+    "intlPickup": 130.0
+  },
+  {
+    "suburb": "Gladsville Ed X City",
+    "cityFare": 95.0,
+    "domDrop": 125.0,
+    "domPickup": 140.0,
+    "intlDrop": 130.0,
+    "intlPickup": 145.0
+  },
+  {
+    "suburb": "Glen Alpine",
+    "cityFare": 195.0,
+    "domDrop": 175.0,
+    "domPickup": 180.0,
+    "intlDrop": 175.0,
+    "intlPickup": 180.0
+  },
+  {
+    "suburb": "Glenhaven",
+    "cityFare": 145.0,
+    "domDrop": 160.0,
+    "domPickup": 165.0,
+    "intlDrop": 165.0,
+    "intlPickup": 170.0
+  },
+  {
+    "suburb": "Glenmore Park M4 - M8",
+    "cityFare": 190.0,
+    "domDrop": 190.0,
+    "domPickup": 195.0,
+    "intlDrop": 190.0,
+    "intlPickup": 195.0
+  },
+  {
+    "suburb": "Granville M4 M8",
+    "cityFare": 125.0,
+    "domDrop": 145.0,
+    "domPickup": 150.0,
+    "intlDrop": 145.0,
+    "intlPickup": 155.0
+  },
+  {
+    "suburb": "Grassmere",
+    "cityFare": 220.0,
+    "domDrop": 195.0,
+    "domPickup": 200.0,
+    "intlDrop": 195.0,
+    "intlPickup": 200.0
+  },
+  {
+    "suburb": "Green Valley",
+    "cityFare": 170.0,
+    "domDrop": 155.0,
+    "domPickup": 160.0,
+    "intlDrop": 155.0,
+    "intlPickup": 160.0
+  },
+  {
+    "suburb": "Greenacre M4 M5 Ed",
+    "cityFare": 120.0,
+    "domDrop": 120.0,
+    "domPickup": 125.0,
+    "intlDrop": 120.0,
+    "intlPickup": 125.0
+  },
+  {
+    "suburb": "Greendale",
+    "cityFare": 185.0,
+    "domDrop": 175.0,
+    "domPickup": 180.0,
+    "intlDrop": 175.0,
+    "intlPickup": 180.0
+  },
+  {
+    "suburb": "Greenfield Park",
+    "cityFare": 170.0,
+    "domDrop": 155.0,
+    "domPickup": 160.0,
+    "intlDrop": 155.0,
+    "intlPickup": 160.0
+  },
+  {
+    "suburb": "Greystanes",
+    "cityFare": 150.0,
+    "domDrop": 155.0,
+    "domPickup": 160.0,
+    "intlDrop": 155.0,
+    "intlPickup": 160.0
+  },
+  {
+    "suburb": "Gymea",
+    "cityFare": 140.0,
+    "domDrop": 120.0,
+    "domPickup": 125.0,
+    "intlDrop": 120.0,
+    "intlPickup": 125.0
+  },
+  {
+    "suburb": "Gymea Bay",
+    "cityFare": 145.0,
+    "domDrop": 125.0,
+    "domPickup": 130.0,
+    "intlDrop": 125.0,
+    "intlPickup": 130.0
+  },
+  {
+    "suburb": "Haberfield",
+    "cityFare": 95.0,
+    "domDrop": 110.0,
+    "domPickup": 115.0,
+    "intlDrop": 110.0,
+    "intlPickup": 120.0
+  },
+  {
+    "suburb": "Haberfield M8",
+    "cityFare": 95.0,
+    "domDrop": 115.0,
+    "domPickup": 120.0,
+    "intlDrop": 115.0,
+    "intlPickup": 125.0
+  },
+  {
+    "suburb": "Hammondville",
+    "cityFare": 150.0,
+    "domDrop": 135.0,
+    "domPickup": 140.0,
+    "intlDrop": 135.0,
+    "intlPickup": 140.0
+  },
+  {
+    "suburb": "Harboard",
+    "cityFare": 120.0,
+    "domDrop": 140.0,
+    "domPickup": 145.0,
+    "intlDrop": 145.0,
+    "intlPickup": 150.0
+  },
+  {
+    "suburb": "Harrington Park",
+    "cityFare": 190.0,
+    "domDrop": 175.0,
+    "domPickup": 180.0,
+    "intlDrop": 175.0,
+    "intlPickup": 180.0
+  },
+  {
+    "suburb": "Harris Park M4 M8",
+    "cityFare": 125.0,
+    "domDrop": 145.0,
+    "domPickup": 150.0,
+    "intlDrop": 145.0,
+    "intlPickup": 155.0
+  },
+  {
+    "suburb": "Hassall Grove",
+    "cityFare": 165.0,
+    "domDrop": 180.0,
+    "domPickup": 185.0,
+    "intlDrop": 180.0,
+    "intlPickup": 185.0
+  },
+  {
+    "suburb": "Haymarket",
+    "cityFare": 80.0,
+    "domDrop": 95.0,
+    "domPickup": 105.0,
+    "intlDrop": 100.0,
+    "intlPickup": 115.0
+  },
+  {
+    "suburb": "Heathcote",
+    "cityFare": 160.0,
+    "domDrop": 135.0,
+    "domPickup": 140.0,
+    "intlDrop": 135.0,
+    "intlPickup": 140.0
+  },
+  {
+    "suburb": "Hillsdale Ed",
+    "cityFare": 105.0,
+    "domDrop": 90.0,
+    "domPickup": 100.0,
+    "intlDrop": 90.0,
+    "intlPickup": 110.0
+  },
+  {
+    "suburb": "Horsley Park",
+    "cityFare": 170.0,
+    "domDrop": 170.0,
+    "domPickup": 175.0,
+    "intlDrop": 170.0,
+    "intlPickup": 175.0
+  },
+  {
+    "suburb": "Hoxton Park",
+    "cityFare": 165.0,
+    "domDrop": 150.0,
+    "domPickup": 155.0,
+    "intlDrop": 150.0,
+    "intlPickup": 155.0
+  },
+  {
+    "suburb": "Hurlstone Park",
+    "cityFare": 100.0,
+    "domDrop": 100.0,
+    "domPickup": 105.0,
+    "intlDrop": 100.0,
+    "intlPickup": 115.0
+  },
+  {
+    "suburb": "Illawong M5 M5E Ed",
+    "cityFare": 160.0,
+    "domDrop": 130.0,
+    "domPickup": 135.0,
+    "intlDrop": 130.0,
+    "intlPickup": 135.0
+  },
+  {
+    "suburb": "Jamisontown",
+    "cityFare": 185.0,
+    "domDrop": 185.0,
+    "domPickup": 195.0,
+    "intlDrop": 185.0,
+    "intlPickup": 195.0
+  },
+  {
+    "suburb": "Jannali",
+    "cityFare": 140.0,
+    "domDrop": 120.0,
+    "domPickup": 125.0,
+    "intlDrop": 120.0,
+    "intlPickup": 125.0
+  },
+  {
+    "suburb": "Kangaroo Point",
+    "cityFare": 130.0,
+    "domDrop": 115.0,
+    "domPickup": 120.0,
+    "intlDrop": 115.0,
+    "intlPickup": 125.0
+  },
+  {
+    "suburb": "Kareela",
+    "cityFare": 135.0,
+    "domDrop": 120.0,
+    "domPickup": 125.0,
+    "intlDrop": 120.0,
+    "intlPickup": 125.0
+  },
+  {
+    "suburb": "Katoomba",
+    "cityFare": 0.0,
+    "domDrop": 335.0,
+    "domPickup": 345.0,
+    "intlDrop": 335.0,
+    "intlPickup": 350.0
+  },
+  {
+    "suburb": "Katoomba M4 M8",
+    "cityFare": 310.0,
+    "domDrop": 315.0,
+    "domPickup": 325.0,
+    "intlDrop": 315.0,
+    "intlPickup": 330.0
+  },
+  {
+    "suburb": "Kearns",
+    "cityFare": 175.0,
+    "domDrop": 160.0,
+    "domPickup": 165.0,
+    "intlDrop": 160.0,
+    "intlPickup": 165.0
+  },
+  {
+    "suburb": "Kiama",
+    "cityFare": 355.0,
+    "domDrop": 325.0,
+    "domPickup": 335.0,
+    "intlDrop": 325.0,
+    "intlPickup": 340.0
+  },
+  {
+    "suburb": "Killara",
+    "cityFare": 105.0,
+    "domDrop": 125.0,
+    "domPickup": 135.0,
+    "intlDrop": 125.0,
+    "intlPickup": 140.0
+  },
+  {
+    "suburb": "Killarney Heights",
+    "cityFare": 115.0,
+    "domDrop": 135.0,
+    "domPickup": 140.0,
+    "intlDrop": 140.0,
+    "intlPickup": 145.0
+  },
+  {
+    "suburb": "Kings Langley M2 Lct Ed",
+    "cityFare": 145.0,
+    "domDrop": 160.0,
+    "domPickup": 165.0,
+    "intlDrop": 165.0,
+    "intlPickup": 175.0
+  },
+  {
+    "suburb": "Kings Langley M4 M8",
+    "cityFare": 145.0,
+    "domDrop": 155.0,
+    "domPickup": 160.0,
+    "intlDrop": 160.0,
+    "intlPickup": 170.0
+  },
+  {
+    "suburb": "Kings Park M2 Lct Ed",
+    "cityFare": 150.0,
+    "domDrop": 175.0,
+    "domPickup": 180.0,
+    "intlDrop": 175.0,
+    "intlPickup": 185.0
+  },
+  {
+    "suburb": "Kings Park M4 M8",
+    "cityFare": 150.0,
+    "domDrop": 165.0,
+    "domPickup": 170.0,
+    "intlDrop": 165.0,
+    "intlPickup": 175.0
+  },
+  {
+    "suburb": "Kirrawee",
+    "cityFare": 135.0,
+    "domDrop": 120.0,
+    "domPickup": 125.0,
+    "intlDrop": 120.0,
+    "intlPickup": 125.0
+  },
+  {
+    "suburb": "Kogarah",
+    "cityFare": 115.0,
+    "domDrop": 100.0,
+    "domPickup": 105.0,
+    "intlDrop": 95.0,
+    "intlPickup": 105.0
+  },
+  {
+    "suburb": "Kograh Bay",
+    "cityFare": 120.0,
+    "domDrop": 105.0,
+    "domPickup": 110.0,
+    "intlDrop": 105.0,
+    "intlPickup": 115.0
+  },
+  {
+    "suburb": "Kurraba Point",
+    "cityFare": 85.0,
+    "domDrop": 110.0,
+    "domPickup": 120.0,
+    "intlDrop": 115.0,
+    "intlPickup": 125.0
+  },
+  {
+    "suburb": "Kurrajong",
+    "cityFare": 210.0,
+    "domDrop": 215.0,
+    "domPickup": 220.0,
+    "intlDrop": 215.0,
+    "intlPickup": 220.0
+  },
+  {
+    "suburb": "Kyeemagh",
+    "cityFare": 110.0,
+    "domDrop": 85.0,
+    "domPickup": 95.0,
+    "intlDrop": 85.0,
+    "intlPickup": 105.0
+  },
+  {
+    "suburb": "La Perouse Ed",
+    "cityFare": 110.0,
+    "domDrop": 95.0,
+    "domPickup": 105.0,
+    "intlDrop": 95.0,
+    "intlPickup": 110.0
+  },
+  {
+    "suburb": "Lakemba",
+    "cityFare": 110.0,
+    "domDrop": 110.0,
+    "domPickup": 115.0,
+    "intlDrop": 110.0,
+    "intlPickup": 115.0
+  },
+  {
+    "suburb": "Lakemba M5 Ed",
+    "cityFare": 125.0,
+    "domDrop": 115.0,
+    "domPickup": 120.0,
+    "intlDrop": 115.0,
+    "intlPickup": 120.0
+  },
+  {
+    "suburb": "Lalor Park M2 Lct Ed",
+    "cityFare": 145.0,
+    "domDrop": 160.0,
+    "domPickup": 165.0,
+    "intlDrop": 165.0,
+    "intlPickup": 175.0
+  },
+  {
+    "suburb": "Lalor Park M4 M8",
+    "cityFare": 145.0,
+    "domDrop": 155.0,
+    "domPickup": 160.0,
+    "intlDrop": 160.0,
+    "intlPickup": 170.0
+  },
+  {
+    "suburb": "Lane Cove",
+    "cityFare": 100.0,
+    "domDrop": 120.0,
+    "domPickup": 125.0,
+    "intlDrop": 120.0,
+    "intlPickup": 135.0
+  },
+  {
+    "suburb": "Lane Cove North",
+    "cityFare": 100.0,
+    "domDrop": 120.0,
+    "domPickup": 125.0,
+    "intlDrop": 120.0,
+    "intlPickup": 135.0
+  },
+  {
+    "suburb": "Lane Cove West",
+    "cityFare": 100.0,
+    "domDrop": 120.0,
+    "domPickup": 125.0,
+    "intlDrop": 120.0,
+    "intlPickup": 135.0
+  },
+  {
+    "suburb": "Lansvale",
+    "cityFare": 155.0,
+    "domDrop": 140.0,
+    "domPickup": 145.0,
+    "intlDrop": 140.0,
+    "intlPickup": 145.0
+  },
+  {
+    "suburb": "Lapstone",
+    "cityFare": 195.0,
+    "domDrop": 190.0,
+    "domPickup": 200.0,
+    "intlDrop": 190.0,
+    "intlPickup": 200.0
+  },
+  {
+    "suburb": "Lavender Bay",
+    "cityFare": 85.0,
+    "domDrop": 105.0,
+    "domPickup": 115.0,
+    "intlDrop": 110.0,
+    "intlPickup": 125.0
+  },
+  {
+    "suburb": "Leichhardt",
+    "cityFare": 95.0,
+    "domDrop": 105.0,
+    "domPickup": 110.0,
+    "intlDrop": 105.0,
+    "intlPickup": 115.0
+  },
+  {
+    "suburb": "Leichhardt Ed X City",
+    "cityFare": 95.0,
+    "domDrop": 110.0,
+    "domPickup": 125.0,
+    "intlDrop": 110.0,
+    "intlPickup": 130.0
+  },
+  {
+    "suburb": "Leichhardt M8",
+    "cityFare": 95.0,
+    "domDrop": 110.0,
+    "domPickup": 115.0,
+    "intlDrop": 110.0,
+    "intlPickup": 120.0
+  },
+  {
+    "suburb": "Leonay",
+    "cityFare": 195.0,
+    "domDrop": 190.0,
+    "domPickup": 200.0,
+    "intlDrop": 190.0,
+    "intlPickup": 200.0
+  },
+  {
+    "suburb": "Leumeah",
+    "cityFare": 190.0,
+    "domDrop": 170.0,
+    "domPickup": 175.0,
+    "intlDrop": 170.0,
+    "intlPickup": 175.0
+  },
+  {
+    "suburb": "Leura M4 M8",
+    "cityFare": 305.0,
+    "domDrop": 310.0,
+    "domPickup": 320.0,
+    "intlDrop": 310.0,
+    "intlPickup": 325.0
+  },
+  {
+    "suburb": "Leura M5 M7",
+    "cityFare": 0.0,
+    "domDrop": 330.0,
+    "domPickup": 340.0,
+    "intlDrop": 330.0,
+    "intlPickup": 345.0
+  },
+  {
+    "suburb": "Lewisham",
+    "cityFare": 95.0,
+    "domDrop": 95.0,
+    "domPickup": 105.0,
+    "intlDrop": 95.0,
+    "intlPickup": 115.0
+  },
+  {
+    "suburb": "Little Bay Ed",
+    "cityFare": 110.0,
+    "domDrop": 95.0,
+    "domPickup": 105.0,
+    "intlDrop": 95.0,
+    "intlPickup": 110.0
+  },
+  {
+    "suburb": "Lucas Height",
+    "cityFare": 160.0,
+    "domDrop": 140.0,
+    "domPickup": 145.0,
+    "intlDrop": 140.0,
+    "intlPickup": 145.0
+  },
+  {
+    "suburb": "Lugarno",
+    "cityFare": 130.0,
+    "domDrop": 110.0,
+    "domPickup": 115.0,
+    "intlDrop": 110.0,
+    "intlPickup": 120.0
+  },
+  {
+    "suburb": "Lugarno M5 Ed",
+    "cityFare": 150.0,
+    "domDrop": 120.0,
+    "domPickup": 125.0,
+    "intlDrop": 120.0,
+    "intlPickup": 130.0
+  },
+  {
+    "suburb": "Lurnea",
+    "cityFare": 165.0,
+    "domDrop": 150.0,
+    "domPickup": 155.0,
+    "intlDrop": 150.0,
+    "intlPickup": 155.0
+  },
+  {
+    "suburb": "Macdonaldtown",
+    "cityFare": 90.0,
+    "domDrop": 90.0,
+    "domPickup": 100.0,
+    "intlDrop": 90.0,
+    "intlPickup": 110.0
+  },
+  {
+    "suburb": "Macquarie Fields",
+    "cityFare": 170.0,
+    "domDrop": 155.0,
+    "domPickup": 160.0,
+    "intlDrop": 155.0,
+    "intlPickup": 160.0
+  },
+  {
+    "suburb": "Macquarie Links",
+    "cityFare": 170.0,
+    "domDrop": 155.0,
+    "domPickup": 160.0,
+    "intlDrop": 155.0,
+    "intlPickup": 160.0
+  },
+  {
+    "suburb": "Macquarie Park",
+    "cityFare": 100.0,
+    "domDrop": 125.0,
+    "domPickup": 135.0,
+    "intlDrop": 125.0,
+    "intlPickup": 140.0
+  },
+  {
+    "suburb": "Macquarie Park M2 Ramp",
+    "cityFare": 105.0,
+    "domDrop": 130.0,
+    "domPickup": 140.0,
+    "intlDrop": 130.0,
+    "intlPickup": 145.0
+  },
+  {
+    "suburb": "Malabar Ed",
+    "cityFare": 110.0,
+    "domDrop": 95.0,
+    "domPickup": 105.0,
+    "intlDrop": 100.0,
+    "intlPickup": 115.0
+  },
+  {
+    "suburb": "Manly",
+    "cityFare": 115.0,
+    "domDrop": 135.0,
+    "domPickup": 140.0,
+    "intlDrop": 135.0,
+    "intlPickup": 145.0
+  },
+  {
+    "suburb": "Manly Vale",
+    "cityFare": 115.0,
+    "domDrop": 135.0,
+    "domPickup": 140.0,
+    "intlDrop": 135.0,
+    "intlPickup": 145.0
+  },
+  {
+    "suburb": "Maraylya",
+    "cityFare": 175.0,
+    "domDrop": 190.0,
+    "domPickup": 195.0,
+    "intlDrop": 190.0,
+    "intlPickup": 200.0
+  },
+  {
+    "suburb": "Marayong M2",
+    "cityFare": 150.0,
+    "domDrop": 175.0,
+    "domPickup": 180.0,
+    "intlDrop": 175.0,
+    "intlPickup": 185.0
+  },
+  {
+    "suburb": "Marayong M4 M8",
+    "cityFare": 150.0,
+    "domDrop": 165.0,
+    "domPickup": 175.0,
+    "intlDrop": 165.0,
+    "intlPickup": 175.0
+  },
+  {
+    "suburb": "Maroota",
+    "cityFare": 190.0,
+    "domDrop": 205.0,
+    "domPickup": 210.0,
+    "intlDrop": 205.0,
+    "intlPickup": 210.0
+  },
+  {
+    "suburb": "Maroubra",
+    "cityFare": 105.0,
+    "domDrop": 95.0,
+    "domPickup": 105.0,
+    "intlDrop": 100.0,
+    "intlPickup": 115.0
+  },
+  {
+    "suburb": "Marrickville",
+    "cityFare": 100.0,
+    "domDrop": 95.0,
+    "domPickup": 105.0,
+    "intlDrop": 95.0,
+    "intlPickup": 110.0
+  },
+  {
+    "suburb": "Marsden Park",
+    "cityFare": 170.0,
+    "domDrop": 185.0,
+    "domPickup": 190.0,
+    "intlDrop": 185.0,
+    "intlPickup": 190.0
+  },
+  {
+    "suburb": "Marsfield",
+    "cityFare": 105.0,
+    "domDrop": 130.0,
+    "domPickup": 140.0,
+    "intlDrop": 130.0,
+    "intlPickup": 145.0
+  },
+  {
+    "suburb": "Marsfield M2",
+    "cityFare": 110.0,
+    "domDrop": 135.0,
+    "domPickup": 145.0,
+    "intlDrop": 135.0,
+    "intlPickup": 150.0
+  },
+  {
+    "suburb": "Mascot Via Ed",
+    "cityFare": 105.0,
+    "domDrop": 80.0,
+    "domPickup": 95.0,
+    "intlDrop": 80.0,
+    "intlPickup": 100.0
+  },
+  {
+    "suburb": "Mascot No Tolls",
+    "cityFare": 95.0,
+    "domDrop": 80.0,
+    "domPickup": 95.0,
+    "intlDrop": 80.0,
+    "intlPickup": 100.0
+  },
+  {
+    "suburb": "Matraville Ed",
+    "cityFare": 110.0,
+    "domDrop": 95.0,
+    "domPickup": 105.0,
+    "intlDrop": 100.0,
+    "intlPickup": 115.0
+  },
+  {
+    "suburb": "Mcgrath Hills",
+    "cityFare": 170.0,
+    "domDrop": 185.0,
+    "domPickup": 190.0,
+    "intlDrop": 190.0,
+    "intlPickup": 195.0
+  },
+  {
+    "suburb": "Mcmohans Point",
+    "cityFare": 85.0,
+    "domDrop": 105.0,
+    "domPickup": 115.0,
+    "intlDrop": 110.0,
+    "intlPickup": 125.0
+  },
+  {
+    "suburb": "Meadowbank",
+    "cityFare": 105.0,
+    "domDrop": 125.0,
+    "domPickup": 130.0,
+    "intlDrop": 125.0,
+    "intlPickup": 130.0
+  },
+  {
+    "suburb": "Meadowbank Ed X City",
+    "cityFare": 105.0,
+    "domDrop": 130.0,
+    "domPickup": 145.0,
+    "intlDrop": 130.0,
+    "intlPickup": 150.0
+  },
+  {
+    "suburb": "Meadowbank M4 M8",
+    "cityFare": 105.0,
+    "domDrop": 130.0,
+    "domPickup": 135.0,
+    "intlDrop": 130.0,
+    "intlPickup": 135.0
+  },
+  {
+    "suburb": "Melonba",
+    "cityFare": 170.0,
+    "domDrop": 185.0,
+    "domPickup": 190.0,
+    "intlDrop": 185.0,
+    "intlPickup": 190.0
+  },
+  {
+    "suburb": "Melrose Park",
+    "cityFare": 110.0,
+    "domDrop": 125.0,
+    "domPickup": 130.0,
+    "intlDrop": 125.0,
+    "intlPickup": 130.0
+  },
+  {
+    "suburb": "Melrose Park Ed X City",
+    "cityFare": 110.0,
+    "domDrop": 130.0,
+    "domPickup": 145.0,
+    "intlDrop": 130.0,
+    "intlPickup": 150.0
+  },
+  {
+    "suburb": "Melrose Park M4 M8",
+    "cityFare": 110.0,
+    "domDrop": 130.0,
+    "domPickup": 135.0,
+    "intlDrop": 130.0,
+    "intlPickup": 135.0
+  },
+  {
+    "suburb": "Menai M5 M5E Ed",
+    "cityFare": 160.0,
+    "domDrop": 130.0,
+    "domPickup": 135.0,
+    "intlDrop": 130.0,
+    "intlPickup": 135.0
+  },
+  {
+    "suburb": "Menangle Park",
+    "cityFare": 200.0,
+    "domDrop": 180.0,
+    "domPickup": 185.0,
+    "intlDrop": 180.0,
+    "intlPickup": 185.0
+  },
+  {
+    "suburb": "Merrylands M4 M8",
+    "cityFare": 130.0,
+    "domDrop": 145.0,
+    "domPickup": 150.0,
+    "intlDrop": 145.0,
+    "intlPickup": 155.0
+  },
+  {
+    "suburb": "Merrylands West M4 M8",
+    "cityFare": 130.0,
+    "domDrop": 145.0,
+    "domPickup": 150.0,
+    "intlDrop": 145.0,
+    "intlPickup": 155.0
+  },
+  {
+    "suburb": "Middle Dural",
+    "cityFare": 160.0,
+    "domDrop": 180.0,
+    "domPickup": 185.0,
+    "intlDrop": 180.0,
+    "intlPickup": 190.0
+  },
+  {
+    "suburb": "Middleton Grange",
+    "cityFare": 170.0,
+    "domDrop": 155.0,
+    "domPickup": 160.0,
+    "intlDrop": 155.0,
+    "intlPickup": 160.0
+  },
+  {
+    "suburb": "Milperra",
+    "cityFare": 145.0,
+    "domDrop": 120.0,
+    "domPickup": 125.0,
+    "intlDrop": 120.0,
+    "intlPickup": 130.0
+  },
+  {
+    "suburb": "Minto East",
+    "cityFare": 175.0,
+    "domDrop": 160.0,
+    "domPickup": 165.0,
+    "intlDrop": 160.0,
+    "intlPickup": 165.0
+  },
+  {
+    "suburb": "Miranda",
+    "cityFare": 130.0,
+    "domDrop": 115.0,
+    "domPickup": 120.0,
+    "intlDrop": 115.0,
+    "intlPickup": 125.0
+  },
+  {
+    "suburb": "Mona Vale",
+    "cityFare": 150.0,
+    "domDrop": 165.0,
+    "domPickup": 170.0,
+    "intlDrop": 165.0,
+    "intlPickup": 175.0
+  },
+  {
+    "suburb": "Moore Park",
+    "cityFare": 95.0,
+    "domDrop": 95.0,
+    "domPickup": 105.0,
+    "intlDrop": 100.0,
+    "intlPickup": 115.0
+  },
+  {
+    "suburb": "Moorebank",
+    "cityFare": 150.0,
+    "domDrop": 135.0,
+    "domPickup": 140.0,
+    "intlDrop": 135.0,
+    "intlPickup": 140.0
+  },
+  {
+    "suburb": "Mortdale",
+    "cityFare": 125.0,
+    "domDrop": 110.0,
+    "domPickup": 115.0,
+    "intlDrop": 110.0,
+    "intlPickup": 120.0
+  },
+  {
+    "suburb": "Mortdale M5 Ed",
+    "cityFare": 140.0,
+    "domDrop": 115.0,
+    "domPickup": 120.0,
+    "intlDrop": 115.0,
+    "intlPickup": 125.0
+  },
+  {
+    "suburb": "Mortlake",
+    "cityFare": 105.0,
+    "domDrop": 120.0,
+    "domPickup": 125.0,
+    "intlDrop": 120.0,
+    "intlPickup": 130.0
+  },
+  {
+    "suburb": "Mortlake M4 M8",
+    "cityFare": 110.0,
+    "domDrop": 125.0,
+    "domPickup": 130.0,
+    "intlDrop": 125.0,
+    "intlPickup": 135.0
+  },
+  {
+    "suburb": "Mosman",
+    "cityFare": 100.0,
+    "domDrop": 120.0,
+    "domPickup": 125.0,
+    "intlDrop": 125.0,
+    "intlPickup": 135.0
+  },
+  {
+    "suburb": "Moss Vale M5 M5E Ed",
+    "cityFare": 395.0,
+    "domDrop": 360.0,
+    "domPickup": 370.0,
+    "intlDrop": 360.0,
+    "intlPickup": 375.0
+  },
+  {
+    "suburb": "Mount Annan",
+    "cityFare": 190.0,
+    "domDrop": 170.0,
+    "domPickup": 175.0,
+    "intlDrop": 170.0,
+    "intlPickup": 175.0
+  },
+  {
+    "suburb": "Mount Colah",
+    "cityFare": 140.0,
+    "domDrop": 160.0,
+    "domPickup": 165.0,
+    "intlDrop": 165.0,
+    "intlPickup": 170.0
+  },
+  {
+    "suburb": "Mount Colah North Connex",
+    "cityFare": 160.0,
+    "domDrop": 180.0,
+    "domPickup": 185.0,
+    "intlDrop": 185.0,
+    "intlPickup": 190.0
+  },
+  {
+    "suburb": "Mount Kuring-Gai",
+    "cityFare": 145.0,
+    "domDrop": 165.0,
+    "domPickup": 170.0,
+    "intlDrop": 170.0,
+    "intlPickup": 175.0
+  },
+  {
+    "suburb": "Mount Kuring-Gai North Connex",
+    "cityFare": 165.0,
+    "domDrop": 185.0,
+    "domPickup": 190.0,
+    "intlDrop": 190.0,
+    "intlPickup": 195.0
+  },
+  {
+    "suburb": "Mount Pritchard",
+    "cityFare": 165.0,
+    "domDrop": 150.0,
+    "domPickup": 155.0,
+    "intlDrop": 150.0,
+    "intlPickup": 155.0
+  },
+  {
+    "suburb": "Mount Victoria",
+    "cityFare": 0.0,
+    "domDrop": 375.0,
+    "domPickup": 385.0,
+    "intlDrop": 375.0,
+    "intlPickup": 390.0
+  },
+  {
+    "suburb": "Mount Victoria M4 M8",
+    "cityFare": 350.0,
+    "domDrop": 355.0,
+    "domPickup": 365.0,
+    "intlDrop": 355.0,
+    "intlPickup": 370.0
+  },
+  {
+    "suburb": "Mulgoa",
+    "cityFare": 200.0,
+    "domDrop": 195.0,
+    "domPickup": 200.0,
+    "intlDrop": 195.0,
+    "intlPickup": 200.0
+  },
+  {
+    "suburb": "Mulgrave",
+    "cityFare": 185.0,
+    "domDrop": 195.0,
+    "domPickup": 200.0,
+    "intlDrop": 195.0,
+    "intlPickup": 200.0
+  },
+  {
+    "suburb": "Narellan",
+    "cityFare": 190.0,
+    "domDrop": 175.0,
+    "domPickup": 180.0,
+    "intlDrop": 175.0,
+    "intlPickup": 180.0
+  },
+  {
+    "suburb": "Narellan Vale",
+    "cityFare": 190.0,
+    "domDrop": 170.0,
+    "domPickup": 175.0,
+    "intlDrop": 170.0,
+    "intlPickup": 175.0
+  },
+  {
+    "suburb": "Naremburn",
+    "cityFare": 90.0,
+    "domDrop": 110.0,
+    "domPickup": 120.0,
+    "intlDrop": 115.0,
+    "intlPickup": 130.0
+  },
+  {
+    "suburb": "Narrabeen",
+    "cityFare": 135.0,
+    "domDrop": 155.0,
+    "domPickup": 160.0,
+    "intlDrop": 155.0,
+    "intlPickup": 165.0
+  },
+  {
+    "suburb": "Narraweena",
+    "cityFare": 125.0,
+    "domDrop": 145.0,
+    "domPickup": 150.0,
+    "intlDrop": 150.0,
+    "intlPickup": 155.0
+  },
+  {
+    "suburb": "Narwee",
+    "cityFare": 120.0,
+    "domDrop": 105.0,
+    "domPickup": 110.0,
+    "intlDrop": 105.0,
+    "intlPickup": 115.0
+  },
+  {
+    "suburb": "Narwee M5 Ed",
+    "cityFare": 135.0,
+    "domDrop": 110.0,
+    "domPickup": 115.0,
+    "intlDrop": 110.0,
+    "intlPickup": 120.0
+  },
+  {
+    "suburb": "Neutral Bay",
+    "cityFare": 90.0,
+    "domDrop": 110.0,
+    "domPickup": 120.0,
+    "intlDrop": 115.0,
+    "intlPickup": 125.0
+  },
+  {
+    "suburb": "Newcastle",
+    "cityFare": 460.0,
+    "domDrop": 480.0,
+    "domPickup": 490.0,
+    "intlDrop": 480.0,
+    "intlPickup": 500.0
+  },
+  {
+    "suburb": "Newcastle M2 North Conx",
+    "cityFare": 485.0,
+    "domDrop": 505.0,
+    "domPickup": 515.0,
+    "intlDrop": 505.0,
+    "intlPickup": 525.0
+  },
+  {
+    "suburb": "Normanhust Via M2",
+    "cityFare": 140.0,
+    "domDrop": 155.0,
+    "domPickup": 165.0,
+    "intlDrop": 160.0,
+    "intlPickup": 170.0
+  },
+  {
+    "suburb": "Normanhust Via Pacific",
+    "cityFare": 130.0,
+    "domDrop": 145.0,
+    "domPickup": 150.0,
+    "intlDrop": 150.0,
+    "intlPickup": 160.0
+  },
+  {
+    "suburb": "North Balgowlah",
+    "cityFare": 115.0,
+    "domDrop": 130.0,
+    "domPickup": 140.0,
+    "intlDrop": 130.0,
+    "intlPickup": 145.0
+  },
+  {
+    "suburb": "North Bondi Via Ed X City",
+    "cityFare": 105.0,
+    "domDrop": 110.0,
+    "domPickup": 120.0,
+    "intlDrop": 110.0,
+    "intlPickup": 130.0
+  },
+  {
+    "suburb": "North Epping Mac Uni M2",
+    "cityFare": 115.0,
+    "domDrop": 135.0,
+    "domPickup": 145.0,
+    "intlDrop": 140.0,
+    "intlPickup": 150.0
+  },
+  {
+    "suburb": "North Epping Via M2 Beecroft Exit",
+    "cityFare": 125.0,
+    "domDrop": 145.0,
+    "domPickup": 155.0,
+    "intlDrop": 150.0,
+    "intlPickup": 160.0
+  },
+  {
+    "suburb": "North Manly",
+    "cityFare": 115.0,
+    "domDrop": 135.0,
+    "domPickup": 140.0,
+    "intlDrop": 135.0,
+    "intlPickup": 145.0
+  },
+  {
+    "suburb": "North Narrabeen",
+    "cityFare": 135.0,
+    "domDrop": 155.0,
+    "domPickup": 160.0,
+    "intlDrop": 155.0,
+    "intlPickup": 165.0
+  },
+  {
+    "suburb": "North Parramatta",
+    "cityFare": 120.0,
+    "domDrop": 135.0,
+    "domPickup": 140.0,
+    "intlDrop": 135.0,
+    "intlPickup": 145.0
+  },
+  {
+    "suburb": "North Parramatta M2 Lct Ed",
+    "cityFare": 135.0,
+    "domDrop": 155.0,
+    "domPickup": 160.0,
+    "intlDrop": 160.0,
+    "intlPickup": 170.0
+  },
+  {
+    "suburb": "North Parramatta M4 M8",
+    "cityFare": 125.0,
+    "domDrop": 145.0,
+    "domPickup": 150.0,
+    "intlDrop": 145.0,
+    "intlPickup": 150.0
+  },
+  {
+    "suburb": "North Ryde M2 Ramp",
+    "cityFare": 105.0,
+    "domDrop": 130.0,
+    "domPickup": 140.0,
+    "intlDrop": 130.0,
+    "intlPickup": 145.0
+  },
+  {
+    "suburb": "North Strathfield",
+    "cityFare": 105.0,
+    "domDrop": 115.0,
+    "domPickup": 120.0,
+    "intlDrop": 120.0,
+    "intlPickup": 125.0
+  },
+  {
+    "suburb": "North Strathfield M8",
+    "cityFare": 110.0,
+    "domDrop": 120.0,
+    "domPickup": 125.0,
+    "intlDrop": 125.0,
+    "intlPickup": 130.0
+  },
+  {
+    "suburb": "North Turramurra",
+    "cityFare": 125.0,
+    "domDrop": 140.0,
+    "domPickup": 150.0,
+    "intlDrop": 145.0,
+    "intlPickup": 155.0
+  },
+  {
+    "suburb": "North Wahroonga",
+    "cityFare": 130.0,
+    "domDrop": 145.0,
+    "domPickup": 155.0,
+    "intlDrop": 150.0,
+    "intlPickup": 160.0
+  },
+  {
+    "suburb": "Northmead M2 Lct Ed",
+    "cityFare": 140.0,
+    "domDrop": 160.0,
+    "domPickup": 165.0,
+    "intlDrop": 165.0,
+    "intlPickup": 170.0
+  },
+  {
+    "suburb": "Northmead M4 M8",
+    "cityFare": 130.0,
+    "domDrop": 145.0,
+    "domPickup": 150.0,
+    "intlDrop": 145.0,
+    "intlPickup": 155.0
+  },
+  {
+    "suburb": "Nowra",
+    "cityFare": 460.0,
+    "domDrop": 430.0,
+    "domPickup": 440.0,
+    "intlDrop": 430.0,
+    "intlPickup": 445.0
+  },
+  {
+    "suburb": "Oakhurst",
+    "cityFare": 165.0,
+    "domDrop": 180.0,
+    "domPickup": 185.0,
+    "intlDrop": 180.0,
+    "intlPickup": 185.0
+  },
+  {
+    "suburb": "Oakville",
+    "cityFare": 170.0,
+    "domDrop": 185.0,
+    "domPickup": 190.0,
+    "intlDrop": 190.0,
+    "intlPickup": 195.0
+  },
+  {
+    "suburb": "Oatlands",
+    "cityFare": 115.0,
+    "domDrop": 135.0,
+    "domPickup": 140.0,
+    "intlDrop": 135.0,
+    "intlPickup": 140.0
+  },
+  {
+    "suburb": "Oatlands M2 Lct Hb",
+    "cityFare": 135.0,
+    "domDrop": 155.0,
+    "domPickup": 160.0,
+    "intlDrop": 160.0,
+    "intlPickup": 165.0
+  },
+  {
+    "suburb": "Oatlands M4 M8",
+    "cityFare": 125.0,
+    "domDrop": 140.0,
+    "domPickup": 145.0,
+    "intlDrop": 140.0,
+    "intlPickup": 145.0
+  },
+  {
+    "suburb": "Oatley",
+    "cityFare": 130.0,
+    "domDrop": 105.0,
+    "domPickup": 115.0,
+    "intlDrop": 105.0,
+    "intlPickup": 115.0
+  },
+  {
+    "suburb": "Oatley M5 Ed",
+    "cityFare": 130.0,
+    "domDrop": 105.0,
+    "domPickup": 115.0,
+    "intlDrop": 105.0,
+    "intlPickup": 115.0
+  },
+  {
+    "suburb": "Old Toongabbie M2",
+    "cityFare": 145.0,
+    "domDrop": 160.0,
+    "domPickup": 165.0,
+    "intlDrop": 165.0,
+    "intlPickup": 170.0
+  },
+  {
+    "suburb": "Old Toongabbie M4 M8",
+    "cityFare": 140.0,
+    "domDrop": 155.0,
+    "domPickup": 160.0,
+    "intlDrop": 155.0,
+    "intlPickup": 160.0
+  },
+  {
+    "suburb": "Olympic Park M4 M8",
+    "cityFare": 110.0,
+    "domDrop": 120.0,
+    "domPickup": 130.0,
+    "intlDrop": 120.0,
+    "intlPickup": 130.0
+  },
+  {
+    "suburb": "Oran Park",
+    "cityFare": 190.0,
+    "domDrop": 170.0,
+    "domPickup": 175.0,
+    "intlDrop": 170.0,
+    "intlPickup": 175.0
+  },
+  {
+    "suburb": "Orange",
+    "cityFare": 0.0,
+    "domDrop": 725.0,
+    "domPickup": 735.0,
+    "intlDrop": 725.0,
+    "intlPickup": 740.0
+  },
+  {
+    "suburb": "Orange M4 M8",
+    "cityFare": 705.0,
+    "domDrop": 705.0,
+    "domPickup": 715.0,
+    "intlDrop": 705.0,
+    "intlPickup": 720.0
+  },
+  {
+    "suburb": "Orchard Hills",
+    "cityFare": 180.0,
+    "domDrop": 180.0,
+    "domPickup": 185.0,
+    "intlDrop": 180.0,
+    "intlPickup": 185.0
+  },
+  {
+    "suburb": "Overseas Pax Terminal (1 Toll)",
+    "cityFare": 85.0,
+    "domDrop": 105.0,
+    "domPickup": 115.0,
+    "intlDrop": 110.0,
+    "intlPickup": 125.0
+  },
+  {
+    "suburb": "Oxford Falls",
+    "cityFare": 125.0,
+    "domDrop": 145.0,
+    "domPickup": 150.0,
+    "intlDrop": 150.0,
+    "intlPickup": 155.0
+  },
+  {
+    "suburb": "Oyester Bay",
+    "cityFare": 140.0,
+    "domDrop": 120.0,
+    "domPickup": 125.0,
+    "intlDrop": 120.0,
+    "intlPickup": 125.0
+  },
+  {
+    "suburb": "Paddington",
+    "cityFare": 85.0,
+    "domDrop": 100.0,
+    "domPickup": 105.0,
+    "intlDrop": 105.0,
+    "intlPickup": 115.0
+  },
+  {
+    "suburb": "Paddington Ed",
+    "cityFare": 90.0,
+    "domDrop": 100.0,
+    "domPickup": 110.0,
+    "intlDrop": 105.0,
+    "intlPickup": 120.0
+  },
+  {
+    "suburb": "Padstow",
+    "cityFare": 145.0,
+    "domDrop": 120.0,
+    "domPickup": 125.0,
+    "intlDrop": 120.0,
+    "intlPickup": 130.0
+  },
+  {
+    "suburb": "Padstow Heights",
+    "cityFare": 145.0,
+    "domDrop": 120.0,
+    "domPickup": 125.0,
+    "intlDrop": 120.0,
+    "intlPickup": 130.0
+  },
+  {
+    "suburb": "Pagewood Via Ed",
+    "cityFare": 110.0,
+    "domDrop": 95.0,
+    "domPickup": 105.0,
+    "intlDrop": 100.0,
+    "intlPickup": 110.0
+  },
+  {
+    "suburb": "Palm Beach",
+    "cityFare": 170.0,
+    "domDrop": 180.0,
+    "domPickup": 185.0,
+    "intlDrop": 185.0,
+    "intlPickup": 195.0
+  },
+  {
+    "suburb": "Panania",
+    "cityFare": 150.0,
+    "domDrop": 125.0,
+    "domPickup": 130.0,
+    "intlDrop": 125.0,
+    "intlPickup": 135.0
+  },
+  {
+    "suburb": "Parklea M2 Lct Ed",
+    "cityFare": 150.0,
+    "domDrop": 175.0,
+    "domPickup": 180.0,
+    "intlDrop": 175.0,
+    "intlPickup": 185.0
+  },
+  {
+    "suburb": "Parklea M4 M8",
+    "cityFare": 150.0,
+    "domDrop": 165.0,
+    "domPickup": 170.0,
+    "intlDrop": 165.0,
+    "intlPickup": 175.0
+  },
+  {
+    "suburb": "Parramatta M4 M8",
+    "cityFare": 125.0,
+    "domDrop": 145.0,
+    "domPickup": 150.0,
+    "intlDrop": 145.0,
+    "intlPickup": 155.0
+  },
+  {
+    "suburb": "Peakhurst",
+    "cityFare": 125.0,
+    "domDrop": 110.0,
+    "domPickup": 115.0,
+    "intlDrop": 110.0,
+    "intlPickup": 120.0
+  },
+  {
+    "suburb": "Peakhurst M5 Ed",
+    "cityFare": 140.0,
+    "domDrop": 115.0,
+    "domPickup": 120.0,
+    "intlDrop": 115.0,
+    "intlPickup": 125.0
+  },
+  {
+    "suburb": "Pennant Hills",
+    "cityFare": 130.0,
+    "domDrop": 150.0,
+    "domPickup": 160.0,
+    "intlDrop": 155.0,
+    "intlPickup": 165.0
+  },
+  {
+    "suburb": "Penrith Via M4",
+    "cityFare": 185.0,
+    "domDrop": 185.0,
+    "domPickup": 195.0,
+    "intlDrop": 185.0,
+    "intlPickup": 195.0
+  },
+  {
+    "suburb": "Petersham",
+    "cityFare": 95.0,
+    "domDrop": 95.0,
+    "domPickup": 105.0,
+    "intlDrop": 95.0,
+    "intlPickup": 115.0
+  },
+  {
+    "suburb": "Pleasure Point",
+    "cityFare": 155.0,
+    "domDrop": 140.0,
+    "domPickup": 145.0,
+    "intlDrop": 140.0,
+    "intlPickup": 145.0
+  },
+  {
+    "suburb": "Port Botany",
+    "cityFare": 105.0,
+    "domDrop": 90.0,
+    "domPickup": 100.0,
+    "intlDrop": 90.0,
+    "intlPickup": 110.0
+  },
+  {
+    "suburb": "Port Botany Ed",
+    "cityFare": 110.0,
+    "domDrop": 90.0,
+    "domPickup": 100.0,
+    "intlDrop": 90.0,
+    "intlPickup": 110.0
+  },
+  {
+    "suburb": "Port Hacking",
+    "cityFare": 140.0,
+    "domDrop": 120.0,
+    "domPickup": 125.0,
+    "intlDrop": 120.0,
+    "intlPickup": 130.0
+  },
+  {
+    "suburb": "Port Kembla",
+    "cityFare": 285.0,
+    "domDrop": 255.0,
+    "domPickup": 265.0,
+    "intlDrop": 255.0,
+    "intlPickup": 270.0
+  },
+  {
+    "suburb": "Prarriewood",
+    "cityFare": 170.0,
+    "domDrop": 155.0,
+    "domPickup": 160.0,
+    "intlDrop": 155.0,
+    "intlPickup": 160.0
+  },
+  {
+    "suburb": "Quakers Hill M2",
+    "cityFare": 155.0,
+    "domDrop": 175.0,
+    "domPickup": 180.0,
+    "intlDrop": 175.0,
+    "intlPickup": 185.0
+  },
+  {
+    "suburb": "Queens Park",
+    "cityFare": 100.0,
+    "domDrop": 105.0,
+    "domPickup": 110.0,
+    "intlDrop": 105.0,
+    "intlPickup": 120.0
+  },
+  {
+    "suburb": "Raby",
+    "cityFare": 175.0,
+    "domDrop": 160.0,
+    "domPickup": 165.0,
+    "intlDrop": 160.0,
+    "intlPickup": 165.0
+  },
+  {
+    "suburb": "Ramsgate",
+    "cityFare": 115.0,
+    "domDrop": 100.0,
+    "domPickup": 105.0,
+    "intlDrop": 100.0,
+    "intlPickup": 110.0
+  },
+  {
+    "suburb": "Randwick",
+    "cityFare": 95.0,
+    "domDrop": 95.0,
+    "domPickup": 105.0,
+    "intlDrop": 100.0,
+    "intlPickup": 115.0
+  },
+  {
+    "suburb": "Regents Park M4",
+    "cityFare": 130.0,
+    "domDrop": 120.0,
+    "domPickup": 125.0,
+    "intlDrop": 120.0,
+    "intlPickup": 125.0
+  },
+  {
+    "suburb": "Rockdale",
+    "cityFare": 110.0,
+    "domDrop": 95.0,
+    "domPickup": 105.0,
+    "intlDrop": 90.0,
+    "intlPickup": 105.0
+  },
+  {
+    "suburb": "Rose Bay",
+    "cityFare": 95.0,
+    "domDrop": 110.0,
+    "domPickup": 120.0,
+    "intlDrop": 115.0,
+    "intlPickup": 125.0
+  },
+  {
+    "suburb": "Rosehill Vic Road",
+    "cityFare": 120.0,
+    "domDrop": 135.0,
+    "domPickup": 140.0,
+    "intlDrop": 135.0,
+    "intlPickup": 140.0
+  },
+  {
+    "suburb": "Roselands",
+    "cityFare": 120.0,
+    "domDrop": 110.0,
+    "domPickup": 115.0,
+    "intlDrop": 110.0,
+    "intlPickup": 115.0
+  },
+  {
+    "suburb": "Roselands Ed M5",
+    "cityFare": 135.0,
+    "domDrop": 115.0,
+    "domPickup": 120.0,
+    "intlDrop": 115.0,
+    "intlPickup": 120.0
+  },
+  {
+    "suburb": "Rosemeadow",
+    "cityFare": 195.0,
+    "domDrop": 175.0,
+    "domPickup": 180.0,
+    "intlDrop": 175.0,
+    "intlPickup": 180.0
+  },
+  {
+    "suburb": "Roseville Chase",
+    "cityFare": 105.0,
+    "domDrop": 125.0,
+    "domPickup": 135.0,
+    "intlDrop": 125.0,
+    "intlPickup": 140.0
+  },
+  {
+    "suburb": "Rozelle Via Ed X City",
+    "cityFare": 85.0,
+    "domDrop": 115.0,
+    "domPickup": 130.0,
+    "intlDrop": 115.0,
+    "intlPickup": 135.0
+  },
+  {
+    "suburb": "Rushcutters Bay Ed X City",
+    "cityFare": 90.0,
+    "domDrop": 100.0,
+    "domPickup": 110.0,
+    "intlDrop": 105.0,
+    "intlPickup": 120.0
+  },
+  {
+    "suburb": "Rushcutters Bay No Toll",
+    "cityFare": 85.0,
+    "domDrop": 100.0,
+    "domPickup": 105.0,
+    "intlDrop": 105.0,
+    "intlPickup": 115.0
+  },
+  {
+    "suburb": "Russell Lea",
+    "cityFare": 100.0,
+    "domDrop": 115.0,
+    "domPickup": 120.0,
+    "intlDrop": 120.0,
+    "intlPickup": 125.0
+  },
+  {
+    "suburb": "Russell Lea Ed X City",
+    "cityFare": 100.0,
+    "domDrop": 120.0,
+    "domPickup": 135.0,
+    "intlDrop": 125.0,
+    "intlPickup": 140.0
+  },
+  {
+    "suburb": "Russell Lea M8",
+    "cityFare": 100.0,
+    "domDrop": 120.0,
+    "domPickup": 125.0,
+    "intlDrop": 125.0,
+    "intlPickup": 130.0
+  },
+  {
+    "suburb": "Rydalmere",
+    "cityFare": 115.0,
+    "domDrop": 130.0,
+    "domPickup": 135.0,
+    "intlDrop": 130.0,
+    "intlPickup": 135.0
+  },
+  {
+    "suburb": "Rydalmere Ed X City",
+    "cityFare": 115.0,
+    "domDrop": 135.0,
+    "domPickup": 150.0,
+    "intlDrop": 135.0,
+    "intlPickup": 150.0
+  },
+  {
+    "suburb": "Rydalmere M4 M8",
+    "cityFare": 115.0,
+    "domDrop": 135.0,
+    "domPickup": 140.0,
+    "intlDrop": 135.0,
+    "intlPickup": 140.0
+  },
+  {
+    "suburb": "Sadleir",
+    "cityFare": 165.0,
+    "domDrop": 150.0,
+    "domPickup": 155.0,
+    "intlDrop": 150.0,
+    "intlPickup": 155.0
+  },
+  {
+    "suburb": "Sandy Point",
+    "cityFare": 155.0,
+    "domDrop": 140.0,
+    "domPickup": 145.0,
+    "intlDrop": 140.0,
+    "intlPickup": 145.0
+  },
+  {
+    "suburb": "Sans Souci",
+    "cityFare": 120.0,
+    "domDrop": 105.0,
+    "domPickup": 110.0,
+    "intlDrop": 105.0,
+    "intlPickup": 115.0
+  },
+  {
+    "suburb": "Seaforth",
+    "cityFare": 115.0,
+    "domDrop": 130.0,
+    "domPickup": 140.0,
+    "intlDrop": 130.0,
+    "intlPickup": 145.0
+  },
+  {
+    "suburb": "Shalvey",
+    "cityFare": 175.0,
+    "domDrop": 180.0,
+    "domPickup": 185.0,
+    "intlDrop": 180.0,
+    "intlPickup": 185.0
+  },
+  {
+    "suburb": "Shellharbour",
+    "cityFare": 325.0,
+    "domDrop": 295.0,
+    "domPickup": 305.0,
+    "intlDrop": 295.0,
+    "intlPickup": 310.0
+  },
+  {
+    "suburb": "Silverdale",
+    "cityFare": 205.0,
+    "domDrop": 200.0,
+    "domPickup": 205.0,
+    "intlDrop": 200.0,
+    "intlPickup": 205.0
+  },
+  {
+    "suburb": "Silverwater",
+    "cityFare": 110.0,
+    "domDrop": 120.0,
+    "domPickup": 130.0,
+    "intlDrop": 120.0,
+    "intlPickup": 130.0
+  },
+  {
+    "suburb": "Silverwater M4 M8",
+    "cityFare": 115.0,
+    "domDrop": 125.0,
+    "domPickup": 135.0,
+    "intlDrop": 125.0,
+    "intlPickup": 135.0
+  },
+  {
+    "suburb": "Smeaton Grange",
+    "cityFare": 190.0,
+    "domDrop": 170.0,
+    "domPickup": 175.0,
+    "intlDrop": 170.0,
+    "intlPickup": 175.0
+  },
+  {
+    "suburb": "South Granville",
+    "cityFare": 130.0,
+    "domDrop": 135.0,
+    "domPickup": 140.0,
+    "intlDrop": 135.0,
+    "intlPickup": 140.0
+  },
+  {
+    "suburb": "South Turramurra Pacific Hwy",
+    "cityFare": 120.0,
+    "domDrop": 140.0,
+    "domPickup": 150.0,
+    "intlDrop": 145.0,
+    "intlPickup": 155.0
+  },
+  {
+    "suburb": "South Turramurra Via M2",
+    "cityFare": 125.0,
+    "domDrop": 145.0,
+    "domPickup": 155.0,
+    "intlDrop": 150.0,
+    "intlPickup": 160.0
+  },
+  {
+    "suburb": "Spring Farm",
+    "cityFare": 190.0,
+    "domDrop": 175.0,
+    "domPickup": 180.0,
+    "intlDrop": 175.0,
+    "intlPickup": 180.0
+  },
+  {
+    "suburb": "St Andrews Ed M5",
+    "cityFare": 175.0,
+    "domDrop": 160.0,
+    "domPickup": 165.0,
+    "intlDrop": 160.0,
+    "intlPickup": 165.0
+  },
+  {
+    "suburb": "St Clair",
+    "cityFare": 170.0,
+    "domDrop": 175.0,
+    "domPickup": 180.0,
+    "intlDrop": 175.0,
+    "intlPickup": 185.0
+  },
+  {
+    "suburb": "St Helens Park",
+    "cityFare": 195.0,
+    "domDrop": 175.0,
+    "domPickup": 180.0,
+    "intlDrop": 175.0,
+    "intlPickup": 180.0
+  },
+  {
+    "suburb": "St Johns Park",
+    "cityFare": 170.0,
+    "domDrop": 155.0,
+    "domPickup": 160.0,
+    "intlDrop": 155.0,
+    "intlPickup": 160.0
+  },
+  {
+    "suburb": "St Leonards",
+    "cityFare": 90.0,
+    "domDrop": 110.0,
+    "domPickup": 120.0,
+    "intlDrop": 115.0,
+    "intlPickup": 130.0
+  },
+  {
+    "suburb": "St Marys M4",
+    "cityFare": 175.0,
+    "domDrop": 180.0,
+    "domPickup": 185.0,
+    "intlDrop": 180.0,
+    "intlPickup": 185.0
+  },
+  {
+    "suburb": "Stanhope Gardens M2 Lct Ed",
+    "cityFare": 150.0,
+    "domDrop": 175.0,
+    "domPickup": 180.0,
+    "intlDrop": 175.0,
+    "intlPickup": 185.0
+  },
+  {
+    "suburb": "Stanhope Gardens M4 M8",
+    "cityFare": 150.0,
+    "domDrop": 165.0,
+    "domPickup": 170.0,
+    "intlDrop": 165.0,
+    "intlPickup": 175.0
+  },
+  {
+    "suburb": "Stanmore",
+    "cityFare": 90.0,
+    "domDrop": 95.0,
+    "domPickup": 105.0,
+    "intlDrop": 95.0,
+    "intlPickup": 115.0
+  },
+  {
+    "suburb": "Strathfield",
+    "cityFare": 105.0,
+    "domDrop": 115.0,
+    "domPickup": 120.0,
+    "intlDrop": 120.0,
+    "intlPickup": 125.0
+  },
+  {
+    "suburb": "Strathfield M4 M8",
+    "cityFare": 110.0,
+    "domDrop": 120.0,
+    "domPickup": 125.0,
+    "intlDrop": 125.0,
+    "intlPickup": 130.0
+  },
+  {
+    "suburb": "Strathfield South",
+    "cityFare": 110.0,
+    "domDrop": 115.0,
+    "domPickup": 120.0,
+    "intlDrop": 115.0,
+    "intlPickup": 120.0
+  },
+  {
+    "suburb": "Strathfield South M4 M8/M5",
+    "cityFare": 115.0,
+    "domDrop": 120.0,
+    "domPickup": 125.0,
+    "intlDrop": 120.0,
+    "intlPickup": 130.0
+  },
+  {
+    "suburb": "Strawberry Hills",
+    "cityFare": 80.0,
+    "domDrop": 95.0,
+    "domPickup": 105.0,
+    "intlDrop": 100.0,
+    "intlPickup": 115.0
+  },
+  {
+    "suburb": "Sutherland",
+    "cityFare": 145.0,
+    "domDrop": 120.0,
+    "domPickup": 125.0,
+    "intlDrop": 120.0,
+    "intlPickup": 130.0
+  },
+  {
+    "suburb": "Sydenham",
+    "cityFare": 95.0,
+    "domDrop": 95.0,
+    "domPickup": 105.0,
+    "intlDrop": 95.0,
+    "intlPickup": 110.0
+  },
+  {
+    "suburb": "Sydney Olympic Park M4 M8",
+    "cityFare": 110.0,
+    "domDrop": 120.0,
+    "domPickup": 130.0,
+    "intlDrop": 120.0,
+    "intlPickup": 130.0
+  },
+  {
+    "suburb": "Sylvania",
+    "cityFare": 125.0,
+    "domDrop": 115.0,
+    "domPickup": 120.0,
+    "intlDrop": 115.0,
+    "intlPickup": 125.0
+  },
+  {
+    "suburb": "Sylvania Waters",
+    "cityFare": 125.0,
+    "domDrop": 115.0,
+    "domPickup": 120.0,
+    "intlDrop": 115.0,
+    "intlPickup": 125.0
+  },
+  {
+    "suburb": "Tallawong",
+    "cityFare": 160.0,
+    "domDrop": 175.0,
+    "domPickup": 185.0,
+    "intlDrop": 180.0,
+    "intlPickup": 185.0
+  },
+  {
+    "suburb": "Tamarama",
+    "cityFare": 100.0,
+    "domDrop": 110.0,
+    "domPickup": 115.0,
+    "intlDrop": 110.0,
+    "intlPickup": 125.0
+  },
+  {
+    "suburb": "Taren Point",
+    "cityFare": 130.0,
+    "domDrop": 115.0,
+    "domPickup": 120.0,
+    "intlDrop": 115.0,
+    "intlPickup": 125.0
+  },
+  {
+    "suburb": "Telopea",
+    "cityFare": 115.0,
+    "domDrop": 135.0,
+    "domPickup": 140.0,
+    "intlDrop": 135.0,
+    "intlPickup": 140.0
+  },
+  {
+    "suburb": "Telopea Ed X City",
+    "cityFare": 115.0,
+    "domDrop": 140.0,
+    "domPickup": 155.0,
+    "intlDrop": 140.0,
+    "intlPickup": 155.0
+  },
+  {
+    "suburb": "Telopea M2 Lct Hb",
+    "cityFare": 130.0,
+    "domDrop": 150.0,
+    "domPickup": 155.0,
+    "intlDrop": 150.0,
+    "intlPickup": 160.0
+  },
+  {
+    "suburb": "Telopea M4 M8",
+    "cityFare": 120.0,
+    "domDrop": 140.0,
+    "domPickup": 145.0,
+    "intlDrop": 140.0,
+    "intlPickup": 145.0
+  },
+  {
+    "suburb": "Terrigal",
+    "cityFare": 265.0,
+    "domDrop": 290.0,
+    "domPickup": 300.0,
+    "intlDrop": 290.0,
+    "intlPickup": 310.0
+  },
+  {
+    "suburb": "Terrigal M2 North Conx",
+    "cityFare": 290.0,
+    "domDrop": 315.0,
+    "domPickup": 325.0,
+    "intlDrop": 315.0,
+    "intlPickup": 335.0
+  },
+  {
+    "suburb": "The Entrance",
+    "cityFare": 290.0,
+    "domDrop": 310.0,
+    "domPickup": 320.0,
+    "intlDrop": 310.0,
+    "intlPickup": 330.0
+  },
+  {
+    "suburb": "The Entrance M2 North Conx",
+    "cityFare": 315.0,
+    "domDrop": 335.0,
+    "domPickup": 345.0,
+    "intlDrop": 335.0,
+    "intlPickup": 355.0
+  },
+  {
+    "suburb": "Toongabbie M2",
+    "cityFare": 155.0,
+    "domDrop": 155.0,
+    "domPickup": 165.0,
+    "intlDrop": 160.0,
+    "intlPickup": 170.0
+  },
+  {
+    "suburb": "Toongabbie M4",
+    "cityFare": 150.0,
+    "domDrop": 150.0,
+    "domPickup": 155.0,
+    "intlDrop": 150.0,
+    "intlPickup": 160.0
+  },
+  {
+    "suburb": "Tregear",
+    "cityFare": 175.0,
+    "domDrop": 180.0,
+    "domPickup": 185.0,
+    "intlDrop": 180.0,
+    "intlPickup": 185.0
+  },
+  {
+    "suburb": "Turella Ed",
+    "cityFare": 110.0,
+    "domDrop": 85.0,
+    "domPickup": 95.0,
+    "intlDrop": 80.0,
+    "intlPickup": 100.0
+  },
+  {
+    "suburb": "Turramurra",
+    "cityFare": 120.0,
+    "domDrop": 140.0,
+    "domPickup": 150.0,
+    "intlDrop": 145.0,
+    "intlPickup": 155.0
+  },
+  {
+    "suburb": "Turramurra M2 Lct",
+    "cityFare": 125.0,
+    "domDrop": 145.0,
+    "domPickup": 155.0,
+    "intlDrop": 150.0,
+    "intlPickup": 160.0
+  },
+  {
+    "suburb": "Varroville",
+    "cityFare": 175.0,
+    "domDrop": 160.0,
+    "domPickup": 165.0,
+    "intlDrop": 160.0,
+    "intlPickup": 165.0
+  },
+  {
+    "suburb": "Vaucluse",
+    "cityFare": 100.0,
+    "domDrop": 115.0,
+    "domPickup": 125.0,
+    "intlDrop": 120.0,
+    "intlPickup": 130.0
+  },
+  {
+    "suburb": "Villawood",
+    "cityFare": 145.0,
+    "domDrop": 140.0,
+    "domPickup": 145.0,
+    "intlDrop": 140.0,
+    "intlPickup": 145.0
+  },
+  {
+    "suburb": "Vineyard",
+    "cityFare": 170.0,
+    "domDrop": 185.0,
+    "domPickup": 190.0,
+    "intlDrop": 190.0,
+    "intlPickup": 195.0
+  },
+  {
+    "suburb": "Voyager Point",
+    "cityFare": 155.0,
+    "domDrop": 140.0,
+    "domPickup": 145.0,
+    "intlDrop": 140.0,
+    "intlPickup": 145.0
+  },
+  {
+    "suburb": "Wahroonga",
+    "cityFare": 120.0,
+    "domDrop": 145.0,
+    "domPickup": 150.0,
+    "intlDrop": 145.0,
+    "intlPickup": 155.0
+  },
+  {
+    "suburb": "Wahroonga M2 Lct",
+    "cityFare": 125.0,
+    "domDrop": 150.0,
+    "domPickup": 155.0,
+    "intlDrop": 150.0,
+    "intlPickup": 160.0
+  },
+  {
+    "suburb": "Waitara",
+    "cityFare": 125.0,
+    "domDrop": 145.0,
+    "domPickup": 155.0,
+    "intlDrop": 150.0,
+    "intlPickup": 160.0
+  },
+  {
+    "suburb": "Waitara M2 Lct",
+    "cityFare": 130.0,
+    "domDrop": 150.0,
+    "domPickup": 160.0,
+    "intlDrop": 155.0,
+    "intlPickup": 165.0
+  },
+  {
+    "suburb": "Wallacia",
+    "cityFare": 200.0,
+    "domDrop": 195.0,
+    "domPickup": 200.0,
+    "intlDrop": 195.0,
+    "intlPickup": 200.0
+  },
+  {
+    "suburb": "Walsh Bay",
+    "cityFare": 80.0,
+    "domDrop": 100.0,
+    "domPickup": 105.0,
+    "intlDrop": 100.0,
+    "intlPickup": 115.0
+  },
+  {
+    "suburb": "Walsh Bay Ed (1 Toll)",
+    "cityFare": 80.0,
+    "domDrop": 100.0,
+    "domPickup": 110.0,
+    "intlDrop": 100.0,
+    "intlPickup": 120.0
+  },
+  {
+    "suburb": "Wareemba",
+    "cityFare": 100.0,
+    "domDrop": 115.0,
+    "domPickup": 120.0,
+    "intlDrop": 120.0,
+    "intlPickup": 125.0
+  },
+  {
+    "suburb": "Wareemba Ed X City",
+    "cityFare": 100.0,
+    "domDrop": 120.0,
+    "domPickup": 135.0,
+    "intlDrop": 125.0,
+    "intlPickup": 140.0
+  },
+  {
+    "suburb": "Wareemba M8",
+    "cityFare": 100.0,
+    "domDrop": 120.0,
+    "domPickup": 125.0,
+    "intlDrop": 125.0,
+    "intlPickup": 130.0
+  },
+  {
+    "suburb": "Warrawee",
+    "cityFare": 120.0,
+    "domDrop": 145.0,
+    "domPickup": 150.0,
+    "intlDrop": 145.0,
+    "intlPickup": 155.0
+  },
+  {
+    "suburb": "Warrawee M2 Ramp",
+    "cityFare": 125.0,
+    "domDrop": 150.0,
+    "domPickup": 155.0,
+    "intlDrop": 150.0,
+    "intlPickup": 160.0
+  },
+  {
+    "suburb": "Warriewood",
+    "cityFare": 140.0,
+    "domDrop": 155.0,
+    "domPickup": 160.0,
+    "intlDrop": 160.0,
+    "intlPickup": 165.0
+  },
+  {
+    "suburb": "Warwick Farm M5 M5E Ed",
+    "cityFare": 155.0,
+    "domDrop": 145.0,
+    "domPickup": 150.0,
+    "intlDrop": 145.0,
+    "intlPickup": 150.0
+  },
+  {
+    "suburb": "Waterfall",
+    "cityFare": 170.0,
+    "domDrop": 145.0,
+    "domPickup": 150.0,
+    "intlDrop": 145.0,
+    "intlPickup": 150.0
+  },
+  {
+    "suburb": "Waterloo",
+    "cityFare": 85.0,
+    "domDrop": 85.0,
+    "domPickup": 95.0,
+    "intlDrop": 90.0,
+    "intlPickup": 105.0
+  },
+  {
+    "suburb": "Watson Bay",
+    "cityFare": 105.0,
+    "domDrop": 120.0,
+    "domPickup": 125.0,
+    "intlDrop": 120.0,
+    "intlPickup": 130.0
+  },
+  {
+    "suburb": "Wattle Grove M5 Ed",
+    "cityFare": 150.0,
+    "domDrop": 135.0,
+    "domPickup": 140.0,
+    "intlDrop": 135.0,
+    "intlPickup": 140.0
+  },
+  {
+    "suburb": "Waverley",
+    "cityFare": 100.0,
+    "domDrop": 105.0,
+    "domPickup": 110.0,
+    "intlDrop": 105.0,
+    "intlPickup": 120.0
+  },
+  {
+    "suburb": "Waverton",
+    "cityFare": 85.0,
+    "domDrop": 105.0,
+    "domPickup": 115.0,
+    "intlDrop": 110.0,
+    "intlPickup": 125.0
+  },
+  {
+    "suburb": "West Pennant Hill",
+    "cityFare": 130.0,
+    "domDrop": 150.0,
+    "domPickup": 160.0,
+    "intlDrop": 155.0,
+    "intlPickup": 165.0
+  },
+  {
+    "suburb": "West Pymble - Pac Hwy",
+    "cityFare": 115.0,
+    "domDrop": 135.0,
+    "domPickup": 145.0,
+    "intlDrop": 135.0,
+    "intlPickup": 150.0
+  },
+  {
+    "suburb": "Westmead M4 M8",
+    "cityFare": 130.0,
+    "domDrop": 145.0,
+    "domPickup": 150.0,
+    "intlDrop": 145.0,
+    "intlPickup": 155.0
+  },
+  {
+    "suburb": "Wetherill Park M4 M8",
+    "cityFare": 160.0,
+    "domDrop": 160.0,
+    "domPickup": 165.0,
+    "intlDrop": 160.0,
+    "intlPickup": 165.0
+  },
+  {
+    "suburb": "Whalan",
+    "cityFare": 175.0,
+    "domDrop": 180.0,
+    "domPickup": 185.0,
+    "intlDrop": 180.0,
+    "intlPickup": 185.0
+  },
+  {
+    "suburb": "Whale Beach",
+    "cityFare": 165.0,
+    "domDrop": 180.0,
+    "domPickup": 185.0,
+    "intlDrop": 180.0,
+    "intlPickup": 190.0
+  },
+  {
+    "suburb": "Wiley Park",
+    "cityFare": 120.0,
+    "domDrop": 110.0,
+    "domPickup": 115.0,
+    "intlDrop": 110.0,
+    "intlPickup": 115.0
+  },
+  {
+    "suburb": "Wiley Park M5 Ed",
+    "cityFare": 135.0,
+    "domDrop": 115.0,
+    "domPickup": 120.0,
+    "intlDrop": 115.0,
+    "intlPickup": 120.0
+  },
+  {
+    "suburb": "Willoughby East & North",
+    "cityFare": 95.0,
+    "domDrop": 115.0,
+    "domPickup": 125.0,
+    "intlDrop": 115.0,
+    "intlPickup": 130.0
+  },
+  {
+    "suburb": "Wollahra Via Toll",
+    "cityFare": 90.0,
+    "domDrop": 105.0,
+    "domPickup": 115.0,
+    "intlDrop": 105.0,
+    "intlPickup": 120.0
+  },
+  {
+    "suburb": "Wollstonecraft",
+    "cityFare": 85.0,
+    "domDrop": 105.0,
+    "domPickup": 115.0,
+    "intlDrop": 110.0,
+    "intlPickup": 125.0
+  },
+  {
+    "suburb": "Woollahra",
+    "cityFare": 85.0,
+    "domDrop": 105.0,
+    "domPickup": 110.0,
+    "intlDrop": 105.0,
+    "intlPickup": 115.0
+  },
+  {
+    "suburb": "Woollahra Ed",
+    "cityFare": 90.0,
+    "domDrop": 105.0,
+    "domPickup": 115.0,
+    "intlDrop": 105.0,
+    "intlPickup": 120.0
+  },
+  {
+    "suburb": "Woolooware",
+    "cityFare": 140.0,
+    "domDrop": 120.0,
+    "domPickup": 125.0,
+    "intlDrop": 120.0,
+    "intlPickup": 130.0
+  },
+  {
+    "suburb": "Woolwich Via Ed X City",
+    "cityFare": 100.0,
+    "domDrop": 125.0,
+    "domPickup": 145.0,
+    "intlDrop": 125.0,
+    "intlPickup": 150.0
+  },
+  {
+    "suburb": "Woronora",
+    "cityFare": 150.0,
+    "domDrop": 135.0,
+    "domPickup": 140.0,
+    "intlDrop": 135.0,
+    "intlPickup": 140.0
+  },
+  {
+    "suburb": "Woronora Heights",
+    "cityFare": 155.0,
+    "domDrop": 145.0,
+    "domPickup": 145.0,
+    "intlDrop": 145.0,
+    "intlPickup": 145.0
+  },
+  {
+    "suburb": "Yagoona",
+    "cityFare": 145.0,
+    "domDrop": 125.0,
+    "domPickup": 130.0,
+    "intlDrop": 125.0,
+    "intlPickup": 130.0
+  },
+  {
+    "suburb": "Yarrawarrah",
+    "cityFare": 150.0,
+    "domDrop": 125.0,
+    "domPickup": 130.0,
+    "intlDrop": 125.0,
+    "intlPickup": 130.0
+  },
+  {
+    "suburb": "Yennora",
+    "cityFare": 150.0,
+    "domDrop": 145.0,
+    "domPickup": 150.0,
+    "intlDrop": 145.0,
+    "intlPickup": 150.0
+  },
+  {
+    "suburb": "Yowie Bay",
+    "cityFare": 140.0,
+    "domDrop": 120.0,
+    "domPickup": 125.0,
+    "intlDrop": 125.0,
+    "intlPickup": 130.0
+  },
+  {
+    "suburb": "Zetland",
+    "cityFare": 95.0,
+    "domDrop": 90.0,
+    "domPickup": 100.0,
+    "intlDrop": 95.0,
+    "intlPickup": 110.0
+  }
+]

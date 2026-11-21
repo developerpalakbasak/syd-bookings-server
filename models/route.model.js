@@ -57,8 +57,6 @@ const routeSchema = new mongoose.Schema(
       ],
     },
     currency: { type: String, default: 'AUD', trim: true, uppercase: true },
-    distanceKm: { type: Number, default: null },
-    durationMin: { type: Number, default: null },
     firstPlaceDetails: { type: locationDetailsSchema, default: () => ({}) },
     lastPlaceDetails: { type: locationDetailsSchema, default: () => ({}) },
     isActive: { type: Boolean, default: true, index: true },

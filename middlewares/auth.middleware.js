@@ -18,9 +18,10 @@ import {
 export const authenticateAdmin = async (req, res, next) => {
   try {
     const accessToken =
+      req.cookies?.adminAccessToken ||
       req.cookies?.accessToken ||
       req.headers?.authorization?.replace(/^Bearer\s+/i, '');
-    const refreshToken = req.cookies?.refreshToken;
+    const refreshToken = req.cookies?.adminRefreshToken || req.cookies?.refreshToken;
 
     if (!accessToken && !refreshToken) {
       const err = new Error('Authentication required. Please log in.');
@@ -34,6 +35,13 @@ export const authenticateAdmin = async (req, res, next) => {
         const decoded = decodeToken(accessToken);
         decoded._id = decoded._id || decoded.id;
         decoded.id = decoded._id;
+
+        // If this token belongs to a customer/passenger, reject it for admin endpoints
+        if (decoded.role !== 'admin' && decoded.role !== 'superadmin') {
+          const err = new Error('Forbidden: Admin credentials required');
+          err.statusCode = 403;
+          return next(err);
+        }
 
         // Check if token payload marks account inactive
         if (decoded.isActive === false) {
@@ -89,6 +97,8 @@ export const authenticateAdmin = async (req, res, next) => {
           (parseInt(process.env.REFRESH_COOKIES_VALIDITY, 10) || 7) * 24 * 60 * 60 * 1000
         );
 
+        res.cookie('adminAccessToken', newAccessToken, getCookieOptions(accessMs));
+        res.cookie('adminRefreshToken', newRefreshToken, getCookieOptions(refreshMs));
         res.cookie('accessToken', newAccessToken, getCookieOptions(accessMs));
         res.cookie('refreshToken', newRefreshToken, getCookieOptions(refreshMs));
 
@@ -105,6 +115,8 @@ export const authenticateAdmin = async (req, res, next) => {
 
         return next();
       } catch (refreshError) {
+        res.clearCookie('adminAccessToken', getCookieOptions(0));
+        res.clearCookie('adminRefreshToken', getCookieOptions(0));
         res.clearCookie('accessToken', getCookieOptions(0));
         res.clearCookie('refreshToken', getCookieOptions(0));
         const err = new Error('Session expired. Please log in again.');

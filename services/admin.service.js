@@ -30,6 +30,9 @@ class AdminService {
     admin.lastLoginAt = new Date();
     await admin.save();
 
+    res.cookie('adminAccessToken', accessToken, getCookieOptions(accessMs));
+    res.cookie('adminRefreshToken', refreshToken, getCookieOptions(refreshMs));
+    // Also set standard cookies for backward-compatibility if role is admin
     res.cookie('accessToken', accessToken, getCookieOptions(accessMs));
     res.cookie('refreshToken', refreshToken, getCookieOptions(refreshMs));
 
@@ -140,6 +143,8 @@ class AdminService {
       (parseInt(process.env.REFRESH_COOKIES_VALIDITY, 10) || 7) * 24 * 60 * 60 * 1000
     );
 
+    res.cookie('adminAccessToken', newAccessToken, getCookieOptions(accessMs));
+    res.cookie('adminRefreshToken', newRefreshToken, getCookieOptions(refreshMs));
     res.cookie('accessToken', newAccessToken, getCookieOptions(accessMs));
     res.cookie('refreshToken', newRefreshToken, getCookieOptions(refreshMs));
 
@@ -163,6 +168,8 @@ class AdminService {
    * Admin Logout
    */
   async logout(res) {
+    res.clearCookie('adminAccessToken', getCookieOptions(0));
+    res.clearCookie('adminRefreshToken', getCookieOptions(0));
     res.clearCookie('accessToken', getCookieOptions(0));
     res.clearCookie('refreshToken', getCookieOptions(0));
 

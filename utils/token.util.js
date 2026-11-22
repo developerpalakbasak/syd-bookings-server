@@ -108,13 +108,24 @@ export const verifyToken = (token) => {
  * Works seamlessly in both local development and HTTPS production.
  */
 export const getCookieOptions = (maxAgeMs) => {
-  const isProduction = process.env.NODE_ENV === 'production';
+  const isProduction =
+    process.env.NODE_ENV === 'production' ||
+    Boolean(process.env.COOKIE_DOMAIN) ||
+    Boolean(process.env.CLIENT_ORIGIN && process.env.CLIENT_ORIGIN.includes('https://'));
+
   const options = {
     httpOnly: true,
     secure: isProduction,
     sameSite: isProduction ? 'none' : 'lax',
     path: '/',
   };
+
+  // Set shared parent domain in production so subdomains share cookies
+  const cookieDomain = process.env.COOKIE_DOMAIN || (isProduction ? '.sydairporttransfer.com.au' : undefined);
+  if (cookieDomain) {
+    options.domain = cookieDomain;
+  }
+
   if (typeof maxAgeMs === 'number') {
     options.maxAge = maxAgeMs;
   }

@@ -147,14 +147,14 @@ const bookingSchema = new mongoose.Schema(
     // Payment status
     paymentStatus: {
       type: String,
-      enum: ['pending', 'paid', 'failed', 'refunded', 'cash_to_driver', 'card'],
+      enum: ['pending', 'paid', 'failed', 'refunded', 'cash_to_driver', 'card', 'corporate_invoiced'],
       default: 'pending',
     },
 
     // Payment method (online transaction or cash)
     paymentMethod: {
       type: String,
-      enum: ['online', 'cash', 'card'],
+      enum: ['online', 'cash', 'card', 'corporate_invoiced'],
       default: 'cash',
       lowercase: true,
       trim: true,
@@ -172,6 +172,13 @@ const bookingSchema = new mongoose.Schema(
         paidAt: null,
         receiptUrl: '',
       }),
+    },
+
+    // Corporate Account reference if booked via corporate
+    corporateAccountId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'CorporateAccount',
+      default: null,
     },
 
     // Internal notes or special requests

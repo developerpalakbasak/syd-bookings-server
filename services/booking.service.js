@@ -2,6 +2,7 @@ import mongoose from 'mongoose';
 import jwt from 'jsonwebtoken';
 import { Booking } from '../models/booking.model.js';
 import { Customer } from '../models/customer.model.js';
+import { sendBookingConfirmationEmail } from './email.service.js';
 
 class BookingService {
   constructor() {
@@ -116,11 +117,34 @@ class BookingService {
       fare: dto.fare ?? quotePayload?.price ?? { currency: 'AUD', total: 0 },
       paymentStatus: dto.paymentStatus || 'pending',
       paymentMethod: dto.paymentMethod || 'cash',
+      corporateAccountId: dto.corporateAccountId || null,
       notes: dto.notes ? String(dto.notes).trim() : '',
       cancellationReason: dto.cancellationReason ? String(dto.cancellationReason).trim() : '',
     });
 
-    return await newBooking.save();
+    const saved = await newBooking.save();
+
+    // If corporate invoiced or pre-confirmed payment, dispatch confirmation email immediately
+    if (saved.paymentStatus === 'corporate_invoiced' && saved.passengerEmail) {
+      sendBookingConfirmationEmail({
+        toEmail: saved.passengerEmail,
+        passengerName: saved.passengerName,
+        bookingNumber: saved.bookingNumber,
+        pickup: typeof saved.pickup === 'object' ? saved.pickup?.address || saved.pickup?.name : saved.pickup,
+        dropoff: typeof saved.dropoff === 'object' ? saved.dropoff?.address || saved.dropoff?.name : saved.dropoff,
+        pickupTime: saved.pickupTime,
+        passengers: saved.passengers,
+        luggage: saved.luggage,
+        vehicleType: saved.vehicleType,
+        flightNumber: saved.flightNumber,
+        paymentMethod: 'corporate_invoiced',
+        paymentStatus: 'corporate_invoiced',
+        amount: saved.fare?.total || 0,
+        currency: saved.fare?.currency || 'AUD',
+      }).catch((err) => console.error('Corporate booking confirmation email error:', err));
+    }
+
+    return saved;
   }
 
   // Retrieves paginated list of bookings with optional filtering by phone, status, or vehicleType.

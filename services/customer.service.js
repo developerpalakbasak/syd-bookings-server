@@ -275,7 +275,7 @@ class CustomerService {
    * Retrieve Customer Profile
    */
   async getProfile(customerId) {
-    const customer = await Customer.findById(customerId);
+    const customer = await Customer.findById(customerId).populate('corporateAccountId', 'companyName accountType status invoicedDetails');
     if (!customer) {
       const err = new Error('Customer not found');
       err.statusCode = 404;
@@ -287,7 +287,8 @@ class CustomerService {
       fullName: customer.fullName,
       email: customer.email,
       phone: customer.phone,
-      role: customer.role,
+      role: customer.role || 'passenger',
+      corporateAccountId: customer.corporateAccountId,
       avatar: customer.avatar,
       preferences: customer.preferences,
       isVerified: customer.isVerified,

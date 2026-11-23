@@ -2,6 +2,7 @@ import { stripe, stripePublishableKey } from '../config/stripe.js';
 import { Booking } from '../models/booking.model.js';
 import { Payment } from '../models/payment.model.js';
 import { bookingService } from './booking.service.js';
+import { sendBookingConfirmationEmail } from './email.service.js';
 
 class PaymentService {
   /**
@@ -210,6 +211,27 @@ class PaymentService {
       },
       { upsert: true, new: true }
     );
+
+    // Send confirmation email on successful payment
+    if (isSuccessful && booking.passengerEmail) {
+      sendBookingConfirmationEmail({
+        toEmail: booking.passengerEmail,
+        passengerName: booking.passengerName,
+        bookingNumber: booking.bookingNumber,
+        pickup: this.formatLocation(booking.pickup),
+        dropoff: this.formatLocation(booking.dropoff),
+        pickupTime: booking.pickupTime,
+        passengers: booking.passengers,
+        luggage: booking.luggage,
+        vehicleType: booking.vehicleType,
+        flightNumber: booking.flightNumber,
+        paymentMethod: 'card',
+        paymentStatus: 'paid',
+        amount: (paymentIntent.amount_received || paymentIntent.amount) / 100,
+        currency: paymentIntent.currency.toUpperCase(),
+        receiptUrl: receiptUrl || '',
+      }).catch((err) => console.error('Booking confirmation email error:', err));
+    }
 
     return {
       success: isSuccessful,

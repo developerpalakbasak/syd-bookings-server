@@ -31,7 +31,12 @@ const customerSchema = new mongoose.Schema(
     role: {
       type: String,
       default: 'passenger',
-      enum: ['passenger'],
+      enum: ['passenger', 'corporate_admin', 'corporate_employee'],
+    },
+    corporateAccountId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'CorporateAccount',
+      default: null,
     },
     avatar: {
       type: String,

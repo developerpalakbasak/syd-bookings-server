@@ -16,8 +16,8 @@ export const sendCorporateApprovalEmail = async ({
 }) => {
   if (!toEmail) return { success: false, message: 'Recipient email missing' };
 
-  const loginUrl = 'https://auth.sydairporttransfer.com.au/customer/login';
-  const portalUrl = 'https://book.sydairporttransfer.com.au/';
+  const loginUrl = 'https://client.sydairporttransfer.com.au/customer/login';
+  const portalUrl = 'https://hire.sydairporttransfer.com.au/';
 
   const termsDescription =
     accountType === 'invoiced'
@@ -89,7 +89,7 @@ export const sendCorporateApprovalEmail = async ({
       <a href="${loginUrl}" class="btn">Sign In to Corporate Portal &rarr;</a>
 
       <p style="font-size: 13px; color: #475569; margin-top: 20px;">
-        Once signed in, you can book executive chauffeured rides at <a href="${portalUrl}" style="color: #0c1938; font-weight: 600;">book.sydairporttransfer.com.au</a> using your corporate account billing.
+        Once signed in, you can book executive chauffeured rides at <a href="${portalUrl}" style="color: #0c1938; font-weight: 600;">hire.sydairporttransfer.com.au</a> using your corporate account billing.
       </p>
     </div>
     <div class="footer">

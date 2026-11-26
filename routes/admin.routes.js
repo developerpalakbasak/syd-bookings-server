@@ -37,6 +37,13 @@ import {
   deleteContact,
 } from '../controllers/contact.controller.js';
 import {
+  getAllVehicles,
+  getVehicleById,
+  createVehicle,
+  updateVehicle,
+  deleteVehicle,
+} from '../controllers/vehicle.controller.js';
+import {
   authenticateAdmin,
   requireSuperAdmin,
 } from '../middlewares/auth.middleware.js';
@@ -126,5 +133,16 @@ router.get('/contacts/:id', authenticateAdmin, getContactById);
 router.patch('/contacts/:id/status', authenticateAdmin, updateContactStatus);
 router.put('/contacts/:id/status', authenticateAdmin, updateContactStatus);
 router.delete('/contacts/:id', authenticateAdmin, deleteContact);
+
+/* ==========================================================================
+   VEHICLES & PRICING CRUD
+   - Create, Read, Update, Delete vehicle types & multipliers (Admin or Superadmin)
+   ========================================================================== */
+router.get('/vehicles', authenticateAdmin, getAllVehicles);
+router.post('/vehicles', authenticateAdmin, createVehicle);
+router.get('/vehicles/:id', authenticateAdmin, getVehicleById);
+router.put('/vehicles/:id', authenticateAdmin, updateVehicle);
+router.patch('/vehicles/:id', authenticateAdmin, updateVehicle);
+router.delete('/vehicles/:id', authenticateAdmin, deleteVehicle);
 
 export default router;

@@ -8,12 +8,14 @@ import customerRoutes from './customer.routes.js';
 import contactRoutes from './contact.routes.js';
 import fareRoutes from './fare.routes.js';
 import corporateRoutes from './corporateAccount.routes.js';
+import vehicleRoutes from './vehicle.routes.js';
 
 const router = Router();
 
 router.use('/health', healthRoutes);
 router.use('/bookings', bookingRoutes);
 router.use('/routes', routeRoutes);
+router.use('/vehicles', vehicleRoutes);
 router.use('/payments', paymentRoutes);
 router.use('/admin', adminRoutes);
 router.use('/customer', customerRoutes);

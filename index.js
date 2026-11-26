@@ -24,10 +24,20 @@ const allowedOrigins = process.env.CLIENT_ORIGIN
   ? process.env.CLIENT_ORIGIN.split(',').map((origin) => origin.trim())
   : ['http://localhost:3000'];
 
+const isOriginAllowed = (origin) => {
+  if (!origin) return true;
+  if (allowedOrigins.includes(origin)) return true;
+  // Allow all sydairporttransfer.com.au subdomains and localhost
+  if (/^https?:\/\/([a-z0-9-]+\.)*sydairporttransfer\.com\.au(:\d+)?$/i.test(origin)) return true;
+  if (/^https?:\/\/localhost(:\d+)?$/i.test(origin)) return true;
+  if (/^https?:\/\/179\.197\.250\.239(:\d+)?$/i.test(origin)) return true;
+  return false;
+};
+
 app.use(
   cors({
     origin: (origin, callback) => {
-      if (!origin || allowedOrigins.includes(origin)) {
+      if (isOriginAllowed(origin)) {
         return callback(null, true);
       }
 
@@ -43,6 +53,7 @@ app.use(
 app.use(cookieParser());
 app.use(
   express.json({
+    limit: '10mb',
     verify: (req, res, buf) => {
       if (req.originalUrl && req.originalUrl.includes('/webhook')) {
         req.rawBody = buf;
